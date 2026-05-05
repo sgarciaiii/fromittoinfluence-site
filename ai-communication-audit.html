@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The AI Communication Audit — From IT to Influence</title>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e1a;
+      --surface-1: #111827;
+      --surface-2: #1a2035;
+      --surface-3: #1e2846;
+      --gold: #d4940a;
+      --gold-dim: rgba(212,148,10,0.12);
+      --gold-border: rgba(212,148,10,0.25);
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.1);
+      --purple: #8b5cf6;
+      --purple-dim: rgba(139, 92, 246, 0.1);
+      --text-primary: #ffffff;
+      --text-body: #94a3b8;
+      --text-muted: #7b8da8;
+      --separator: rgba(212,148,10,0.15);
+      --font: 'Inter', sans-serif;
+      --nav-h: 56px;
+    }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(10, 14, 26, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--separator);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 0;
+    }
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-right: auto;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+    section + section {
+      border-top: 1px solid var(--separator);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 96px 0 80px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-tagline {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: var(--text-body);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold);
+    }
+    .pill::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    h1, h2, .hero h1, .section-label { font-family: 'Sora', 'Inter', sans-serif; }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(26px, 4vw, 34px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── PROSE ── */
+    .prose p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      line-height: 1.75;
+      max-width: 68ch;
+    }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* ── CODE BLOCK ── */
+    .code-wrap {
+      position: relative;
+      margin-top: 8px;
+    }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Cascadia Code', monospace;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--surface-2);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .copy-btn:hover {
+      color: var(--text-primary);
+      background: var(--surface-3);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .copy-btn.copied {
+      color: var(--gold);
+      border-color: var(--gold-border);
+    }
+    .copy-icon { width: 13px; height: 13px; }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .step-content .inline-code {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #e2e8f0;
+    }
+
+    /* ── ACCORDION ── */
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .acc-item {
+      background: var(--surface-1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .acc-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 16px;
+      text-align: left;
+    }
+    .acc-trigger:hover { background: rgba(255,255,255,0.02); }
+    .acc-trigger h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .acc-chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .acc-item.open .acc-chevron { transform: rotate(180deg); }
+    .acc-item.open { border-color: var(--gold-border); }
+    .acc-item.open .acc-trigger { background: rgba(212, 148, 10, 0.04); }
+    .acc-body {
+      display: none;
+      padding: 0 24px 24px;
+    }
+    .acc-item.open .acc-body { display: block; }
+    .acc-body p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .acc-body p:last-child { margin-bottom: 0; }
+    .acc-body .score-bands { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .score-band {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .score-band.green { background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); }
+    .score-band.amber { background: var(--amber-dim); border: 1px solid rgba(245, 158, 11, 0.2); }
+    .score-band.red { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); }
+    .score-band-label {
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .score-band.green .score-band-label { color: #4ade80; }
+    .score-band.amber .score-band-label { color: var(--amber); }
+    .score-band.red .score-band-label { color: #f87171; }
+
+    /* ── EXAMPLE REPORT ── */
+    .report-wrap {
+      background: var(--surface-1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .report-header {
+      background: var(--surface-2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 28px;
+    }
+    .report-header .report-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .report-header h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .report-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .report-body { padding: 28px; }
+    .report-section { margin-bottom: 36px; }
+    .report-section:last-child { margin-bottom: 0; }
+    .report-section-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--separator);
+    }
+    .tonal-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface-3);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-bottom: 16px;
+    }
+    .tonal-label span {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .report-p {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .report-p:last-child { margin-bottom: 0; }
+    .score-grid { display: flex; flex-direction: column; gap: 10px; }
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr 60px;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .score-row-left h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .score-row-left p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .score-badge {
+      text-align: right;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .score-badge.high { color: #4ade80; }
+    .score-badge.mid { color: var(--amber); }
+    .score-badge.low { color: #f87171; }
+    .score-badge .score-denom {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .signal-grid { grid-template-columns: 1fr; } }
+    .signal-card {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid;
+    }
+    .signal-card.strength {
+      background: rgba(74, 222, 128, 0.06);
+      border-color: rgba(74, 222, 128, 0.2);
+    }
+    .signal-card.risk {
+      background: rgba(248, 113, 113, 0.06);
+      border-color: rgba(248, 113, 113, 0.2);
+    }
+    .signal-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .signal-card.strength .signal-card-label { color: #4ade80; }
+    .signal-card.risk .signal-card-label { color: #f87171; }
+    .signal-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .signal-card ul li {
+      font-size: 13px;
+      color: var(--text-body);
+      padding-left: 14px;
+      position: relative;
+    }
+    .signal-card ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+    .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .impact-grid { grid-template-columns: 1fr; } }
+    .impact-card {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid;
+    }
+    .impact-card.best {
+      background: rgba(74, 222, 128, 0.05);
+      border-color: rgba(74, 222, 128, 0.15);
+    }
+    .impact-card.worst {
+      background: rgba(248, 113, 113, 0.05);
+      border-color: rgba(248, 113, 113, 0.15);
+    }
+    .impact-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .impact-card.best .impact-card-label { color: #4ade80; }
+    .impact-card.worst .impact-card-label { color: #f87171; }
+    .impact-card p { font-size: 13px; color: var(--text-body); line-height: 1.6; }
+    .adjustments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      counter-reset: adj;
+    }
+    .adjustments-list li {
+      counter-increment: adj;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .adjustments-list li::before {
+      content: counter(adj);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--amber-dim);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--amber);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .scenario-block { margin-bottom: 24px; }
+    .scenario-block:last-child { margin-bottom: 0; }
+    .scenario-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .version-pair { display: flex; flex-direction: column; gap: 10px; }
+    .version-card {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .version-card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .version-card.ver-a .version-card-head {
+      background: rgba(100, 116, 139, 0.12);
+      color: var(--text-muted);
+    }
+    .version-card.ver-b .version-card-head {
+      background: rgba(212, 148, 10, 0.07);
+      color: var(--gold);
+    }
+    .version-card-body {
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: var(--text-body);
+      line-height: 1.7;
+      background: rgba(255,255,255,0.01);
+      white-space: pre-wrap;
+      font-family: var(--font);
+    }
+    .scenario-note {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: var(--amber-dim);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .scenario-note strong { color: var(--amber); }
+
+    /* ── SKILL SECTION ── */
+    .skill-card {
+      background: var(--surface-1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .skill-card p { font-size: 15px; color: var(--text-body); line-height: 1.7; margin-bottom: 16px; }
+    .skill-card p:last-child { margin-bottom: 0; }
+    .skill-inline-code {
+      display: inline-block;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #c4b5fd;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section { padding: 80px 0; }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 560px) { .cta-grid { grid-template-columns: 1fr; } }
+    .cta-card {
+      background: var(--surface-1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 28px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cta-card:hover { border-color: var(--gold-border); background: var(--surface-2); }
+    .cta-card.primary { border-color: var(--gold-border); }
+    .cta-card.primary:hover { background: rgba(212, 148, 10, 0.05); }
+    .cta-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .cta-card.primary .cta-card-label { color: var(--gold); }
+    .cta-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .cta-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .cta-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .cta-card.primary .cta-arrow { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--separator);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--text-primary); }
+
+    /* ── UTILITY ── */
+    strong { color: var(--text-primary); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand" style="display:flex;align-items:center;gap:8px;"><img src="./chess_knight_logo.png" alt="From IT to Influence" style="height:24px;width:auto;">From IT to Influence</a>
+    <ul class="nav-links">
+      <li><a href="#prompt">Prompt</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#interpretation">How to Read</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#skill">Skill</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION 1: HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <span class="hero-eyebrow">From IT to Influence</span>
+      <h1>The AI Communication Audit</h1>
+      <p class="hero-tagline">You've sent the message. Now you're waiting. Wondering if it landed the way you meant it — or if it made you sound smaller than you are. This audit tells you before you hit send.</p>
+      <div class="pills">
+        <span class="pill">The Prompt</span>
+        <span class="pill">The Workflow</span>
+        <span class="pill">The Interpretation Guide</span>
+        <span class="pill">Example Report</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHAT THIS IS -->
+  <section id="what">
+    <div class="container">
+      <div class="section-label">What This Is</div>
+      <div class="prose">
+        <p>You'll run this audit on your real Outlook and Teams messages, then see exactly how your writing lands in the rooms that decide your promotion, projects, and budget. Not a self-assessment — your actual emails, analyzed by AI.</p>
+        <p>Outcome: a scored breakdown across six dimensions, a three-word tonal label that captures how leadership reads you, scenario simulations showing how your natural writing style lands — and a revised version showing what's possible. Before-and-after examples you can copy into your next promotion packet, escalation, or exec update.</p>
+        <p>The example report in Section 4 shows you exactly what output to expect before you run it yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE PROMPT -->
+  <section id="prompt">
+    <div class="container">
+      <div class="section-label">The Prompt</div>
+      <h2>The Prompt</h2>
+      <p class="section-sub">Copy this exactly into Perplexity (with Outlook/Teams connected) or Claude.</p>
+      <div class="code-wrap">
+        <pre class="code-block" id="prompt-text">You are an expert communication coach and organizational psychologist.
+Your job is to analyze my Outlook emails, Teams chats, and give a brutally honest but constructive read on tone, personality, and soft skills.
+
+Follow these steps exactly:
+
+STEP 1: Tonal Tension Scan
+Identify the dominant emotional tones in my writing (for example: calm, urgent, warm, detached, playful, frustrated, optimistic, skeptical, etc.).
+Note any tension between tones — such as being both encouraging and impatient, or both confident and anxious.
+Briefly describe how that tension likely feels to the reader.
+
+STEP 2: Three-Word Tonal Label
+Create a concise three-word phrase that captures this person's overall communication "tonal tension."
+Format: Three-word tonal label: Word1 – Word2 – Word3
+Each word should be specific and grounded in the actual messages.
+
+STEP 3: Tone and Soft-Skill Assessment
+Evaluate on these dimensions with 1–10 scores and 1–2 honest sentences each:
+- Clarity of communication
+- Emotional awareness / empathy
+- Assertiveness vs. passivity
+- Collaboration and openness to input
+- Conflict handling (directness, defensiveness, avoidance)
+- Professional warmth (approachability, respect, courtesy)
+
+STEP 4: Personality and Character Signals
+Infer likely personality traits. Call out both strength signals and risk signals.
+Speak plainly to a high-performing executive who wants the truth, not flattery. If something reads as impatient, controlling, vague, or defensive — say so explicitly and explain the impact.
+
+STEP 5: Impact on Others
+Best case and worst case. Flag any patterns of active or passive incivility.
+
+STEP 6: Concrete Adjustments
+3–5 specific, behavioral micro-adjustments. Not generic advice — specific to what you observed.
+
+STEP 7: Scenario Simulations
+Simulate how this person writes in these scenarios:
+1. Delivering tough feedback to a high performer
+2. Pushing back on an unrealistic request from above
+3. Admitting a mistake that impacted a key project
+
+For each: Version A (natural tone) and Version B (preserves personality, reduces relationship risk). One line after each pair: what changed and why.
+
+Base everything ONLY on the messages provided. Do not apply stereotypes.</pre>
+        <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">
+          <svg class="copy-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="5" width="9" height="9" rx="1.5"/>
+            <path d="M3 11V3a1 1 0 011-1h8" stroke-linecap="round"/>
+          </svg>
+          Copy
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE WORKFLOW -->
+  <section id="workflow">
+    <div class="container">
+      <div class="section-label">The Workflow</div>
+      <h2>The Workflow</h2>
+      <p class="section-sub">Don't stop at the first report. This is where the depth lives.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Run the base analysis</h3>
+            <p>Paste the prompt. Let it pull your last 30–60 days of Outlook + Teams. Read the first report straight through without defending it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Expand the dataset</h3>
+            <p>Follow up with: <span class="inline-code">"Expand the email dataset to 100 emails and see if anything changes."</span> A larger sample either confirms the initial findings or reveals patterns the first pass missed. Both outcomes are useful.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Add your context</h3>
+            <p>The AI only knows what's in the messages. Now give it the context it's missing. Example: <span class="inline-code">"One of my closest colleagues has called me [nickname] for years. Do you see it in the data?"</span> Watch it connect the pattern to the label.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Add your loyalty signals</h3>
+            <p>Follow up with the evidence that complicates the story. <span class="inline-code">"The same person who gave me that nickname has followed me across three positions. Does that change anything?"</span> This is where the nuance lives — and where the report goes from a diagnosis to a strategy.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Generate the skill</h3>
+            <p>Ask: <span class="inline-code">"Turn everything you've learned into a reusable skill with usage instructions."</span> You'll get a ZIP file with the full methodology, scoring rubric, and scenario templates. Use it quarterly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: INTERPRETATION GUIDE -->
+  <section id="interpretation">
+    <div class="container">
+      <div class="section-label">Interpretation Guide</div>
+      <h2>How to Read Your Report</h2>
+      <p class="section-sub">What each section actually means — and what to do with it.</p>
+      <div class="accordion">
+
+        <div class="acc-item open">
+          <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="true">
+            <h3>Three-Word Tonal Label</h3>
+            <svg class="acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-body">
+            <p>This is your communication fingerprint. It captures the push-pull in how you come across — not who you are, but who your writing says you are to people who don't know you yet. The tension between the words is the finding. "Efficient – Candid – Clipped" means you're communicating speed and directness at the cost of warmth. The label is a starting point for the conversation, not a verdict.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+            <h3>Soft-Skill Scores</h3>
+            <svg class="acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-body">
+            <div class="score-bands">
+              <div class="score-band green">
+                <span class="score-band-label">7–10</span>
+                <span>Genuine strengths. Don't change these — amplify them.</span>
+              </div>
+              <div class="score-band amber">
+                <span class="score-band-label">5–6</span>
+                <span>The gap zone. You have the instinct, but the execution isn't consistent. These are your highest-leverage improvement areas.</span>
+              </div>
+              <div class="score-band red">
+                <span class="score-band-label">1–4</span>
+                <span>Structural patterns that are actively costing you. These need direct attention before anything else.</span>
+              </div>
+            </div>
+            <p>The most important score to focus on first is the one that surprises you. If you expected a 5 on emotional awareness and got a 3, that gap is the real finding.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+            <h3>Personality Signals — Strength vs. Risk</h3>
+            <svg class="acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-body">
+            <p>Read the risk signals without deflecting. The AI isn't criticizing who you are — it's describing how your patterns land on people who don't have the context your inner circle has. Every risk signal has a corresponding strength signal. The same directness that makes you a credible operator can read as dismissive to someone who doesn't know you. Both things are true.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+            <h3>The Scenario Simulations</h3>
+            <svg class="acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-body">
+            <p>Version A is a mirror. Read it and ask: "Would I actually send this?" If yes — and it makes you wince — that's the data.</p>
+            <p>Version B is not a softer version of you. It's the same directness with the relational architecture that makes it land. Notice what changed: it's almost never the content. It's almost always the framing, the acknowledgment, or the context sentence at the start.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+            <h3>When the AI Seems Wrong</h3>
+            <svg class="acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-body">
+            <p>Before dismissing a finding: check whether someone in your life has said something similar — a manager, a partner, a close colleague. The AI is reading signals. If the signal is there consistently, the finding is probably right even if the framing feels off. The resistance is data.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: EXAMPLE REPORT -->
+  <section id="example">
+    <div class="container">
+      <div class="section-label">Example Report</div>
+      <h2>Example Report</h2>
+      <p class="section-sub">This is what your output looks like. Subject: Marcus Chen, Director of Infrastructure.</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px;">Fictionalized from a real analysis. All specific details changed.</p>
+
+      <div class="report-wrap">
+        <div class="report-header">
+          <div class="report-label">Fictionalized Report</div>
+          <h3>Marcus Chen — Director of Infrastructure, Enterprise Technology</h3>
+          <p>Based on 38 messages across Outlook email and Microsoft Teams (February–April 2026)</p>
+        </div>
+        <div class="report-body">
+
+          <div class="report-section">
+            <div class="report-section-title">Three-Word Tonal Label</div>
+            <div class="tonal-label">
+              <span>Efficient – Candid – Clipped</span>
+            </div>
+            <p class="report-p">Your dominant tones are directness, pragmatic confidence, and task-focused urgency. You communicate like someone who values speed and clarity over ceremony — you get to the point fast, often in a single sentence, and you expect others to keep up. The tension is between your genuine collaborative intent ("This only works if we are both successful together") and the ultra-compressed delivery that strips away the warmth those sentiments are meant to carry. When a VP reads "This is not IT's responsibility to fill out" followed immediately by "Let me know if you have questions" — the first sentence lands hard, and the softener reads more like a formality than genuine openness. You mean to be collaborative, but your writing style undercuts that intention before the reader gets to the part where you show it.</p>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-title">Soft-Skill Scores</div>
+            <div class="score-grid">
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Clarity of Communication</h4>
+                  <p>Clear on what you want, not always clear on what you need from the other person. "Why are we getting these?" is efficient for you; the recipient may not know whether to investigate, escalate, or just acknowledge.</p>
+                </div>
+                <div class="score-badge high">7<span class="score-denom">/10</span></div>
+              </div>
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Emotional Awareness / Empathy</h4>
+                  <p>Genuine in DMs ("I'm here to help however I can"), nearly absent in formal email. The gap between your chat voice and your email voice is wide enough that people who only interact with you via email are meeting a different person.</p>
+                </div>
+                <div class="score-badge mid">5<span class="score-denom">/10</span></div>
+              </div>
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Assertiveness vs. Passivity</h4>
+                  <p>You state positions clearly and don't hedge. Strength — except when assertiveness lands without framing, it reads as controlling rather than confident.</p>
+                </div>
+                <div class="score-badge high">8<span class="score-denom">/10</span></div>
+              </div>
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Collaboration / Openness to Input</h4>
+                  <p>You say you're open. The structure of your messages often contradicts that. You tend to state conclusions first, invite input as an afterthought. By the time you ask a question, readers assume the decision is already made.</p>
+                </div>
+                <div class="score-badge mid">6<span class="score-denom">/10</span></div>
+              </div>
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Conflict Handling</h4>
+                  <p>You address conflict through data and indirect framing. "That's an odd approach" is technically diplomatic; it also avoids the direct conversation that would resolve things faster.</p>
+                </div>
+                <div class="score-badge mid">6<span class="score-denom">/10</span></div>
+              </div>
+              <div class="score-row">
+                <div class="score-row-left">
+                  <h4>Professional Warmth</h4>
+                  <p>In DMs, you're warm, funny, and human. In email, that person almost entirely disappears. People who only see your email voice are working with an incomplete picture.</p>
+                </div>
+                <div class="score-badge mid">5<span class="score-denom">/10</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-title">Personality Signals</div>
+            <div class="signal-grid">
+              <div class="signal-card strength">
+                <div class="signal-card-label">Strengths</div>
+                <ul>
+                  <li>Systems-oriented thinker</li>
+                  <li>Action-biased ("start and then refine")</li>
+                  <li>Intellectually curious</li>
+                  <li>High loyalty to inner circle</li>
+                  <li>Self-aware about growth areas</li>
+                </ul>
+              </div>
+              <div class="signal-card risk">
+                <div class="signal-card-label">Risks</div>
+                <ul>
+                  <li>Brevity reads as dismissiveness outside trust circle</li>
+                  <li>Inner/outer warmth gap erodes cross-functional trust</li>
+                  <li>Data-as-shield habit makes messages read as cold</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-title">Impact on Others</div>
+            <div class="impact-grid">
+              <div class="impact-card best">
+                <div class="impact-card-label">Best Case</div>
+                <p>Colleagues see a sharp, no-nonsense operator who cuts through ambiguity. Direct reports appreciate the clarity and the lack of politics. People decode the brevity and value the efficiency.</p>
+              </div>
+              <div class="impact-card worst">
+                <div class="impact-card-label">Worst Case</div>
+                <p>People outside the inner circle experience you as dismissive and difficult to read. Senior leaders interpret efficiency as indifference. The passive incivility risk is moderate — brevity without acknowledgment, conclusions without invitation, corrections without cushioning. The person doing it rarely intends it. The recipient feels it every time.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-title">Concrete Adjustments</div>
+            <ol class="adjustments-list">
+              <li>Add one human sentence before the first business sentence in every email. Not small talk — acknowledgment. "Jennifer, thanks for looping me in." This takes 5 seconds and changes how the rest of the message lands.</li>
+              <li>Replace public call-outs with private flags + public questions. DM the person first, then raise it in the thread as a question, not a correction.</li>
+              <li>End directive statements with the "why" or "what's next." "This isn't IT's responsibility" becomes "This should come from the business side since they'll be measuring the outcomes — happy to help you think through what to include."</li>
+              <li>Bring your DM personality into email — selectively. One conversational line bridges the gap between efficient and human.</li>
+            </ol>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-title">Scenario Simulation: Pushing Back on an Unrealistic Request</div>
+            <div class="scenario-block">
+              <div class="version-pair">
+                <div class="version-card ver-a">
+                  <div class="version-card-head">Version A — Natural Tone</div>
+                  <div class="version-card-body">David,
+That timeline isn't realistic. We're already running lean and accelerating Q3 would put the migration at risk. We'd need 3 additional contractors at minimum — not budgeted. Happy to walk through the numbers.
+Marcus</div>
+                </div>
+                <div class="version-card ver-b">
+                  <div class="version-card-head">Version B — Preserves Candor, Reduces Perception of Rigidity</div>
+                  <div class="version-card-body">David,
+I want to find a way to make this work, so let me show you where I'm landing. Accelerating Q3 as proposed would require pulling resources from the migration, which is already lean. Backfilling runs roughly $120K over 3 months — unbudgeted currently. I see two paths: shift scope within Q3 to prioritize the highest-impact items, or request budget approval to run both tracks. I'd recommend option one as the lower-risk play, but I'm open to your read on the priorities. Can we align this week?
+Marcus</div>
+                </div>
+              </div>
+              <div class="scenario-note"><strong>What changed:</strong> Same pushback, same numbers, completely different posture. Version A closes the door. Version B opens a negotiation.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: THE SKILL -->
+  <section id="skill">
+    <div class="container">
+      <div class="section-label">The Skill File</div>
+      <h2>The Skill File</h2>
+      <p class="section-sub">Turn this into a reusable system.</p>
+      <div class="skill-card">
+        <p>After running your full analysis, ask Perplexity: <span class="skill-inline-code">"Turn everything you've learned about my communication style into a reusable skill with usage instructions."</span></p>
+        <p>You'll receive a ZIP file containing the full methodology, a scoring rubric for all six dimensions, and scenario templates. Upload it to your Perplexity skills settings.</p>
+        <p>Run it quarterly — or any time you get feedback that doesn't sit right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: WHAT'S NEXT -->
+  <section class="cta-section" id="next">
+    <div class="container">
+      <div class="section-label">What's Next</div>
+      <h2>What's Next</h2>
+      <div class="cta-grid" style="margin-top:32px;">
+        <div class="cta-card primary" style="cursor:default;">
+          <div class="cta-card-label">Come Back With Your Findings</div>
+          <h3>Tell Me Your Three-Word Label</h3>
+          <p>Run it before your next promotion cycle or executive conversation. It takes 10 minutes and shows you exactly where your communication is working against you.</p>
+          <div class="cta-arrow" style="color:var(--gold); font-size:0.85rem; font-weight:600; letter-spacing:0.05em;">jimmy@fromittoinfluence.com</div>
+        </div>
+        <a href="https://www.youtube.com/@FromITtoInfluence" class="cta-card" target="_blank" rel="noopener">
+          <div class="cta-card-label">What's Next in the Game</div>
+          <h3>The Audit Tells You the Gap. The Win Column Closes It.</h3>
+          <p>The AI Audit shows where you're invisible. Now build the Win Column that makes them see you. That's what the channel is for.</p>
+          <div class="cta-arrow">
+            From IT to Influence
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 7h10M7 2l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 From IT to Influence · <a href="https://fromittoinfluence.com">fromittoinfluence.com</a></p>
+  </footer>
+
+  <script>
+    // Copy prompt button
+    function copyPrompt() {
+      const text = document.getElementById('prompt-text').textContent;
+      const btn = document.getElementById('copy-btn');
+      navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg class="copy-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 8.5l3.5 3.5 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg> Copied`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg class="copy-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M3 11V3a1 1 0 011-1h8" stroke-linecap="round"/></svg> Copy`;
+        }, 2200);
+      }).catch(() => {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg class="copy-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 8.5l3.5 3.5 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg> Copied`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg class="copy-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M3 11V3a1 1 0 011-1h8" stroke-linecap="round"/></svg> Copy`;
+        }, 2200);
+      });
+    }
+
+    // Accordion
+    function toggleAcc(trigger) {
+      const item = trigger.closest('.acc-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.acc-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</body>
+</html>

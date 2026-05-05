@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Free Tools — From IT to Influence</title>
+  <meta name="description" content="Your free resources from From IT to Influence." />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+  :root {
+    --bg:        #0c0d14;
+    --bg-2:      #08090f;
+    --surface:   #15161f;
+    --surface-2: #1d1e29;
+    --border:    rgba(212,148,10,0.10);
+    --border-h:  rgba(212,148,10,0.22);
+    --border-w:  rgba(255,255,255,0.08);
+    --gold:      #dea01a;
+    --gold-lt:   #f0b428;
+    --gold-glow: rgba(212,148,10,0.12);
+    --white:     #f1f5f9;
+    --muted:     #94a3b8;
+    --dimmer:    #7b8da8;
+    --green:     #34d399;
+    --font-d:    'Sora', sans-serif;
+    --font-b:    'DM Sans', sans-serif;
+    --font-m:    'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-b);
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Orb background */
+  .bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-orb-1 {
+    width: 600px; height: 600px;
+    top: -200px; left: -150px;
+    background: radial-gradient(circle, rgba(212,148,10,0.07), transparent 70%);
+  }
+  .bg-orb-2 {
+    width: 400px; height: 400px;
+    bottom: -100px; right: -100px;
+    background: radial-gradient(circle, rgba(59,130,246,0.04), transparent 70%);
+  }
+
+  /* ── Nav ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    position: relative; z-index: 10;
+    background: rgba(12,13,20,0.8);
+    backdrop-filter: blur(16px);
+  }
+  .logo {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--white);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .logo img { height: 26px; width: auto; }
+  .logo em { font-style: normal; color: var(--gold); }
+  .nav-yt {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid rgba(212,148,10,0.35);
+    padding: 9px 18px;
+    border-radius: 6px;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .nav-yt:hover {
+    background: rgba(212,148,10,0.08);
+    border-color: var(--gold);
+  }
+  .yt-dot {
+    display: inline-block;
+    width: 20px; height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Crect width='20' height='14' rx='3' fill='%23FF0000'/%3E%3Cpath d='M8 3.5 13.5 7 8 10.5z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: pulse-red 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-red {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+
+  /* ── Main ── */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 24px 100px;
+    position: relative; z-index: 2;
+  }
+
+  /* ── Confirm block ── */
+  .confirm {
+    text-align: center;
+    max-width: 560px;
+    margin-bottom: 72px;
+  }
+  .confirm-icon {
+    width: 72px; height: 72px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05));
+    border: 1px solid rgba(52,211,153,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    animation: pop-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  @keyframes pop-in {
+    0%   { transform: scale(0.5); opacity: 0; }
+    60%  { transform: scale(1.08); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .confirm h1 {
+    font-family: var(--font-d);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .confirm h1 span { color: var(--gold); }
+  .confirm p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .inbox-note {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 20px;
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--dimmer);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-w);
+    padding: 8px 16px;
+    border-radius: 100px;
+  }
+  .inbox-note::before {
+    content: '✉';
+    font-size: 0.9rem;
+    color: var(--gold);
+  }
+
+  /* ── Resources grid ── */
+  .resources-label {
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 980px;
+    margin-bottom: 64px;
+  }
+
+  .resource-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .resource-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at top right, rgba(212,148,10,0.07), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .resource-card:hover {
+    border-color: var(--border-h);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(212,148,10,0.1);
+  }
+  .resource-card:hover::after { opacity: 1; }
+
+  .resource-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .resource-type {
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .badge {
+    font-family: var(--font-m);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .badge--live {
+    background: rgba(52,211,153,0.1);
+    color: var(--green);
+    border: 1px solid rgba(52,211,153,0.25);
+  }
+  .badge--soon {
+    background: rgba(255,255,255,0.04);
+    color: var(--dimmer);
+    border: 1px solid var(--border-w);
+  }
+
+  .resource-card h3 {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .resource-card > p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  .resource-source {
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--dimmer);
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .resource-source em { font-style: normal; color: var(--muted); }
+
+  .resource-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 11px 20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+    color: var(--bg);
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(212,148,10,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: -0.01em;
+    align-self: flex-start;
+  }
+  .resource-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(212,148,10,0.3);
+  }
+  .resource-cta--locked {
+    display: inline-flex; align-items: center;
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dimmer);
+    cursor: default;
+    padding: 8px 0;
+  }
+
+  /* ── Channel CTA ── */
+  .channel-cta {
+    text-align: center;
+  }
+  .channel-cta p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .btn-yt {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: var(--font-d);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .btn-yt:hover {
+    border-color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--dimmer);
+    position: relative; z-index: 2;
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+
+  @media (max-width: 860px) {
+    .resources-grid { grid-template-columns: 1fr; max-width: 480px; }
+  }
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    main { padding: 56px 20px 80px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+  }
+  </style>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+<div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="./chess_knight_logo.png" alt="From IT to Influence">
+    From <em>IT</em> to Influence
+  </a>
+  <a href="https://youtube.com/@FromITtoInfluence" class="nav-yt" target="_blank" rel="noopener">
+    <span class="yt-dot"></span> Watch the Channel
+  </a>
+</nav>
+
+<main>
+
+  <!-- Confirm -->
+  <div class="confirm">
+    <div class="confirm-icon">✓</div>
+    <h1>You're <span>in.</span></h1>
+    <p>Your free tools are below. New resources drop with every video — check back after each one.</p>
+    <div class="inbox-note">Check your inbox — confirmation on its way</div>
+  </div>
+
+  <!-- Resources -->
+  <h2 class="resources-label">Your Free Playbooks</h2>
+
+  <div class="resources-grid">
+
+    <div class="resource-card">
+      <div class="resource-meta">
+        <span class="resource-type">Assessment</span>
+        <span class="badge badge--live">Live</span>
+      </div>
+      <h3>The Influence Audit</h3>
+      <p>5-dimension scored assessment. Find out exactly where you're invisible to leadership — and what to fix first.</p>
+      <div class="resource-source">Ships with: <em>I Got Passed Over for Promotion. Then I Saw Why.</em></div>
+      <a href="influence-audit.html" class="resource-cta">Take the Assessment →</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-meta">
+        <span class="resource-type">Template</span>
+        <span class="badge badge--live">Live</span>
+      </div>
+      <h3>The Champion Brief</h3>
+      <p>One page your boss uses to advocate for you in rooms you're not in. Fill it quarterly. Send it before your 1:1.</p>
+      <div class="resource-source">Ships with: <em>What Your Boss Actually Wants From You</em></div>
+      <a href="/champion-brief" class="resource-cta">Get the Template →</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-meta">
+        <span class="resource-type">Checklist</span>
+        <span class="badge badge--soon">Coming soon</span>
+      </div>
+      <h3>Hybrid Visibility Checklist</h3>
+      <p>5 presence signals + weekly Monday audit. Confirm you're generating the right signals before anyone notices you're absent.</p>
+      <div class="resource-source">Ships with: <em>The Visibility Paradox in Hybrid Environments</em></div>
+      <span class="resource-cta--locked">Available with the video</span>
+    </div>
+
+  </div>
+
+  <!-- Channel CTA -->
+  <div class="channel-cta">
+    <p>The videos that go with these tools are dropping soon.</p>
+    <a href="https://youtube.com/@FromITtoInfluence" class="btn-yt" target="_blank" rel="noopener">
+      <span class="yt-dot"></span> Subscribe so you don't miss them
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2026 From IT to Influence · Jimmy Garcia</span>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<!-- © 2026 From IT to Influence. All rights reserved. fromittoinfluence.com -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>From IT to Influence — AI Cheat Sheet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@page{size:letter portrait;margin:0.4in}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0a1628;color:#e9f0ff;font-family:'Inter','Segoe UI',system-ui,sans-serif}
+body{
+  font-size:clamp(13px, 0.95vw, 20px);
+  line-height:1.45;
+  padding:clamp(14px, 1.6vw, 32px);
+  min-height:100vh;
+}
+.page{
+  max-width:1800px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(10px,1vw,20px);
+}
+
+/* HEADER */
+.head{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:2px solid #f4c430;padding-bottom:0.55em;
+}
+.head-left{display:flex;align-items:center;gap:0.6em}
+.logo-mark{line-height:1}
+.logo-mark img{height:clamp(26px,2vw,40px);width:auto;display:block}
+@media print{.logo-mark img{height:28px}}
+.head-titles{}
+.head h1{
+  font-size:clamp(18px, 1.8vw, 34px);
+  font-weight:900;letter-spacing:-.3px;line-height:1.05;
+  background:linear-gradient(90deg,#f0aa1a,#d4940a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.head .tagline{
+  font-size:clamp(12px,0.65vw,13px);
+  letter-spacing:1px;color:#9fb1d1;
+  font-family:'JetBrains Mono',monospace;margin-top:2px;
+}
+.head .right{display:flex;align-items:center;gap:clamp(10px,1vw,20px)}
+
+.print-btn{
+  background:linear-gradient(135deg,#f0aa1a,#d4940a);color:#0a1628;
+  border:none;border-radius:999px;
+  padding:0.5em 1em;font-family:'JetBrains Mono',monospace;
+  font-size:clamp(12px,0.72vw,14px);font-weight:900;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;white-space:nowrap;
+}
+.print-btn:hover{transform:translateY(-1px)}
+.print-btn::before{content:"⎙  "}
+@media print{.print-btn{display:none!important}}
+
+/* GRID */
+.row{display:grid;gap:clamp(10px,1vw,20px)}
+.row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.row.two,.row.three{grid-template-columns:1fr}}
+
+/* BLOCKS */
+.block{
+  background:#0f1f3a;border:1px solid rgba(244,196,48,.28);
+  border-radius:0.7em;padding:clamp(12px,1vw,22px) clamp(14px,1.1vw,26px);
+}
+.block h2{
+  font-size:clamp(12px,0.82vw,16px);
+  letter-spacing:2px;text-transform:uppercase;color:#f4c430;
+  margin-bottom:0.7em;font-family:'JetBrains Mono',monospace;
+  border-bottom:1px solid rgba(244,196,48,.2);padding-bottom:0.35em;
+}
+.block h3{
+  font-size:clamp(12px,0.78vw,14px);
+  color:#ffe48a;margin:0.7em 0 0.4em;
+  text-transform:uppercase;letter-spacing:1.5px;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:clamp(12px,0.78vw,14px)}
+table td{padding:0.42em 0.52em;border-bottom:1px solid rgba(244,196,48,.15);vertical-align:top;line-height:1.45}
+table tr:last-child td{border-bottom:none}
+td.dim{
+  color:#ffe48a;font-family:'JetBrains Mono',monospace;
+  font-size:0.9em;text-transform:uppercase;letter-spacing:1px;
+  width:36%;white-space:nowrap;
+}
+table.three th{
+  color:#f4c430;font-family:'JetBrains Mono',monospace;font-size:0.85em;
+  letter-spacing:1.5px;text-transform:uppercase;padding:0.4em 0.5em;
+  border-bottom:1px solid rgba(244,196,48,.25);
+}
+table.three td.fail{color:#ff5a7a;font-size:0.9em}
+
+/* FAILURE MODES */
+ol.modes{list-style:none;counter-reset:m;display:flex;flex-direction:column;gap:0.5em}
+ol.modes li{
+  counter-increment:m;padding:0.5em 0 0.5em 2.4em;position:relative;
+  border-bottom:1px dashed rgba(244,196,48,.15);
+  font-size:clamp(12px,0.78vw,14px);line-height:1.5;
+}
+ol.modes li:last-child{border-bottom:none}
+ol.modes li::before{
+  content:counter(m);position:absolute;left:0;top:0.55em;
+  width:1.6em;height:1.6em;border-radius:4px;
+  background:linear-gradient(135deg,#f0aa1a,#d4940a);color:#0a1628;
+  font-weight:900;font-size:0.95em;display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+}
+ol.modes li b{color:#ffe48a;display:block;margin-bottom:0.15em;font-size:1.05em}
+ol.modes li i{color:#36e39a;font-style:italic}
+
+/* PRD */
+.prd{
+  background:#0a1628;border:1px solid rgba(52,209,255,.35);
+  border-radius:0.5em;padding:0.65em 0.85em;
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(12px,0.75vw,13px);color:#34d1ff;line-height:1.8;
+}
+.prd b{color:#ffe48a}
+
+/* GUARDRAILS */
+.guardrails{font-size:clamp(12px,0.76vw,14px);line-height:1.6;list-style:none;margin-top:0.5em}
+.guardrails li{margin-bottom:0.2em;padding-left:1.3em;position:relative}
+.guardrails li::before{content:"✕";position:absolute;left:0;color:#ff5a7a;font-weight:900}
+.guardrails li.ok::before{content:"✓";color:#36e39a}
+
+/* 7 MOVES */
+.moves{
+  display:grid;gap:clamp(6px,0.6vw,12px);
+  grid-template-columns:repeat(7,minmax(0,1fr));
+}
+@media (max-width:1200px){.moves{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:720px){.moves{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.moves .m{
+  background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.35);
+  border-radius:0.5em;padding:0.6em 0.7em;
+  font-size:clamp(12px,0.72vw,13px);line-height:1.45;
+}
+.moves .m .n{
+  font-family:'JetBrains Mono',monospace;color:#d4940a;
+  font-size:1em;font-weight:900;margin-bottom:0.25em;
+}
+.moves .m b{color:#ffe48a;display:block;margin-bottom:0.2em;font-size:1.05em}
+
+/* PIPELINE */
+.pipeline{
+  display:flex;gap:0;align-items:stretch;margin-top:0.5em;
+  font-size:clamp(12px,0.75vw,13px);
+}
+.pipe-step{
+  flex:1;background:rgba(244,196,48,.06);border:1px solid rgba(244,196,48,.2);
+  border-radius:0;padding:0.55em 0.7em;
+  border-right:none;text-align:center;line-height:1.4;
+}
+.pipe-step:first-child{border-radius:0.5em 0 0 0.5em}
+.pipe-step:last-child{border-radius:0 0.5em 0.5em 0;border-right:1px solid rgba(244,196,48,.2)}
+.pipe-step .sn{
+  font-family:'JetBrains Mono',monospace;font-size:0.8em;
+  color:#f4c430;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;
+}
+.pipe-step .st{font-size:0.9em;color:#e9f0ff}
+.pipe-arrow{color:#f4c430;font-size:1.1em;display:flex;align-items:center;padding:0 1px;opacity:.6}
+
+/* FOOTER */
+.foot{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:clamp(11px,0.62vw,12px);
+  color:#9fb1d1;font-family:'JetBrains Mono',monospace;
+  letter-spacing:2px;text-transform:uppercase;
+  border-top:1px solid rgba(244,196,48,.2);padding-top:0.6em;
+}
+.foot .brand{
+  font-weight:900;
+  background:linear-gradient(90deg,#f0aa1a,#d4940a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.foot a{color:#9fb1d1;text-decoration:none;transition:color .15s}
+.foot a:hover{color:#f4c430}
+.foot-logo{height:clamp(14px,1vw,18px);width:auto;opacity:.8}
+@media print{.foot-logo{height:14px}}
+
+/* PRINT OVERRIDES */
+@media print{
+  html,body{background:#0a1628!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:10px;padding:0.35in;line-height:1.35}
+  .page{max-width:none;gap:8px}
+  .head h1{font-size:20px}
+  .block{padding:10px 12px}
+  .block h2{font-size:11px}
+  table{font-size:9px}
+  td.dim{font-size:8.5px}
+  ol.modes li{font-size:9.5px;padding-left:24px}
+  ol.modes li::before{width:18px;height:18px;font-size:10px;top:6px}
+  .prd{font-size:8.5px}
+  .guardrails{font-size:9px}
+  .moves{grid-template-columns:repeat(7,1fr);gap:6px}
+  .moves .m{font-size:8.5px;padding:6px 7px}
+  .foot{font-size:8px}
+  .pipeline{font-size:8.5px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="head">
+  <div class="head-left">
+    <div class="logo-mark"><img src="/chess_knight_logo_transparent.png" alt="From IT to Influence"></div>
+    <div class="head-titles">
+      <h1>From IT to Influence · AI Cheat Sheet</h1>
+      <div class="tagline">Prompt to Ship · AI for Your Team · v1</div>
+    </div>
+  </div>
+  <div class="right">
+    <button class="print-btn" onclick="window.print()">Print</button>
+  </div>
+</div>
+
+<!-- ROW 1: Two Rubrics -->
+<div class="row two">
+  <div class="block">
+    <h2>▸ Operations Rubric — Research / Triage</h2>
+    <table class="three">
+      <tr><th>Dimension</th><th>What "Good" Looks Like</th><th>Failure Signal</th></tr>
+      <tr><td class="dim">Triage speed</td><td>Classified + owner in &lt;15 min</td><td class="fail">Still reading source material after 20 min</td></tr>
+      <tr><td class="dim">Citation quality</td><td>Every claim → dated, linked source</td><td class="fail">"According to the internet…" no URL</td></tr>
+      <tr><td class="dim">Tone fit</td><td>Exec-readable in 20 sec; warmth w/o fluff</td><td class="fail">Reads like a stack dump or a press release</td></tr>
+      <tr><td class="dim">Scope discipline</td><td>Answer only what was asked</td><td class="fail">Five pages when the ask was a paragraph</td></tr>
+      <tr><td class="dim">Sanitization</td><td>Zero PII, zero unreleased data</td><td class="fail">Anything you wouldn't post publicly</td></tr>
+    </table>
+  </div>
+  <div class="block">
+    <h2>▸ Development Rubric — Specs / Backlog</h2>
+    <table class="three">
+      <tr><th>Dimension</th><th>What "Good" Looks Like</th><th>Failure Signal</th></tr>
+      <tr><td class="dim">Spec fidelity</td><td>AC maps 1:1 to requirement</td><td class="fail">AC restates the title in different words</td></tr>
+      <tr><td class="dim">Test coverage</td><td>≥1 happy path + 1 edge case per AC</td><td class="fail">"Test: it works"</td></tr>
+      <tr><td class="dim">Reproducibility</td><td>Peer runs same prompt → comparable spec</td><td class="fail">Output depends on vibes</td></tr>
+      <tr><td class="dim">Technical accuracy</td><td>APIs / endpoints / fields actually exist</td><td class="fail">Invented endpoint that sounds plausible</td></tr>
+      <tr><td class="dim">Deploy-readiness</td><td>Lands in tracker without a rewrite</td><td class="fail">PM has to re-spec before groom</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ROW 2: Failure Modes + Prompt PRD -->
+<div class="row two">
+  <div class="block">
+    <h2>▸ Three Failure Modes — Debug the Prompt</h2>
+    <ol class="modes">
+      <li><b>Missing context</b>Output is generic — says nothing specific to your system or project. <i>Fix:</i> attach the source doc, paste the prior spec, link the ticket. The model can't see what you see.</li>
+      <li><b>Vague instruction</b>You got a three-paragraph essay when you wanted five bullets with owners. <i>Fix:</i> rewrite instructions as a checklist. Count the bullets. Name the columns.</li>
+      <li><b>Model mismatch</b>Wrong tool — fast model for nuanced reasoning, text model for video, general model for deep research. <i>Fix:</i> switch lanes. Perplexity for sourced research, reasoning model for logic, agent for multi-step.</li>
+    </ol>
+  </div>
+  <div class="block">
+    <h2>▸ Prompt PRD Template — Write This First</h2>
+    <div class="prd">
+      <b>Persona:</b> [role the AI should play]<br>
+      <b>Context:</b> [attach artifacts, not descriptions — paste, don't describe]<br>
+      <b>Constraints:</b> [3 hard rules — tone, sources, length, format]<br>
+      <b>Success metric:</b> [what "done" looks like, measurable]<br>
+      <b>Non-goals:</b> [what to NOT produce]
+    </div>
+    <h3>Guardrails</h3>
+    <ul class="guardrails">
+      <li>No PII (names, emails, customer IDs, employee data)</li>
+      <li>No unreleased pricing, roadmap, or vendor terms</li>
+      <li>No data outside your role's authorized scope</li>
+      <li class="ok">Sanitize exports before pasting into any AI tool</li>
+      <li class="ok">Use only tools approved by your IT / security policy</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ROW 3: Pipeline + 7 Moves -->
+<div class="block">
+  <h2>▸ The Five-Stage Prompt Pipeline</h2>
+  <div class="pipeline">
+    <div class="pipe-step"><div class="sn">01 · Export</div><div class="st">Saved filter → CSV · strip PII</div></div>
+    <div class="pipe-arrow">▶</div>
+    <div class="pipe-step"><div class="sn">02 · Classify</div><div class="st">Normalize + bucket by severity + owner</div></div>
+    <div class="pipe-arrow">▶</div>
+    <div class="pipe-step"><div class="sn">03 · Render</div><div class="st">Generate HTML card (navy/gold, ≤160 words)</div></div>
+    <div class="pipe-arrow">▶</div>
+    <div class="pipe-step"><div class="sn">04 · Ship</div><div class="st">Paste into exec email or dashboard tile</div></div>
+    <div class="pipe-arrow">▶</div>
+    <div class="pipe-step"><div class="sn">05 · Checkpoint</div><div class="st">Save CSV + HTML · rerun next cycle</div></div>
+  </div>
+</div>
+
+<div class="block">
+  <h2>▸ Seven Unblocking Moves — When You're Stuck</h2>
+  <div class="moves">
+    <div class="m"><div class="n">01</div><b>Prompt the prompter</b>Ask AI what prompt it needs from you.</div>
+    <div class="m"><div class="n">02</div><b>Switch lanes</b>Download artifacts; hand to a different tool or thread.</div>
+    <div class="m"><div class="n">03</div><b>Many formats</b>One session → HTML + slides + explainer doc.</div>
+    <div class="m"><div class="n">04</div><b>Constraint as fuel</b>Out of credits = forcing function, not failure.</div>
+    <div class="m"><div class="n">05</div><b>Checkpoint it</b>Save CSV/HTML exports like git commits.</div>
+    <div class="m"><div class="n">06</div><b>Build the bridge</b>No integration? Export → sanitize → reshape → ship.</div>
+    <div class="m"><div class="n">07</div><b>Council review</b>Ask a 2nd AI: "what's wrong, missing, or overconfident?"</div>
+  </div>
+</div>
+
+<div class="foot">
+  <span>Tape this to your monitor.</span>
+  <img src="/chess_knight_logo_transparent.png" alt="From IT to Influence" class="foot-logo">
+  <span><a href="https://fromittoinfluence.com" target="_blank" rel="noopener">fromittoinfluence.com</a> · <a href="https://fromittoinfluence.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://fromittoinfluence.com/terms" target="_blank" rel="noopener">Terms</a></span>
+</div>
+
+</div>
+</body>
+</html>
