@@ -530,15 +530,17 @@ graph TD
     </div>
 
     <h2 class="s-h2">Context Injection Architecture</h2>
-    <p style="color:var(--tx2);font-size:.875rem;margin-bottom:16px">How state reaches Claude's context window at session start. No RAG. No embeddings. Deterministic full injection.</p>
+    <p style="color:var(--tx2);font-size:.875rem;margin-bottom:16px">How state reaches Claude's context window at session start. No RAG. No embeddings. Two-layer guaranteed injection: CLAUDE.md (always loaded) + hooks (deterministic lifecycle commands).</p>
     <div class="mmd-wrap reveal">
       <div class="mermaid">
 sequenceDiagram
+    participant HK as .claude/settings.json (hooks)
     participant CC as Claude Code
     participant CM as CLAUDE.md
     participant CF as context/ files
     participant MEM as memory/MEMORY.md
     participant SK as .claude/skills/
+    HK->>CC: SessionStart hook fires — inject critical context (guaranteed)
     CC->>CM: Load session (always)
     CM->>CF: @-reference context files
     CF-->>CC: Inject: identity · work · priorities · goals
@@ -547,12 +549,14 @@ sequenceDiagram
     Note over CC: Session context window now contains full OS state
     CC->>SK: On /skill trigger, load matching SKILL.md
     SK-->>CC: Inject: workflow instructions
+    Note over HK,CC: PreCompact hook fires before any compaction — re-injects critical context
       </div>
     </div>
 
     <div class="callout callout-note">
       <div class="callout-t">Key Design Decision</div>
       <p>Flat file injection over vector retrieval. For a single-operator system with a bounded context surface, full injection is more reliable than retrieval. Retrieval introduces precision/recall trade-offs; injection is deterministic. The trade-off is context window consumption — mitigated by keeping context files concise and MEMORY.md as a pointer index rather than full content store.</p>
+      <p style="margin-top:10px">CLAUDE.md injection is reliable but probabilistic — in very long sessions or under compaction, critical context can drift. <strong>Hooks are the guarantee layer</strong>: shell commands wired to Claude Code lifecycle events in <code>.claude/settings.json</code>. <code>SessionStart</code> fires at every session open and injects your current priorities unconditionally. <code>PreCompact</code> fires before any compaction event and re-injects critical context so it survives the summary. CLAUDE.md is a hint. Hooks are a guarantee.</p>
     </div>
 
     <h2 class="s-h2">Full Production Session</h2>
