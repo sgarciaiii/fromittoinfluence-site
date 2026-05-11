@@ -1634,6 +1634,8 @@ footer {
   .hero { padding: 140px 0 80px; }
   .pain-grid { grid-template-columns: 1fr; }
   .tweaks-panel { width: calc(100vw - 40px); max-width: 340px; }
+  /* Hide stacked card mockup — too cramped to read at phone width */
+  .toolkit-stack { display: none; }
 }
 @media (max-width: 480px) {
   .hero-btns, .final-btns, .term-cta { flex-direction: column; align-items: stretch; }
