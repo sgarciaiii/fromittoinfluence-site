@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Boss Can't Champion Work They Can't Explain — From IT to Influence</title>
+  <meta name="description" content="Why technically excellent professionals keep getting passed over — and the three things your manager actually needs from you to fix it." />
+  <meta property="og:title" content="Your Boss Can't Champion Work They Can't Explain" />
+  <meta property="og:description" content="Why technically excellent professionals keep getting passed over — and the three things your manager actually needs from you to fix it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog/your-boss-cant-champion" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog/your-boss-cant-champion" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG ARTICLE STYLES ── */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 120px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.22);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-date,
+    .article-read {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--dimmer);
+    }
+    .article-date::before { content: '·'; margin-right: 16px; color: var(--border-h); }
+    .article-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .article-sub {
+      font-family: var(--font-b);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* Video CTA */
+    .article-video {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 52px;
+      transition: border-color 0.2s;
+    }
+    .article-video:hover { border-color: var(--border-h); }
+    .article-video-icon {
+      width: 40px; height: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Crect width='40' height='28' rx='6' fill='%23FF0000'/%3E%3Cpath d='M16 7 28 14 16 21z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .article-video-text {
+      flex: 1;
+    }
+    .article-video-label {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      margin-bottom: 2px;
+    }
+    .article-video-title {
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .article-video-arrow {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(212,148,10,0.3);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .article-video-arrow:hover {
+      background: rgba(212,148,10,0.08);
+      border-color: var(--gold);
+    }
+
+    /* Article body typography */
+    .article-body {
+      margin-bottom: 72px;
+    }
+    .article-body p {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin-bottom: 1.5em;
+    }
+    .article-body h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 2.4em 0 0.8em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-family: var(--font-d);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.8em 0 0.5em;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--gold);
+      margin: 2em 0;
+      padding: 16px 24px;
+      background: rgba(212,148,10,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      font-family: var(--font-s);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      margin: 0;
+    }
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3em 0;
+    }
+    .article-body .lede {
+      font-family: var(--font-b);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--white);
+      margin-bottom: 2em;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--surface);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .article-cta-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .article-cta p {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-cta a {
+      display: inline-block;
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .article-cta a:hover { background: var(--gold-lt); }
+
+    /* Back link */
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      text-decoration: none;
+      margin: 96px 0 0;
+      padding: 0 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: color 0.2s;
+    }
+    .blog-back:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .article-header { padding: 100px 0 40px; }
+      .article-video { flex-wrap: wrap; }
+      .article-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/blog" class="blog-back">← Back to The Playbook</a>
+
+  <div class="blog-wrap">
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Executive Communication</span>
+        <span class="article-date">May 11, 2026</span>
+        <span class="article-read">6 min read</span>
+      </div>
+      <h1>Your Boss Can't Champion Work They Can't Explain</h1>
+      <p class="article-sub">Why technically excellent professionals keep getting passed over — and the three things your manager actually needs from you to fix it.</p>
+    </header>
+
+    <a href="https://youtube.com/@FromITtoInfluence" class="article-video" target="_blank" rel="noopener">
+      <div class="article-video-icon" aria-hidden="true"></div>
+      <div class="article-video-text">
+        <div class="article-video-label">Watch the video</div>
+        <div class="article-video-title">What Your Boss Actually Wants From You (And Never Says)</div>
+      </div>
+      <span class="article-video-arrow">Watch →</span>
+    </a>
+
+    <article class="article-body">
+      <p class="lede">I spent years delivering excellent work and assuming the people above me would figure out why it mattered. They didn't. My career stalled while peers who were technically weaker kept moving up.</p>
+
+      <p>If you've ever watched a less capable colleague get the resources you needed, the budget you asked for, or the seat at the table you earned — it probably wasn't your performance holding you back. It was something quieter. Something nobody told you about when you got the job.</p>
+
+      <p>Your boss cannot champion what they cannot explain.</p>
+
+      <hr />
+
+      <h2>The Room You're Not In</h2>
+
+      <p>Here's what your boss's world actually looks like. They're managing up to their own boss. They're absorbing political pressure from peers. They're fielding escalations from every direction simultaneously.</p>
+
+      <p>Most VPs have six to ten direct reports. Each of those people manages six to ten more. Before your VP even manages up to their own leadership, they're absorbing pressure from hundreds of people across the organization. If understanding your update requires mental translation work — converting technical specifics into business impact before they can use it — that translation won't happen. Your work disappears inside an overloaded context, and you wonder why nothing moved.</p>
+
+      <p>There's a compounding factor most people don't account for: year-end performance reviews predominantly reflect the most recent 60 to 90 days of work. That project you led in Q1 that saved the organization real money? If it didn't surface in the last quarter, there's a real probability your boss can't accurately describe it right now. Not because they don't care. Because recency bias under cognitive load is a feature of how human memory works, not a flaw in your boss specifically.</p>
+
+      <p>This is why the standard advice about "managing up" tends to feel like performance. Like political theater. Like sucking up. Because most of it teaches you to manage impressions rather than reduce cognitive load.</p>
+
+      <p><strong>Real managing up isn't a performance. It's a service.</strong> You're giving your boss what they need to do their job — which includes advocating for you in rooms you'll never be invited into.</p>
+
+      <hr />
+
+      <h2>When the VP Finally Said It</h2>
+
+      <p>Early in my career, I was a Service Portfolio Manager when a new CIO came in from outside. He consolidated resources, shifted responsibilities, changed my job overnight. I knew the technology he wanted. My peers didn't. On paper, I had the upper hand.</p>
+
+      <p>But my peers kept getting what they asked for. I didn't.</p>
+
+      <p>I assumed it was because I was younger, or newer, or because my budget footprint was smaller. I was wrong.</p>
+
+      <p>When I presented to leadership, I watched eyes glaze over. They tuned me out before I finished. I thought I was explaining it simply. Then my VP finally got frustrated enough to tell me the truth.</p>
+
+      <blockquote><p>"I never know what the hell you are talking about."</p></blockquote>
+
+      <p>It stung. But he was right. I was speaking a foreign language and waiting for them to translate it themselves.</p>
+
+      <p>So I changed my approach. I stopped leading with technical specs and started painting the picture leadership needed — full ROI, not just dollars saved, but what the investment actually <em>enabled</em> the business to do and when. I built visual aids so they didn't have to construct the mental model themselves. I started writing updates the way I'd brief someone who had never been inside my department.</p>
+
+      <p>Shortly after, that same VP walked into my office while other senior managers were sitting there, and said:</p>
+
+      <blockquote><p>"I've funded your entire capital portfolio. Fully."</p></blockquote>
+
+      <p>All of it, upfront. No line-item negotiation. Just trust.</p>
+
+      <p>One of the most tenured people in the room looked at him and asked what gives — the VP had never done that for anyone. He looked back and said: <em>"You're right. But you aren't him."</em></p>
+
+      <p>That was the moment I stopped seeing myself as someone sitting at the kids' table.</p>
+
+      <hr />
+
+      <h2>Three Things Your Boss Actually Needs (That They'll Never Ask For)</h2>
+
+      <p>These aren't impression management tactics. They're operational inputs your boss needs to do their job — and yours.</p>
+
+      <h3>1. Context before the ask.</h3>
+      <p>Never bring a problem alone. Bring three sentences: here's the situation, here's what I've already done, here's what I need from you. Reduce the cognitive load before you make the request. The easier you are to support, the more you get supported.</p>
+
+      <h3>2. The translation layer.</h3>
+      <p>Your boss presents to executives. If you don't translate your technical work into business impact before they have to, that translation won't happen in time to matter. Give them the exact bullet points they need to defend your project in a room you're not in. If you can't write it in two sentences, you haven't translated it yet.</p>
+
+      <h3>3. No surprises upward.</h3>
+      <p>Your boss should never hear bad news about your work from someone else first. Not once. The moment that happens, you've broken the foundational trust that everything else is built on. They can't advocate for someone who makes them look uninformed — not because they're vindictive, but because self-preservation is rational.</p>
+
+      <p>None of this is about looking good. It's about making sure the person above you has what they need to move things in your direction.</p>
+
+      <hr />
+
+      <h2>The Real Game</h2>
+
+      <p>Your boss isn't ignoring you. They're managing their own survival in a system that demands more cognitive bandwidth than any one person has.</p>
+
+      <p>The fastest path to getting your name on the list isn't doing more work. It's becoming the person who makes your boss's job easier to do.</p>
+
+      <p>Most technical professionals are excellent at the actual work. They were hired for that. The gap isn't competence — it's the invisible operating system running above the technical layer that determines who gets promoted, funded, and heard. The people advancing aren't outworking you. They're writing to a system you didn't know existed.</p>
+
+      <p>That's the game. And now you know it exists.</p>
+
+      <hr />
+
+      <h2>Try This Before Your Next One-on-One</h2>
+
+      <p>Send your manager three sentences 24 hours before your next meeting: here's what I'm working on, here's the business impact, here's what I need from you.</p>
+
+      <p>That's it. Watch how the conversation changes.</p>
+    </article>
+
+    <div class="article-cta">
+      <div class="article-cta-tag">Free Resource</div>
+      <h3>The Champion Brief</h3>
+      <p>The exact one-page format I use — and would want from my own direct reports before a 1:1. Structured so your boss can walk into any room and champion your work without needing you there.</p>
+      <a href="/champion-brief">Get the Champion Brief →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 From IT to Influence · Jimmy Garcia · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

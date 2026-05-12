@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Playbook — From IT to Influence</title>
+  <meta name="description" content="Field notes from the unwritten corporate game. Real stories, real frameworks for technical professionals who are done being invisible." />
+  <meta property="og:title" content="The Playbook — From IT to Influence" />
+  <meta property="og:description" content="Field notes from the unwritten corporate game." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG INDEX STYLES ── */
+    .blog-header {
+      padding: 140px 0 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 72px;
+    }
+    .blog-header-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .blog-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .blog-header h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .blog-header p {
+      font-family: var(--font-b);
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Article grid */
+    .blog-grid-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 28px 100px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    /* Article card */
+    .article-card {
+      display: block;
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 40px;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,148,10,0.03) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+    .article-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .article-card:hover::before { opacity: 1; }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .card-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.20);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .card-date,
+    .card-read {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--dimmer);
+    }
+    .card-date::before { content: '·'; margin-right: 14px; color: var(--border-h); }
+
+    .card-headline {
+      font-family: var(--font-d);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: var(--white);
+      margin-bottom: 12px;
+      transition: color 0.2s;
+    }
+    .article-card:hover .card-headline { color: var(--gold-lt); }
+
+    .card-sub {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .card-video-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+    }
+    .card-yt-icon {
+      width: 22px; height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Crect width='22' height='16' rx='3' fill='%23FF0000'/%3E%3Cpath d='M9 4.5 15 8 9 11.5z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .card-read-link {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-read-link::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+    .article-card:hover .card-read-link::after { transform: translateX(4px); }
+
+    /* Empty state (for future use) */
+    .blog-empty {
+      text-align: center;
+      padding: 80px 0;
+      color: var(--dimmer);
+      font-family: var(--font-m);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 640px) {
+      .blog-header { padding: 110px 0 48px; }
+      .article-card { padding: 24px; }
+      .card-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="blog-header">
+    <div class="wrap">
+      <div class="blog-header-tag">From IT to Influence</div>
+      <h1>The <em>Playbook</em></h1>
+      <p>Field notes from the unwritten corporate game. Real stories, real frameworks — from someone still playing it.</p>
+    </div>
+  </header>
+
+  <div class="blog-grid-wrap">
+    <div class="blog-grid">
+
+      <a href="/blog/your-boss-cant-champion" class="article-card">
+        <div class="card-meta">
+          <span class="card-tag">Executive Communication</span>
+          <span class="card-date">May 11, 2026</span>
+          <span class="card-read">6 min read</span>
+        </div>
+        <div class="card-headline">Your Boss Can't Champion Work They Can't Explain</div>
+        <p class="card-sub">Why technically excellent professionals keep getting passed over — and the three things your manager actually needs from you to fix it.</p>
+        <div class="card-footer">
+          <span class="card-video-link">
+            <span class="card-yt-icon" aria-hidden="true"></span>
+            Watch on YouTube
+          </span>
+          <span class="card-read-link">Read the article</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 From IT to Influence · Jimmy Garcia · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
