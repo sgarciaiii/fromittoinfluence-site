@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Work Doesn't Have a Return Address — From IT to Influence</title>
+  <meta name="description" content="Execution excellence and organizational visibility are two completely different games. Most technical professionals spend their entire career playing only one of them." />
+  <meta property="og:title" content="Your Work Doesn't Have a Return Address" />
+  <meta property="og:description" content="Execution excellence and organizational visibility are two completely different games. Most technical professionals spend their entire career playing only one of them." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog/your-work-needs-a-return-address" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog/your-work-needs-a-return-address" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG ARTICLE STYLES ── */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 120px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.22);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-date,
+    .article-read {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--dimmer);
+    }
+    .article-date::before { content: '·'; margin-right: 16px; color: var(--border-h); }
+    .article-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .article-sub {
+      font-family: var(--font-b);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* Video CTA */
+    .article-video {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 52px;
+      transition: border-color 0.2s;
+    }
+    .article-video:hover { border-color: var(--border-h); }
+    .article-video-icon {
+      width: 40px; height: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Crect width='40' height='28' rx='6' fill='%23FF0000'/%3E%3Cpath d='M16 7 28 14 16 21z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .article-video-text {
+      flex: 1;
+    }
+    .article-video-label {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      margin-bottom: 2px;
+    }
+    .article-video-title {
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .article-video-arrow {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(212,148,10,0.3);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .article-video-arrow:hover {
+      background: rgba(212,148,10,0.08);
+      border-color: var(--gold);
+    }
+
+    /* Article body typography */
+    .article-body {
+      margin-bottom: 72px;
+    }
+    .article-body p {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin-bottom: 1.5em;
+    }
+    .article-body h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 2.4em 0 0.8em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-family: var(--font-d);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.8em 0 0.5em;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--gold);
+      margin: 2em 0;
+      padding: 16px 24px;
+      background: rgba(212,148,10,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      font-family: var(--font-s);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      margin: 0;
+    }
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3em 0;
+    }
+    .article-body .lede {
+      font-family: var(--font-b);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--white);
+      margin-bottom: 2em;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--surface);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .article-cta-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .article-cta p {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-cta a {
+      display: inline-block;
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .article-cta a:hover { background: var(--gold-lt); }
+
+    /* Back link */
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      text-decoration: none;
+      margin: 96px 0 0;
+      padding: 0 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: color 0.2s;
+    }
+    .blog-back:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .article-header { padding: 100px 0 40px; }
+      .article-video { flex-wrap: wrap; }
+      .article-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/blog" class="blog-back">← Back to The Playbook</a>
+
+  <div class="blog-wrap">
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Narrative Control</span>
+        <span class="article-date">April 30, 2026</span>
+        <span class="article-read">7 min read</span>
+      </div>
+      <h1>Your Work Doesn't Have a Return Address</h1>
+      <p class="article-sub">Execution excellence and organizational visibility are two completely different games. Most technical professionals spend their entire career playing only one of them.</p>
+    </header>
+
+    <a href="https://youtu.be/vDo-PodAkr8" class="article-video" target="_blank" rel="noopener">
+      <div class="article-video-icon" aria-hidden="true"></div>
+      <div class="article-video-text">
+        <div class="article-video-label">Watch the video</div>
+        <div class="article-video-title">Why Your Boss Gets Credit for Your Work (And 4 Moves to Fix It)</div>
+      </div>
+      <span class="article-video-arrow">Watch →</span>
+    </a>
+
+    <article class="article-body">
+      <p class="lede">You built it. You ran it. And someone else got credit for it in the meeting you weren't invited to.</p>
+
+      <p>I know that feeling. Not the rage — something worse. The clarity. The moment you realize the floor just went out from under you, and you didn't even feel it happen.</p>
+
+      <p>That isn't just a blow to your ego. It's a structural threat to your next promotion.</p>
+
+      <p>Here's what I've learned after watching this play out — in my own career and in the careers of people I've worked with for twenty-five years: this is almost never about a sinister manager. It's about a gap most technical professionals never see. <strong>Execution excellence and organizational visibility are two completely different games.</strong> You've been playing one. The game above you runs on the other.</p>
+
+      <hr />
+
+      <h2>The Comment That Changed Everything</h2>
+
+      <p>For me it wasn't a confrontation. It wasn't a dramatic scene. It was a comment from my CIO — almost offhand — that landed like a gut punch I wasn't expecting.</p>
+
+      <p>I was a Service Portfolio Manager at the time. My work was showing up in my VP's presentations regularly. That was fine — that's how the org worked. But at some point the CIO pulled me aside and said: "I never know where your ideas start and stop and where your VP's do."</p>
+
+      <p>My first reaction was pure frustration. Why wasn't my VP crediting us? We were doing the work. It was our data, our analysis, our frameworks. But then I thought — wait. The CIO already knows my area of responsibility. He should be able to connect the dots. So if he can't, that's not just a communication failure on my VP's end.</p>
+
+      <p>Then it hit me.</p>
+
+      <p>Nobody was being sinister. The work we were turning in had to go through translation layers — from us, to our VP, to the CIO, to the business. The CIO was hands-on. He liked going to the source. But he couldn't get to the source because the work wasn't executive-ready enough to have a clear source.</p>
+
+      <p>That was the real problem. Not theft. Not politics. Not a bad manager.</p>
+
+      <p><strong>The work wasn't attached to my name. And I had let that happen.</strong></p>
+
+      <hr />
+
+      <h2>The Gap Nobody Teaches You About</h2>
+
+      <p>If you've ever gotten a "great job on the briefing" passed along to someone else in the hallway, or seen your project show up in a leadership deck with zero attribution, you know what I'm talking about.</p>
+
+      <p>I had spent years thinking if I just did better work, it would be obvious who was responsible. That is not how it works. That is never how it works.</p>
+
+      <p>Credit doesn't travel with the work. Credit travels with the relationship — and the visibility of who did what. The person presenting your work built that relationship. You built the work. Those are not the same thing. And the gap between them is where your name disappears.</p>
+
+      <p>If you've been passed over for promotion while watching people with weaker technical chops move up — this is probably part of the reason. Not because you're doing bad work. Because the people making decisions about your career have a version of you that someone else wrote. And they're not investigating. Executives don't investigate. They absorb what surfaces. If your name isn't in the stream before the meeting happens, you're not in the story.</p>
+
+      <blockquote><p>The question isn't: how do I stop someone from stealing my credit? The real question is: how did I let my work get disconnected from my name in the first place?</p></blockquote>
+
+      <p>Once I understood that, I stopped trying to fix the wrong thing. I couldn't change my VP. But I could change the architecture of how my work traveled — before it ever got to a meeting.</p>
+
+      <hr />
+
+      <h2>Four Moves That Put Your Name Back on the Work</h2>
+
+      <h3>Move 1: The pre-brief.</h3>
+      <p>I stopped waiting for the moment my work showed up in someone else's deck. If a project was going to land in front of a decision-maker, I wanted to be the one who briefed that person first — not after the fact, not through a chain, but directly. One conversation. Not a status report. Something closer to: here's what you need to know before you hear about this from anyone else.</p>
+
+      <p>There's a difference between being the person who does the work and being the person who frames it. I started being both.</p>
+
+      <h3>Move 2: Make your name structurally inseparable from the deliverable.</h3>
+      <p>Not for ego — for accountability. Every deliverable I produced had my name on it explicitly. Not "Q2 Infrastructure Migration Plan." My name in the executive summary header. In the email subject line. In the document title. When someone lifted it into a deck, my name went with it. Or someone had to actively remove it. That's a different calculation than hoping they remember to mention you.</p>
+
+      <p>I know what you're thinking right now. This feels like brown-nosing. It's not. Brown-nosing is signaling loyalty upward with nothing behind it. What you're doing here is making accurate information easy to find. Your work already happened. You're just making sure it has a return address.</p>
+
+      <h3>Move 3: Build a simple upstream signal.</h3>
+      <p>This is the one nobody tells you about. Not a status report. Not a formal briefing. One sentence to the right person at the right cadence. Something like: "Team delivered the firewall migration early. Zero issues — great work from everyone." Sent to your skip-level. Takes thirty seconds.</p>
+
+      <p>What it does is build a running picture in that person's head of who's handling what — without asking for anything, without making it political, without waiting for someone to remember you in a meeting.</p>
+
+      <h3>Move 4: Find a sponsor, not just a mentor.</h3>
+      <p>It took me longer than I want to admit to understand this distinction. Mentors give you advice. Sponsors say your name. If you can't identify the person who's mentioning you when you're not in the room — you probably don't have one. That's not a character flaw. It's a gap in the strategy.</p>
+
+      <hr />
+
+      <h2>How I Knew It Was Working</h2>
+
+      <p>My VP had six Service Portfolio Managers at the time. Two reported to a Director, the other four of us reported directly to the VP. When the VP traveled, the Director was nominally in charge.</p>
+
+      <p>One day I got called into the CIO's office. The Director was there. They were finalizing the budget, working through equipment orders. And instead of the Director asking me for the data — the way the chain of command was supposed to work — the CIO called me directly to work the problem.</p>
+
+      <p>The Director was in charge. The CIO went around him to me.</p>
+
+      <p>Not because I had lobbied for it. Not because I had made a political move. Because when that CIO needed the answer, my name was already in his head as the person who knew it. I was the source.</p>
+
+      <p>That's the shift. Not confidence. Not networking. Not executive presence as some vague quality you're supposed to develop. Executive visibility. Your name attached to your work, upstream, before the meeting happens.</p>
+
+      <hr />
+
+      <h2>This Isn't Politics. It's Professionalism.</h2>
+
+      <p>Office politics for technical professionals gets a bad reputation because most of the advice sounds like maneuvering — like you're trying to win something at someone else's expense. This isn't that.</p>
+
+      <p>This is making your work visible in a way that's accurate. You did the work. The decision-maker should know that. Making sure they do is not manipulation. It's visibility.</p>
+
+      <p>Most technical professionals are excellent at the actual work. They were hired for that. The gap isn't competence — it's the invisible operating system running above the technical layer that determines who gets promoted, funded, and heard.</p>
+
+      <p>You don't need a new manager. You need a different strategy for how your work travels.</p>
+
+      <p><strong>The work got you in the room. It won't keep you there.</strong></p>
+    </article>
+
+    <div class="article-cta">
+      <div class="article-cta-tag">Free Resource</div>
+      <h3>Credit Visibility Checklist</h3>
+      <p>Four moves, one page. Run through it before your next major project delivery to make sure your name travels with your work.</p>
+      <a href="/credit-checklist">Get the Checklist →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 From IT to Influence · Jimmy Garcia · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

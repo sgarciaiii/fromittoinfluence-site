@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Work Is Current. Your Reputation Isn't. — From IT to Influence</title>
+  <meta name="description" content="How the memory system inside your organization is building a version of you that doesn't reflect who you actually are — and what to do before the next calibration session." />
+  <meta property="og:title" content="Your Work Is Current. Your Reputation Isn't." />
+  <meta property="og:description" content="How the memory system inside your organization is building a version of you that doesn't reflect who you actually are — and what to do before the next calibration session." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog/the-visibility-paradox" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog/the-visibility-paradox" />
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG ARTICLE STYLES ── */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 120px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.22);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-date,
+    .article-read {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--dimmer);
+    }
+    .article-date::before { content: '·'; margin-right: 16px; color: var(--border-h); }
+    .article-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .article-sub {
+      font-family: var(--font-b);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* Video CTA */
+    .article-video {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 52px;
+      transition: border-color 0.2s;
+    }
+    .article-video:hover { border-color: var(--border-h); }
+    .article-video-icon {
+      width: 40px; height: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Crect width='40' height='28' rx='6' fill='%23FF0000'/%3E%3Cpath d='M16 7 28 14 16 21z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .article-video-text {
+      flex: 1;
+    }
+    .article-video-label {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      margin-bottom: 2px;
+    }
+    .article-video-title {
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .article-video-arrow {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(212,148,10,0.3);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .article-video-arrow:hover {
+      background: rgba(212,148,10,0.08);
+      border-color: var(--gold);
+    }
+
+    /* Article body typography */
+    .article-body {
+      margin-bottom: 72px;
+    }
+    .article-body p {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin-bottom: 1.5em;
+    }
+    .article-body h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 2.4em 0 0.8em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-family: var(--font-d);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.8em 0 0.5em;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--gold);
+      margin: 2em 0;
+      padding: 16px 24px;
+      background: rgba(212,148,10,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      font-family: var(--font-s);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      margin: 0;
+    }
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3em 0;
+    }
+    .article-body .lede {
+      font-family: var(--font-b);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--white);
+      margin-bottom: 2em;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--surface);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .article-cta-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .article-cta p {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-cta a {
+      display: inline-block;
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .article-cta a:hover { background: var(--gold-lt); }
+
+    /* Back link */
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      text-decoration: none;
+      margin: 96px 0 0;
+      padding: 0 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: color 0.2s;
+    }
+    .blog-back:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .article-header { padding: 100px 0 40px; }
+      .article-video { flex-wrap: wrap; }
+      .article-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/blog" class="blog-back">← Back to The Playbook</a>
+
+  <div class="blog-wrap">
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Reading the Corporate Game</span>
+        <span class="article-date">May 11, 2026</span>
+        <span class="article-read">7 min read</span>
+      </div>
+      <h1>Your Work Is Current. Your Reputation Isn't.</h1>
+      <p class="article-sub">How the memory system inside your organization is building a version of you that doesn't reflect who you actually are — and what to do before the next calibration session.</p>
+    </header>
+
+    <a href="https://youtube.com/@FromITtoInfluence" class="article-video" target="_blank" rel="noopener">
+      <div class="article-video-icon" aria-hidden="true"></div>
+      <div class="article-video-text">
+        <div class="article-video-label">Coming soon</div>
+        <div class="article-video-title">The Visibility Paradox in Hybrid Environments</div>
+      </div>
+      <span class="article-video-arrow">Watch →</span>
+    </a>
+
+    <article class="article-body">
+      <p class="lede">Your career is not being managed by your performance reviews. It's being managed by what people remember about you the moment your name comes up in a room you're not in.</p>
+
+      <p>And if you're hybrid — if you're not physically present when those moments happen — the version of you that exists in leadership's memory might be years out of date. It might be wrong. It might be one word.</p>
+
+      <p>That's the visibility paradox. Your work is current. Your reputation isn't.</p>
+
+      <hr />
+
+      <h2>You're Not Being Evaluated. You're Being Recalled.</h2>
+
+      <p>Here's what nobody tells you about how internal promotions actually work at the leadership level.</p>
+
+      <p>When you're hiring someone from outside the organization, you have to read their résumé. You have to interview them. You have nothing else to go on. So you slow down, do the work, and evaluate them on paper and in conversation.</p>
+
+      <p>Internal candidates don't get that treatment.</p>
+
+      <p>Internal candidates get judged by memory. By the most recent thing that felt relevant. By favorites — yes, favorites — and occasionally, if the hiring manager is smart enough, by an actual interview. And even in those interviews, the context can limit what comes out. The person sitting across from you might have done ten extraordinary things in the last three years that simply never come up because nobody thought to ask.</p>
+
+      <p>You're not being evaluated. You're being recalled.</p>
+
+      <p>Research consistently shows that year-end performance reviews predominantly reflect the most recent 60 to 90 days of work — not your full year. That exceptional Q1 project? That critical cross-functional work you led in June? There's significant probability your manager has minimal specific recollection of it by November. Not because they aren't paying attention. Because human memory prioritizes recent events under the volume load of managing dozens of people.</p>
+
+      <p>And performance ratings frequently reflect budget constraints and forced distribution models as much as actual performance. Someone gets a lower rating not because they performed worse — because the budget mandated the distribution. <strong>The system was never purely about merit. It was always about memory and math.</strong></p>
+
+      <p>When you're remote or hybrid, you are not in the ambient field where those memories get made. The hallway conversation. The coffee run. The end of a meeting where the real decisions happen. Those don't exist for you.</p>
+
+      <hr />
+
+      <h2>What Calibration Sessions Actually Look Like</h2>
+
+      <p>I've sat in calibration sessions, promotion discussions, succession planning meetings — rooms where dozens of people's careers are discussed in a matter of hours. The pattern is consistent: the people who get the most nuanced, accurate read are the people whose managers fought hardest to tell their full story. The people who get a one-word summary get a one-word career.</p>
+
+      <p>We were filling a Service Portfolio Manager role. Good role. High visibility.</p>
+
+      <p>I had a guy on my team. Technically solid. But everyone called him the Oracle guy. That's it. That's all they thought he was. He did Oracle. He was the Oracle guy.</p>
+
+      <p>But I knew his actual résumé. I knew what he'd done across his career — the breadth of it, the depth of it, the things that had nothing to do with Oracle. So I did something.</p>
+
+      <p>I laid out his full résumé in front of the decision-makers. I left his name off.</p>
+
+      <p>They read it. They liked it. They asked to meet the person.</p>
+
+      <p>So I told them who it was.</p>
+
+      <p>They were floored. Not because he'd changed. Because their mental snapshot of him was five years old and one technology wide. He had spent years delivering work they didn't know existed, in a system that never required them to know.</p>
+
+      <p>He got the role.</p>
+
+      <p>Now here's the part that should make you uncomfortable. He needed me in that room to advocate for his full picture. He needed someone who knew the whole story to go in and manually override the system's broken memory of him. Most people don't have that. And most people in hybrid or remote environments are building exactly that problem — silently, every single day they aren't in the building when it matters.</p>
+
+      <hr />
+
+      <h2>The Label Problem</h2>
+
+      <p>That same year, I had a leader who flatly refused to hire anyone who wasn't a developer for a particular role. That was his rule. Non-developers didn't make the list.</p>
+
+      <p>I put a systems guy in that position.</p>
+
+      <p>He killed it. One of the best hires that team made.</p>
+
+      <p>The problem wasn't the systems guy's capabilities. The problem was the label someone had assigned to the role — and the label they'd assigned to the candidate — and the two-sentence memory that was being used to make a decision that would affect years of someone's career.</p>
+
+      <p>Labels are how organizations compress people into something manageable. The danger isn't that you get labeled. The danger is that you let the label go stale.</p>
+
+      <hr />
+
+      <h2>Four Moves That Update the Snapshot</h2>
+
+      <p>So what do you do if you're the Oracle guy and you don't have someone in the room running your résumé reveal for you?</p>
+
+      <h3>1. Manage the snapshot, not just the output.</h3>
+      <p>Stop assuming that delivering good work means people know you delivered good work. Leadership doesn't read your project files. They carry a mental snapshot of you — and if you're not actively updating it, it defaults to the last thing that was memorable. Identify your skip-level. Ask yourself: what's the current mental model they have of me? If you can't answer that with confidence, you have a visibility problem.</p>
+
+      <h3>2. Get into conversations before they become calendar invites.</h3>
+      <p>The hallway meeting that never got scheduled is the one where your name did or didn't come up. If you're hybrid, you need deliberate entry points into the informal layer. That means knowing when the important conversations are likely to happen — project kick-offs, reorg rumors, budget cycles — and being physically or digitally present at the edges of those moments before they become formal decisions.</p>
+
+      <h3>3. Make your work visible one level higher than you delivered it.</h3>
+      <p>This is the one most hybrid workers skip — and it's the one that costs them the most. The Oracle guy's work was invisible to the decision-makers not because it was bad, but because it never reached them. Don't rely on your manager to translate your impact upward. Send a brief, clear update directly to your skip-level once a quarter. Not a status report. One paragraph: what I delivered, what it enabled, what I'm working on next.</p>
+
+      <blockquote><p>"Hi [Name] — quick quarter update. I wrapped [X project], which enabled [Y outcome]. Currently driving [Z]. Happy to go deeper on any of it if useful."</p></blockquote>
+
+      <p>One paragraph. Quarterly. That's it. You're not showing off. You're updating the snapshot.</p>
+
+      <h3>4. Find your in-room advocate before you need one.</h3>
+      <p>I ran the résumé reveal because I knew the full picture. You need someone in those rooms who knows your full picture — not just your label. That's a sponsor, not a mentor. The difference: a mentor tells you what to do. A sponsor tells the room who you are. If you don't have one, build one. Deliberately.</p>
+
+      <hr />
+
+      <h2>The System Isn't Broken Because It's Malicious</h2>
+
+      <p>It's broken because it's human. Volume is real. Memory is selective. Recency bias is built into how every brain processes information under load.</p>
+
+      <p>The leaders in those rooms aren't trying to overlook you. They're working with incomplete data — and if you're remote or hybrid and nobody is feeding them better data, the incomplete version is the one that makes the decision.</p>
+
+      <p>You've spent years delivering work that deserves to be seen. The gap isn't competence. It's the distance between what you've actually done and what the organization currently believes about you.</p>
+
+      <p>That distance is closeable. But only if you close it on purpose.</p>
+    </article>
+
+    <div class="article-cta">
+      <div class="article-cta-tag">Free Resource</div>
+      <h3>Hybrid Visibility Checklist</h3>
+      <p>Five visibility signals, weekly actions, one page. Built for hybrid workers who are delivering great work that leadership isn't seeing.</p>
+      <a href="/hybrid-visibility-checklist">Get the Checklist →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 From IT to Influence · Jimmy Garcia · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

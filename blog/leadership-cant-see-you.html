@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The People Deciding Your Career Don't Know Who You Are — From IT to Influence</title>
+  <meta name="description" content="How your default communication mode is building a stranger in your boss's mind — and what it costs you at every review cycle." />
+  <meta property="og:title" content="The People Deciding Your Career Don't Know Who You Are" />
+  <meta property="og:description" content="How your default communication mode is building a stranger in your boss's mind — and what it costs you at every review cycle." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog/leadership-cant-see-you" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog/leadership-cant-see-you" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG ARTICLE STYLES ── */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 120px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.22);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-date,
+    .article-read {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--dimmer);
+    }
+    .article-date::before { content: '·'; margin-right: 16px; color: var(--border-h); }
+    .article-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .article-sub {
+      font-family: var(--font-b);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* Video CTA */
+    .article-video {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 52px;
+      transition: border-color 0.2s;
+    }
+    .article-video:hover { border-color: var(--border-h); }
+    .article-video-icon {
+      width: 40px; height: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Crect width='40' height='28' rx='6' fill='%23FF0000'/%3E%3Cpath d='M16 7 28 14 16 21z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .article-video-text {
+      flex: 1;
+    }
+    .article-video-label {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      margin-bottom: 2px;
+    }
+    .article-video-title {
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .article-video-arrow {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(212,148,10,0.3);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .article-video-arrow:hover {
+      background: rgba(212,148,10,0.08);
+      border-color: var(--gold);
+    }
+
+    /* Article body typography */
+    .article-body {
+      margin-bottom: 72px;
+    }
+    .article-body p {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin-bottom: 1.5em;
+    }
+    .article-body h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 2.4em 0 0.8em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-family: var(--font-d);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.8em 0 0.5em;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--gold);
+      margin: 2em 0;
+      padding: 16px 24px;
+      background: rgba(212,148,10,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p {
+      font-family: var(--font-s);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      margin: 0;
+    }
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3em 0;
+    }
+    .article-body .lede {
+      font-family: var(--font-b);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--white);
+      margin-bottom: 2em;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--surface);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .article-cta-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .article-cta p {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-cta a {
+      display: inline-block;
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .article-cta a:hover { background: var(--gold-lt); }
+
+    /* Back link */
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      text-decoration: none;
+      margin: 96px 0 0;
+      padding: 0 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: color 0.2s;
+    }
+    .blog-back:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .article-header { padding: 100px 0 40px; }
+      .article-video { flex-wrap: wrap; }
+      .article-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/blog" class="blog-back">← Back to The Playbook</a>
+
+  <div class="blog-wrap">
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Reading the Corporate Game</span>
+        <span class="article-date">April 18, 2026</span>
+        <span class="article-read">7 min read</span>
+      </div>
+      <h1>The People Deciding Your Career Don't Know Who You Are</h1>
+      <p class="article-sub">How your default communication mode is building a stranger in your boss's mind — and what it costs you at every review cycle.</p>
+    </header>
+
+    <a href="https://youtu.be/KiHeV7CMJc8" class="article-video" target="_blank" rel="noopener">
+      <div class="article-video-icon" aria-hidden="true"></div>
+      <div class="article-video-text">
+        <div class="article-video-label">Watch the video</div>
+        <div class="article-video-title">Why Leadership Doesn't Know You (And How to Fix It)</div>
+      </div>
+      <span class="article-video-arrow">Watch →</span>
+    </a>
+
+    <article class="article-body">
+      <p class="lede">I got a performance review that matched my own self-assessment almost phrase by phrase. My CIO said it was "spot on." I should have felt validated. Instead, I felt the floor drop out — because "spot on" meant the feedback wasn't going anywhere.</p>
+
+      <p>I wasn't walking into that moment empty. Earlier in my career, I'd run what's now split across two VP roles and a Director position. I had the receipts — major wins, projects that moved the business, customer-facing infrastructure re-platformed while cutting costs, a multi-year initiative that almost everyone had given up on. I got it across the finish line.</p>
+
+      <p>In my head, I was ready. No question.</p>
+
+      <p>So I did what any good IT professional does when presented with data they don't like. I built a counter-argument. Every win, every project saved, every time I was right when everyone else was wrong. Airtight — on paper.</p>
+
+      <p>And then I sat there with this airtight case and thought: this isn't the first review that sounded like this, is it?</p>
+
+      <p>It wasn't. Different words. Same shape.</p>
+
+      <hr />
+
+      <h2>The Feedback I Wasn't Ready For</h2>
+
+      <p>Then my CIO told me something that made it harder to hold onto the politics narrative. I wasn't just being evaluated. I was being directly compared to a peer — also a Director, also promoted, also in the running.</p>
+
+      <p>Politics is real. I'm not telling you it isn't. But politics wasn't the whole story.</p>
+
+      <p>My wife had watched me on calls for five years, working from home. She said something I wasn't ready for: <em>"Did it ever occur to you that you're a different person with me than you are with them?"</em></p>
+
+      <p>Most senior IT professionals aren't losing to politics. They're losing to a communication pattern they don't even know they have.</p>
+
+      <p>I decided to run an audit. Not because I believed the feedback. Because I wanted to prove it wrong.</p>
+
+      <hr />
+
+      <h2>Six Months of Email. One Uncomfortable Answer.</h2>
+
+      <p>Six months of emails and Teams messages. I fed it to an AI with one instruction: tell me what you see, and don't be polite about it.</p>
+
+      <p>The first pass didn't pull enough data — sample size too small. So I engineered a fix. Made the prompt loop until it hit the right number. That's how I solve everything: find the gap, build the workaround, get to the right answer.</p>
+
+      <p>I was reading the first report when the second batch came back. The AI opened with: <em>"My assessment is still right — here are more examples and context."</em></p>
+
+      <p>The problem was never the sample size.</p>
+
+      <p>What made it real wasn't the summary. It was the examples. Here's what you said. Here's how you could have said it. Tangible. Processable. Hard to argue with your own words.</p>
+
+      <p>The findings matched my CIO's feedback almost word for word. Not approximately. Phrase by phrase.</p>
+
+      <p>You can't dismiss both a human and a language model running on your own data. The counter-argument collapsed.</p>
+
+      <p>I closed the laptop. Went for a walk. Took a longer lunch than normal.</p>
+
+      <hr />
+
+      <h2>The Three Modes — And Which One Leadership Actually Gets</h2>
+
+      <p>Here's what the audit actually found. Three distinct communication modes. And leadership was mostly seeing the wrong one.</p>
+
+      <h3>Mode 1: The person your inner circle knows.</h3>
+      <p>Warm. Funny. Vulnerable. Fully human. This version shows up when the stakes are low and the trust is high. I had a colleague who nicknamed me Darth Vader — not as an insult. He said he could see past the mask to the person underneath. He said I read his mind, worked him extremely hard, gave him grief every single day, and he gave it right back. When I transferred departments, he chose to follow. He wanted to follow the full person. That version of me is real. It's just rationed. Almost nobody gets it.</p>
+
+      <h3>Mode 2: What leadership sees on 70% of interactions.</h3>
+      <p>Terse. Directive. No context. Dispatched from the bridge of a Star Destroyer. "Where are we on this?" "FYSA." "I approve." The people making decisions about your career are evaluating a stranger. That's what the audit said. That's what my CIO said. Two different sources. Same conclusion.</p>
+
+      <h3>Mode 3: The version you're treating like a scarce resource.</h3>
+      <p>Measured. Thoughtful. Collaborative. This one shows up under maximum pressure — high-stakes presentations, crisis calls. It's the version people actually want to follow. But I was reserving it for emergencies instead of deploying it where it builds perception.</p>
+
+      <blockquote><p>You've been managing your best self like it might run out.</p></blockquote>
+
+      <hr />
+
+      <h2>The Reframe That Changed Everything</h2>
+
+      <p>The AI said it directly: <em>"You don't need to stop being Darth Vader. You need to learn when to take the helmet off in front of people who haven't earned the backstage pass yet."</em></p>
+
+      <p>This isn't about being someone you're not. It's not about softening who you are. It's not about performing warmth for people who've done nothing to earn it.</p>
+
+      <p>It's about understanding that the people deciding your career trajectory don't get automatic access to the full version. You're defaulting to a communication mode — and that default is the whole problem.</p>
+
+      <p>Your CIO wasn't wrong about you. He just didn't have the framework to describe what he was seeing. Now you do.</p>
+
+      <p>This is the whole game — not just the email problem. Every move you make above your current level requires you to know which version you're showing, and to make that a choice instead of a reflex.</p>
+
+      <hr />
+
+      <h2>What Happened When I Changed the Default</h2>
+
+      <p>I wrote an email to my CIO. Didn't argue the review. Acknowledged the feedback. Named the pattern. Said what changes.</p>
+
+      <p>I sent it to my closest advisor first — the guy I call my 4D chess player. His response: "Wow man. Love it."</p>
+
+      <p>My CIO had been traveling all week. He responded Friday morning. He said he appreciated the sincerity. He said it was another example of the quality he'd described. Then he said something I keep coming back to:</p>
+
+      <blockquote><p>"Not a very tall mountain to climb. Just some adjustments on communication style."</p></blockquote>
+
+      <p>Not a very tall mountain to climb. I'd been carrying this for years. Watching peers get passed over for the same shape of feedback. Writing it off as politics. Building counter-arguments nobody asked for.</p>
+
+      <p>And the actual answer was: this isn't a rebuild. It's a calibration.</p>
+
+      <p><strong>Leadership can't follow someone they can't see.</strong> The gap isn't your competence. It's the version of yourself you're putting in front of the people who decide what happens next.</p>
+    </article>
+
+    <div class="article-cta">
+      <div class="article-cta-tag">Free Resource</div>
+      <h3>The Executive Lens</h3>
+      <p>Five dimensions of executive presence, scored. Find exactly where leadership can't see you — and which signal to fix first.</p>
+      <a href="/executive-lens">Get the Executive Lens →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 From IT to Influence · Jimmy Garcia · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
