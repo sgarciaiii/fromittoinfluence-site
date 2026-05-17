@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Communicating in the Wrong Language — From IT to Influence</title>
+  <meta name="description" content="Most technical professionals communicate in the language of execution. Leadership listens in the language of impact. The gap between them is where careers stall." />
+  <meta property="og:title" content="You're Communicating in the Wrong Language" />
+  <meta property="og:description" content="Most technical professionals communicate in the language of execution. Leadership listens in the language of impact. The gap between them is where careers stall." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fromittoinfluence.com/blog/the-ai-communication-gap" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://fromittoinfluence.com/blog/the-ai-communication-gap" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../landing.css?v=3" />
+  <style>
+    /* ── BLOG ARTICLE STYLES ── */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .article-header {
+      padding: 120px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,148,10,0.08);
+      border: 1px solid rgba(212,148,10,0.22);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-date,
+    .article-read {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--dimmer);
+    }
+    .article-date::before { content: '\B7'; margin-right: 16px; color: var(--border-h); }
+    .article-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .article-sub {
+      font-family: var(--font-b);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .article-body {
+      margin-bottom: 64px;
+    }
+    .article-body p {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-body h2 {
+      font-family: var(--font-d);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 56px 0 20px;
+      line-height: 1.2;
+    }
+    .article-body h3 {
+      font-family: var(--font-d);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 36px 0 12px;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin: 32px 0;
+    }
+    .article-body blockquote p {
+      font-family: var(--font-b);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+    .article-body .lede {
+      font-size: 1.15rem;
+      color: var(--lt);
+      line-height: 1.7;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--surface);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .article-cta-tag {
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .article-cta p {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .article-cta a {
+      display: inline-block;
+      font-family: var(--font-d);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .article-cta a:hover { background: var(--gold-lt); }
+
+    .article-cta-paid {
+      background: linear-gradient(135deg, var(--surface), #1a1b26);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-cta-paid::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(212,148,10,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .article-cta-paid .article-cta-tag { color: var(--gold-lt); }
+    .article-cta-paid .paid-price {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .article-cta-paid .paid-price span {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--dimmer);
+      margin-left: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dimmer);
+      text-decoration: none;
+      margin: 96px 0 0;
+      padding: 0 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: color 0.2s;
+    }
+    .blog-back:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .article-header { padding: 100px 0 40px; }
+      .article-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body data-warmth="neutral">
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+<div class="bg-thread" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark"><img src="../chess_knight_logo.png" alt="From IT to Influence">From <em>IT</em> to Influence</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#resources" class="nav-link">Free Tools</a>
+      <a href="https://youtube.com/@FromITtoInfluence" class="nav-cta" target="_blank" rel="noopener">
+        <span class="yt-dot"></span> Watch the Channel
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/blog" class="blog-back">&larr; Back to The Playbook</a>
+
+  <div class="blog-wrap">
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">AI Communication</span>
+        <span class="article-date">May 17, 2026</span>
+        <span class="article-read">6 min read</span>
+      </div>
+      <h1>You're Communicating in the Wrong Language</h1>
+      <p class="article-sub">Most technical professionals communicate in the language of execution. Leadership listens in the language of impact. The gap between them is where careers stall.</p>
+    </header>
+
+    <article class="article-body">
+      <p class="lede">You write clear emails. Your Slack messages are precise. Your status updates cover every detail. And leadership still has no idea what you actually do.</p>
+
+      <p>This is the communication gap nobody warns you about when you move into a senior technical role. You're not communicating poorly. You're communicating in a language your audience doesn't process.</p>
+
+      <p>Technical professionals default to the language of execution: what was done, how it was done, and what's next. Leadership processes a completely different signal: what changed, what it means, and what decision it enables.</p>
+
+      <p>Same information. Different framing. One gets filed. The other gets remembered.</p>
+
+      <h2>The Three-Word Label Problem</h2>
+
+      <p>Every person in your organization has a three-word label in leadership's mind. Most technical professionals don't know what theirs is. Worse, they've never tried to find out.</p>
+
+      <p>The label isn't what you do. It's the impression your communication creates over hundreds of interactions — every email, every Slack thread, every status update. It compounds silently.</p>
+
+      <p>"Solid but quiet." "Detail guy." "Always in the weeds."</p>
+
+      <p>None of those are wrong. They're just incomplete. And incomplete labels don't get budget, headcount, or a seat at the strategy table.</p>
+
+      <p>The people who advance aren't necessarily better at their jobs. They're better at making the value of their work legible to the people who decide trajectories.</p>
+
+      <h2>Why AI Makes This Worse (and Better)</h2>
+
+      <p>AI amplifies whatever communication mode you're already in. If you default to execution-language, AI helps you write more detailed, more thorough, more comprehensive execution-language. Faster.</p>
+
+      <p>That's not a solution. That's an accelerant on the wrong fire.</p>
+
+      <p>But AI can also do something most professionals never think to ask it for: <strong>translate between registers.</strong> Take your execution-language update and reframe it in impact-language. Take your technical email and show you what a VP actually hears when they read it.</p>
+
+      <p>That's the gap the AI Communication Audit was built to close.</p>
+
+      <h2>Five Dimensions of Communication That Leadership Actually Scores</h2>
+
+      <p>When leadership evaluates you — consciously or not — they're listening across five dimensions:</p>
+
+      <h3>1. Communication mode awareness.</h3>
+      <p>Do you know what register you're in? Technical detail is appropriate in a design review. In a steering committee update, it signals that you can't distinguish what matters from what happened.</p>
+
+      <h3>2. Executive visibility signal.</h3>
+      <p>Does your communication make your work visible to the people who decide your trajectory? Or does it only reach the people who already know what you do?</p>
+
+      <h3>3. The win column.</h3>
+      <p>Can you articulate impact in one sentence? Not what you built — what it changed. Not the migration — the risk it eliminated. Not the automation — the hours it freed for strategic work.</p>
+
+      <h3>4. Strategic positioning.</h3>
+      <p>Does your communication position you as someone who executes, or someone who thinks? Both matter. But only one gets invited to the conversation where the next initiative gets scoped.</p>
+
+      <h3>5. Influence delivery.</h3>
+      <p>When you need something — budget, headcount, a decision — does your communication make it easy for leadership to say yes? Or does it create work for them?</p>
+
+      <h2>The Audit That Shows You the Gap</h2>
+
+      <p>The AI Communication Audit takes your actual emails, Slack messages, and status updates and runs them through a structured analysis across all five dimensions. It's not a quiz. It's not a personality test. It's a diagnostic that uses AI to show you exactly how your communication lands — and where it's working against you.</p>
+
+      <p>You bring real messages. The audit scores them. You leave with revised versions that preserve your voice while closing the gaps that are costing you.</p>
+
+      <p>It takes about 10 minutes. The insights last longer than that.</p>
+
+      <hr />
+
+      <h2>Try This Before Your Next Email</h2>
+
+      <p>Before you send your next status update or project summary, ask yourself one question: <strong>if this email is the only thing a VP reads about me this quarter, what three-word label does it create?</strong></p>
+
+      <p>If the answer is "detail-oriented executor" and you're trying to be seen as a strategic leader — you've found the gap. The audit helps you close it.</p>
+    </article>
+
+    <div class="article-cta">
+      <div class="article-cta-tag">Free Tool</div>
+      <h3>The AI Communication Audit</h3>
+      <p>Structured AI workflow that analyzes your actual emails and messages across 5 dimensions. See how your writing lands with leadership — and get revised versions that preserve your voice while closing the gaps.</p>
+      <a href="/ai-communication-audit">Take the Audit — Free &rarr;</a>
+    </div>
+
+    <div class="article-cta-paid">
+      <div class="article-cta-tag">Go Deeper</div>
+      <h3>The Executive Visibility Playbook</h3>
+      <p>The complete 30-day system: 5 presence signals, 4 frameworks, 12 AI templates, and the narrative architecture that gets technical professionals seen by leadership.</p>
+      <div class="paid-price">$347 <span>one payment &middot; lifetime access</span></div>
+      <a href="/executive-visibility-os">See What's Inside &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-wordmark">From <em>IT</em> to Influence</div>
+      <ul class="footer-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:jimmy@fromittoinfluence.com">Contact</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 From IT to Influence &middot; Jimmy Garcia &middot; All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
