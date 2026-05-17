@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Visibility Playbook — From IT to Influence</title>
+  <meta name="description" content="A 30-day system for technically strong leaders who are invisible to the people who decide promotions, projects, and budget." />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e1a;
+      --surface-1: #111827;
+      --surface-2: #1a2035;
+      --surface-3: #1e2846;
+      --gold: #d4940a;
+      --gold-dim: rgba(212,148,10,0.12);
+      --gold-border: rgba(212,148,10,0.25);
+      --amber: #f59e0b;
+      --green: #34d399;
+      --green-dim: rgba(52,211,153,0.1);
+      --red: #f87171;
+      --red-dim: rgba(248,113,113,0.1);
+      --text-primary: #ffffff;
+      --text-body: #94a3b8;
+      --text-muted: #7b8da8;
+      --separator: rgba(212,148,10,0.15);
+      --font: 'Inter', sans-serif;
+      --nav-h: 56px;
+    }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--nav-h);
+      background: rgba(10,14,26,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--separator);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+    }
+    .nav-brand {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
+      color: var(--text-primary); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-brand img { height: 22px; }
+    .nav-brand em { font-style: normal; color: var(--gold); }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 60px 0; }
+    section + section { border-top: 1px solid var(--separator); }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, .section-label { font-family: 'Sora', 'Inter', sans-serif; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.03em; line-height: 1.15; }
+    h2 { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin-bottom: 16px; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+    p { margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text-primary); font-weight: 600; }
+    blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px; margin: 24px 0;
+      background: var(--gold-dim); border-radius: 0 8px 8px 0;
+      font-style: italic; color: var(--text-primary);
+    }
+    blockquote p { margin-bottom: 0; }
+
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .hero h1 { margin-bottom: 16px; }
+    .hero .hero-sub {
+      font-size: 1.1rem; color: var(--text-muted); max-width: 560px; margin: 0 auto 28px; line-height: 1.6;
+    }
+    .hero-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-border);
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 20px;
+    }
+
+    /* ── CARDS / SURFACES ── */
+    .card {
+      background: var(--surface-1); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 28px; margin-bottom: 16px;
+    }
+    .card-highlight {
+      border-color: var(--gold-border);
+      background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
+    }
+
+    /* ── WAR STORY ── */
+    .war-story {
+      background: var(--surface-1); border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0; padding: 28px 28px 28px 24px;
+      margin: 32px 0;
+    }
+    .war-story p { color: var(--text-body); }
+    .war-story p:first-child { color: var(--text-primary); }
+
+    /* ── SCORING TABLE ── */
+    .score-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .score-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--surface-2); color: var(--gold);
+      font-weight: 600; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      border-bottom: 1px solid var(--separator);
+    }
+    .score-table td {
+      padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+    .score-table td:first-child {
+      font-weight: 700; color: var(--gold); width: 50px; text-align: center;
+    }
+    .score-input {
+      display: flex; align-items: center; gap: 10px;
+      margin: 16px 0 28px; padding: 16px 20px;
+      background: var(--surface-2); border: 1px solid var(--gold-border);
+      border-radius: 8px;
+    }
+    .score-input label { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; white-space: nowrap; }
+    .score-input input {
+      width: 60px; padding: 8px 12px; text-align: center;
+      background: var(--surface-3); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; color: var(--gold); font-size: 1.1rem; font-weight: 700;
+      font-family: var(--font);
+    }
+    .score-input input:focus { outline: none; border-color: var(--gold); }
+
+    /* ── TOTAL SCORE ── */
+    .total-score {
+      background: linear-gradient(135deg, var(--surface-2), var(--surface-3));
+      border: 1px solid var(--gold-border); border-radius: 12px;
+      padding: 28px; text-align: center; margin: 32px 0;
+    }
+    .total-score .score-display {
+      font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800;
+      color: var(--gold); line-height: 1;
+    }
+    .total-score .score-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+
+    .diagnosis-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    .diagnosis-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--surface-2); color: var(--gold);
+      font-weight: 600; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .diagnosis-table td { padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+    .diagnosis-table td:first-child { font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+
+    /* ── TRANSLATION TABLE ── */
+    .translation-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    .translation-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--surface-2); color: var(--gold);
+      font-weight: 600; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .translation-table td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+    .translation-table .before { color: var(--red); }
+    .translation-table .after { color: var(--green); }
+
+    /* ── FORMULA ── */
+    .formula-box {
+      background: var(--surface-2); border: 1px solid var(--gold-border);
+      border-radius: 10px; padding: 24px; margin: 24px 0; text-align: center;
+    }
+    .formula-box .formula {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.5;
+    }
+
+    /* ── ACTION MAP ── */
+    .week-header {
+      background: var(--surface-2); border: 1px solid var(--separator);
+      border-radius: 10px; padding: 20px 24px; margin: 32px 0 16px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .week-num {
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.4rem;
+      color: var(--gold); line-height: 1;
+    }
+    .week-goal { font-size: 0.88rem; color: var(--text-muted); }
+    .week-goal strong { color: var(--text-primary); }
+
+    .day-row {
+      display: grid; grid-template-columns: 48px 1fr 60px;
+      gap: 12px; align-items: start;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .day-row:last-child { border-bottom: none; }
+    .day-num {
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem;
+      color: var(--gold); padding-top: 2px;
+    }
+    .day-action { font-size: 0.9rem; }
+    .day-time {
+      font-size: 0.75rem; color: var(--text-muted); text-align: right; padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .checkpoint {
+      background: var(--green-dim); border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 8px; padding: 16px 20px; margin: 16px 0 32px;
+      font-size: 0.88rem; color: var(--green);
+    }
+    .checkpoint strong { color: var(--green); }
+
+    /* ── TEMPLATES ── */
+    .template-card {
+      background: var(--surface-1); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; margin-bottom: 16px; overflow: hidden;
+    }
+    .template-header {
+      padding: 18px 24px; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.2s;
+    }
+    .template-header:hover { background: var(--surface-2); }
+    .template-header h3 { margin-bottom: 0; font-size: 0.95rem; }
+    .template-header .template-when {
+      font-size: 0.75rem; color: var(--text-muted); font-weight: 400;
+    }
+    .template-chevron {
+      color: var(--text-muted); font-size: 0.85rem; transition: transform 0.3s;
+    }
+    .template-body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .template-body-inner { padding: 0 24px 24px; }
+    .template-card.open .template-body { max-height: 2000px; }
+    .template-card.open .template-chevron { transform: rotate(180deg); }
+
+    .prompt-block {
+      background: var(--surface-3); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; padding: 20px; margin: 16px 0;
+      font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap;
+      color: var(--text-primary); position: relative;
+    }
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--gold); color: var(--bg); border: none;
+      padding: 5px 12px; border-radius: 4px; font-size: 0.7rem;
+      font-weight: 600; cursor: pointer; letter-spacing: 0.05em;
+      text-transform: uppercase; transition: opacity 0.2s;
+    }
+    .copy-btn:hover { opacity: 0.85; }
+
+    .example-block {
+      margin: 16px 0; font-size: 0.88rem;
+    }
+    .example-block .label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .example-block .before { color: var(--red); }
+    .example-block .after { color: var(--green); }
+    .example-block p { margin-bottom: 8px; font-style: italic; }
+
+    /* ── EXERCISE ── */
+    .exercise {
+      background: var(--surface-2); border: 1px dashed var(--gold-border);
+      border-radius: 10px; padding: 24px; margin: 28px 0;
+    }
+    .exercise h4 {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .exercise ol, .exercise ul { padding-left: 20px; margin-bottom: 0; }
+    .exercise li { margin-bottom: 6px; font-size: 0.9rem; }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      text-align: center; padding: 60px 0;
+    }
+    .cta-section h2 { margin-bottom: 12px; }
+    .cta-section p { color: var(--text-muted); max-width: 480px; margin: 0 auto 24px; }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 480px; margin: 0 auto; }
+    @media (max-width: 480px) { .cta-grid { grid-template-columns: 1fr; } }
+    .cta-card {
+      background: var(--surface-1); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 20px; text-align: left; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .cta-card:hover { border-color: var(--gold-border); transform: translateY(-2px); }
+    .cta-card .cta-price { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--gold); }
+    .cta-card .cta-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-top: 4px; }
+    .cta-card .cta-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--separator);
+      padding: 24px; text-align: center;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 40px 0; }
+      .hero { padding: 56px 0 40px; }
+      .day-row { grid-template-columns: 40px 1fr 48px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <img src="/chess_knight_logo.png" alt="">
+    From <em>IT</em> to Influence
+  </a>
+  <ul class="nav-links">
+    <li><a href="#audit">Self-Assessment</a></li>
+    <li><a href="#frameworks">Frameworks</a></li>
+    <li><a href="#action-map">30-Day Map</a></li>
+    <li><a href="#templates">AI Templates</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-badge">The Visibility Playbook</div>
+    <h1>Stop Being the Best-Kept Secret in Your Own Organization</h1>
+    <p class="hero-sub">A 30-day system for technically strong leaders who are delivering at a high level but still getting passed over because leadership does not have an accurate, usable narrative of their value.</p>
+  </div>
+</section>
+
+<!-- ═══ THE GAP ═══ -->
+<section id="gap">
+  <div class="wrap">
+    <div class="section-label">Section 1</div>
+    <h2>The Gap Nobody Talks About</h2>
+
+    <p>You're good at your job. You know it. Your reviews confirm it. "Exceeds expectations" — year after year.</p>
+    <p>And yet. Someone less capable than you got promoted last quarter. Someone who breaks things you fix, who asks questions you answered six months ago — they're now one level above you.</p>
+    <p>Here's what nobody told you: <strong>the game stopped being technical three levels ago.</strong> Technical excellence is the entry fee. It was never the differentiator.</p>
+    <p>You have a visibility problem. Not a competence problem. Not a confidence problem. A <em>visibility</em> problem — meaning the people who make decisions about your career literally do not know what you do, how well you do it, or why it matters.</p>
+    <p>That's fixable. In 30 days. With a system.</p>
+
+    <div class="war-story">
+      <p>Nine years. Near-perfect performance ratings. "Ready Now" for VP on the succession plan three years running. When the slot finally opened, they gave it to someone who was ranked lower than me.</p>
+      <p>A few years later, same thing. This time it was a peer. And here's the part that still makes me shake my head: while I was being passed over, I was leading a platform replacement that saved tens of millions. My readiness rating actually went <em>backwards</em>.</p>
+      <p>I wasn't solving the wrong problem. I was solving the wrong <em>kind</em> of problem. I was playing a technical game inside a narrative system.</p>
+      <p>This playbook is what I wish someone had handed me at year three.</p>
+    </div>
+
+    <h3>What This Playbook Is</h3>
+    <p>A 30-day operating system for becoming known to the people who decide your trajectory. Five signals. Four frameworks. Daily actions. AI templates that do 80% of the communication rewrite for you.</p>
+
+    <h3>What This Playbook Is Not</h3>
+    <ul style="margin-bottom: 24px; padding-left: 20px;">
+      <li>Not office politics. No schmoozing, no backstabbing, no games.</li>
+      <li>Not fake networking. No forced coffee chats.</li>
+      <li>Not "personal branding." No LinkedIn cringe.</li>
+    </ul>
+
+    <h3>Why I Can Write This</h3>
+    <p>I'm a Director at a large organization with over 25 years of experience in technology. Before that, I was you — technically excellent, organizationally invisible. I watched the game from the individual contributor side, figured out what was actually happening, crossed the gap, and then spent years watching others fail to cross it for the exact same reasons I almost didn't.</p>
+
+    <h3>How to Use This</h3>
+    <ol style="padding-left: 20px;">
+      <li><strong>Start with Section 2.</strong> Score yourself honestly.</li>
+      <li><strong>Read the frameworks in order.</strong> Each builds on the last.</li>
+      <li><strong>Follow the 30-Day Action Map.</strong> One action per day, under 15 minutes.</li>
+      <li><strong>Use the AI templates.</strong> Copy, paste, customize, send.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ SELF-ASSESSMENT ═══ -->
+<section id="audit">
+  <div class="wrap">
+    <div class="section-label">Section 2</div>
+    <h2>The Visibility Gap Audit</h2>
+    <p class="section-sub">Before the fix, the diagnosis. Rate yourself 1–5 on each signal. Be brutal — nobody sees this but you.</p>
+
+    <!-- Signal 1 -->
+    <h3>Signal 1 — Leadership Presence</h3>
+    <p><em>Does leadership know your name when you're not in the room?</em></p>
+    <table class="score-table">
+      <thead><tr><th>Score</th><th>What it looks like</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Leadership couldn't name you in a lineup. You exist in Jira tickets, not in their mental model.</td></tr>
+        <tr><td>2</td><td>They've heard your name once — attached to a project, not a person.</td></tr>
+        <tr><td>3</td><td>They know your name and role. They couldn't tell you what you're working on right now.</td></tr>
+        <tr><td>4</td><td>They know you, your work, and your perspective on at least one thing.</td></tr>
+        <tr><td>5</td><td>Your name comes up in conversations you're not part of. Unprompted.</td></tr>
+      </tbody>
+    </table>
+    <div class="score-input"><label>Your score:</label><input type="number" min="1" max="5" id="s1" value="" placeholder="—"></div>
+
+    <!-- Signal 2 -->
+    <h3>Signal 2 — Communication Translation</h3>
+    <p><em>Do you speak "executive" or "engineer" in upward communications?</em></p>
+    <table class="score-table">
+      <thead><tr><th>Score</th><th>What it looks like</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Your updates read like commit messages. Technical detail, zero business context.</td></tr>
+        <tr><td>2</td><td>You occasionally mention impact but default to describing the how, not the why.</td></tr>
+        <tr><td>3</td><td>You consciously frame things in business terms when you remember to — but it's not automatic.</td></tr>
+        <tr><td>4</td><td>Your written updates consistently land at the right altitude. Verbal still slips.</td></tr>
+        <tr><td>5</td><td>You instinctively frame every communication in terms of risk, cost, or momentum.</td></tr>
+      </tbody>
+    </table>
+    <div class="score-input"><label>Your score:</label><input type="number" min="1" max="5" id="s2" value="" placeholder="—"></div>
+
+    <!-- Signal 3 -->
+    <h3>Signal 3 — Credit Capture</h3>
+    <p><em>When your work ships, who gets mentioned?</em></p>
+    <table class="score-table">
+      <thead><tr><th>Score</th><th>What it looks like</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Your work ships under someone else's name. You aren't mentioned.</td></tr>
+        <tr><td>2</td><td>You're mentioned as "the team" or "our engineers." Never by name.</td></tr>
+        <tr><td>3</td><td>Some work is credited to you. Major wins still get attributed to the project lead or your manager.</td></tr>
+        <tr><td>4</td><td>You're the named owner on most projects. Occasionally someone else gets the stage.</td></tr>
+        <tr><td>5</td><td>When your work ships, your name is the first one mentioned. You built that into the process.</td></tr>
+      </tbody>
+    </table>
+    <div class="score-input"><label>Your score:</label><input type="number" min="1" max="5" id="s3" value="" placeholder="—"></div>
+
+    <!-- Signal 4 -->
+    <h3>Signal 4 — Strategic Alignment</h3>
+    <p><em>Do you know what leadership is worried about this quarter?</em></p>
+    <table class="score-table">
+      <thead><tr><th>Score</th><th>What it looks like</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>You have no idea what leadership's top 3 priorities are this quarter.</td></tr>
+        <tr><td>2</td><td>You've heard them in an all-hands but couldn't name them specifically.</td></tr>
+        <tr><td>3</td><td>You know what they are. You haven't connected your work to any of them.</td></tr>
+        <tr><td>4</td><td>You've aligned at least one project to a leadership priority and communicated that alignment.</td></tr>
+        <tr><td>5</td><td>Every major piece of work you do is explicitly framed in terms of what leadership cares about.</td></tr>
+      </tbody>
+    </table>
+    <div class="score-input"><label>Your score:</label><input type="number" min="1" max="5" id="s4" value="" placeholder="—"></div>
+
+    <!-- Signal 5 -->
+    <h3>Signal 5 — Relationship Capital</h3>
+    <p><em>Do you have one executive who would champion you if asked?</em></p>
+    <table class="score-table">
+      <thead><tr><th>Score</th><th>What it looks like</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>You have zero relationships with anyone above your manager's level.</td></tr>
+        <tr><td>2</td><td>You've interacted with senior leaders but only in group settings.</td></tr>
+        <tr><td>3</td><td>One senior leader knows you by name and has a vague positive impression.</td></tr>
+        <tr><td>4</td><td>One leader knows your work specifically and has mentioned it positively.</td></tr>
+        <tr><td>5</td><td>You have at least one champion who would advocate for you in a closed-door conversation.</td></tr>
+      </tbody>
+    </table>
+    <div class="score-input"><label>Your score:</label><input type="number" min="1" max="5" id="s5" value="" placeholder="—"></div>
+
+    <!-- Total -->
+    <div class="total-score">
+      <div class="score-display" id="total-display">— / 25</div>
+      <div class="score-label">Your Visibility Score</div>
+    </div>
+
+    <table class="diagnosis-table">
+      <thead><tr><th>Range</th><th>Diagnosis</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>21–25</td><td>Visible. You're already in the conversation.</td><td>Skim the frameworks. Focus on the 30-Day Map for maintenance.</td></tr>
+        <tr><td>14–20</td><td>Partially visible. Leadership has a vague sense of you.</td><td>Read all four frameworks. Build the weakest 2 signals first.</td></tr>
+        <tr><td>5–13</td><td>Invisible. Excellent work that nobody with power knows about.</td><td>Read end to end. Follow the 30-Day Map exactly. Start with Credit Capture.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="exercise">
+      <h4>The Mirror Exercise</h4>
+      <p><strong>Write the name of one person in your organization who is less competent than you but more visible to leadership.</strong></p>
+      <p>Now answer: Which of the 5 signals do they have that you don't?</p>
+      <p>They're not playing politics. They have <em>signals you don't have.</em> That's the entire gap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FRAMEWORKS ═══ -->
+<section id="frameworks">
+  <div class="wrap">
+    <div class="section-label">Frameworks</div>
+    <h2>The Four Frameworks</h2>
+    <p class="section-sub">Each framework addresses one of the core visibility gaps. Read them in order — each builds on the last.</p>
+
+    <!-- Framework 1 -->
+    <h3>Framework 1 — The Executive Translation Layer</h3>
+    <p>There's a moment where a VP looks at you mid-sentence and you can see them stop listening. Not because you're wrong. Because you're speaking the wrong language.</p>
+
+    <div class="war-story">
+      <p>My VP told me, point-blank: <strong>"I never know what the hell you are talking about."</strong></p>
+      <p>I stopped leading with technical specifications. I started painting business-impact pictures. Shortly after, that same VP walked into my office and told me he'd funded my entire capital portfolio upfront. No negotiation. Full approval.</p>
+      <p>Another senior manager asked him what changed. The VP's response: "You're right. But you aren't him."</p>
+      <p>Nothing about my work had changed. The translation layer changed everything.</p>
+    </div>
+
+    <h3>The Three Executive Concerns</h3>
+    <p>Every executive processes information through three filters:</p>
+    <ol style="padding-left: 20px; margin-bottom: 24px;">
+      <li><strong>Risk</strong> — What could go wrong and who is managing it?</li>
+      <li><strong>Cost</strong> — Is this worth the investment?</li>
+      <li><strong>Momentum</strong> — Is this moving or stalled?</li>
+    </ol>
+    <p>If your communication doesn't answer at least one of these in the first two sentences, you've already lost them.</p>
+
+    <h3>The IT Default vs. The Executive Translation</h3>
+    <table class="translation-table">
+      <thead><tr><th>What you said</th><th>What they heard</th><th>What you should have said</th></tr></thead>
+      <tbody>
+        <tr><td class="before">"We're migrating the database"</td><td>"Something technical is happening"</td><td class="after">"We're eliminating the risk of a service outage before Q3 earnings"</td></tr>
+        <tr><td class="before">"The API is broken"</td><td>"Something is broken"</td><td class="after">"A vendor dependency is blocking the sales team — I'm owning the fix by EOD"</td></tr>
+        <tr><td class="before">"I fixed the bug"</td><td>"Good, that's your job"</td><td class="after">"Restored functionality for 400 users; root cause documented so it doesn't recur"</td></tr>
+        <tr><td class="before">"The project is 80% complete"</td><td>"So it's not done"</td><td class="after">"On track for Thursday delivery. One dependency remains — already escalated"</td></tr>
+        <tr><td class="before">"We need to upgrade the infrastructure"</td><td>"They want money"</td><td class="after">"Our current infrastructure can't support the Q4 launch. Here's the risk if we don't act by August"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="formula-box">
+      <div class="formula"><strong>[What you did]</strong> + <strong>[what it protected or created]</strong> + <strong>[who it matters to]</strong></div>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 10px;">The One-Sentence Formula for every upward communication</p>
+    </div>
+
+    <div class="exercise">
+      <h4>Workbook Exercise</h4>
+      <ol>
+        <li>Pull up your last 3 emails or messages to anyone above your manager's level.</li>
+        <li>For each: What filter does it answer? (Risk / Cost / Momentum / None)</li>
+        <li>Rewrite the first sentence using the one-sentence formula.</li>
+      </ol>
+    </div>
+
+    <!-- Framework 2 -->
+    <h3 style="margin-top: 48px;">Framework 2 — The Credit Architecture</h3>
+
+    <div class="war-story">
+      <p>My CIO pulled me aside: <strong>"I never know where your ideas start and stop and where your VP's do."</strong></p>
+      <p>I was expecting leadership to do detective work — to trace output back to its source. But busy executives see the deliverable in front of them and attribute it to whoever presented it.</p>
+      <p>That wasn't theft. It was a system failure — and I was the one who hadn't built the system.</p>
+    </div>
+
+    <h3>The Three Credit Leaks</h3>
+    <div class="card" style="margin-bottom: 12px;">
+      <strong>Leak 1:</strong> Work announced by your manager without your name attached. They say "we shipped X" — your name isn't in the sentence.
+    </div>
+    <div class="card" style="margin-bottom: 12px;">
+      <strong>Leak 2:</strong> Project ownership confused with technical execution. You did the heavy lifting. The org chart says ownership lives elsewhere.
+    </div>
+    <div class="card" style="margin-bottom: 16px;">
+      <strong>Leak 3:</strong> Wins that live in Jira tickets, not in the room where decisions happen. Nobody making promotion decisions reads Jira.
+    </div>
+
+    <h3>The Credit Architecture System</h3>
+    <div class="card"><strong>Move 1: The Project Anchor.</strong> Establish yourself as the named owner at project kickoff, not after delivery. "I'm owning the delivery of X, targeting Y date, will update weekly."</div>
+    <div class="card"><strong>Move 2: The Breadcrumb Trail.</strong> One-line weekly updates to your manager that keep your name structurally attached to the work.</div>
+    <div class="card"><strong>Move 3: The Visibility Moment.</strong> For every significant project, identify the one meeting where leadership sees the work. Be in that room.</div>
+    <div class="card"><strong>Move 4: The Upstream Signal.</strong> A brief, useful update that reaches above your manager. One-sentence FYI to your skip-level after completing a major deliverable.</div>
+
+    <div class="exercise">
+      <h4>Workbook Exercise</h4>
+      <ol>
+        <li>List your 3 current projects. For each: who is the named owner in your manager's mind?</li>
+        <li>Does leadership know your name is attached to this work?</li>
+        <li>What one structural move would change the attribution?</li>
+      </ol>
+    </div>
+
+    <!-- Framework 3 -->
+    <h3 style="margin-top: 48px;">Framework 3 — The Strategic Presence Protocol</h3>
+
+    <div class="war-story">
+      <p>When I moved into executive management, I sat in a calibration session for the first time — where Directors, VPs, and the CIO discuss promotion potential for hundreds of people in a few hours.</p>
+      <p>High performers, technically brilliant, consistently delivering. Some of them never got mentioned. Not once. Not because they were bad. Because nobody in that room had them top of mind.</p>
+      <p>That's the moment I understood there are two systems: the <strong>technical system</strong> (the work itself) and the <strong>narrative system</strong> (what gets said about you in rooms you're not in). You can dominate the first and be invisible in the second.</p>
+    </div>
+
+    <h3>Three Moves from Zone 1 to Zone 2</h3>
+    <div class="card"><strong>Move 1: The Strategic Question Insert.</strong> In any meeting where leadership is present, ask one question that demonstrates awareness of business context, not technical context.</div>
+    <div class="card"><strong>Move 2: The Advisory Positioning Move.</strong> Stop presenting yourself as the builder. Start presenting yourself as the advisor who happens to build.</div>
+    <div class="card"><strong>Move 3: The Future-Quarter Anchor.</strong> In 1:1s, consistently reference what you're thinking about next quarter — not just what you're finishing this quarter.</div>
+
+    <div class="war-story">
+      <p>I had a team member everyone called "the Oracle guy." Leadership had filed him into a two-word mental box five years ago.</p>
+      <p>I printed his resume with the name removed and laid it in front of the decision-makers. They loved it. "Who is this? When can we meet them?"</p>
+      <p>When I told them who it was, they were floored. He got the role. But he needed someone to manually override the system's broken memory of him.</p>
+    </div>
+
+    <!-- Framework 4 -->
+    <h3 style="margin-top: 48px;">Framework 4 — The Relationship Capital Stack</h3>
+    <p>You need <strong>one champion.</strong> One person, two or more levels above you, who knows your name, knows your work, and would say yes if someone asked: "Is [your name] ready for more?"</p>
+
+    <div class="war-story">
+      <p>The CTO needed to place someone in a hostile business unit — one that had already decided "we don't need IT." I pushed back on the surface-level keyword match.</p>
+      <p>"What about Tim?" Tim was a Windows admin who could build a Linux solution from scratch. I laid out what I knew about his actual track record. Not his resume — his <em>capacity.</em></p>
+      <p>Tim got the role. He walked into that hostile unit and turned it around completely. He got promoted to executive management.</p>
+      <p>I didn't change Tim's skills. I changed his <em>context</em> — I wrote to the narrative system on his behalf. <strong>That's what a champion does.</strong></p>
+    </div>
+
+    <h3>The Champion-Building System (30 Days)</h3>
+    <div class="card"><strong>Week 1:</strong> Identify your target. Who is 2+ levels above you and has influence over promotions or resources?</div>
+    <div class="card"><strong>Week 2:</strong> Find one legitimate touchpoint. A meeting, a project overlap, a shared problem.</div>
+    <div class="card"><strong>Week 3:</strong> Contribute once. One strategic question, one insight, one useful piece of information in their presence.</div>
+    <div class="card"><strong>Week 4:</strong> Follow up with something useful. A relevant insight, a brief update, a heads-up about a risk.</div>
+
+    <div class="exercise">
+      <h4>Workbook Exercise</h4>
+      <ol>
+        <li>Name one person two or more levels above you who has organizational influence.</li>
+        <li>Write three sentences about what they care about this quarter.</li>
+        <li>What is one legitimate touchpoint you could activate in the next 2 weeks?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 30-DAY ACTION MAP ═══ -->
+<section id="action-map">
+  <div class="wrap">
+    <div class="section-label">The System</div>
+    <h2>The 30-Day Action Map</h2>
+    <p class="section-sub">One action per day. None take more than 15 minutes. Most take 5.</p>
+
+    <!-- Week 1 -->
+    <div class="week-header">
+      <div class="week-num">W1</div>
+      <div class="week-goal"><strong>Diagnose and Position</strong> — understand where you stand and lay the structural foundation</div>
+    </div>
+    <div class="day-row"><div class="day-num">Day 1</div><div class="day-action">Complete the Visibility Gap Audit above. Write your scores. Identify your 2 lowest signals.</div><div class="day-time">10 min</div></div>
+    <div class="day-row"><div class="day-num">Day 2</div><div class="day-action">Pull up your last 5 upward communications. Run each through the Executive Translation formula.</div><div class="day-time">15 min</div></div>
+    <div class="day-row"><div class="day-num">Day 3</div><div class="day-action">List your 3 current projects. For each: who is the named owner in your manager's mind? Send the "I'm owning this" email today.</div><div class="day-time">10 min</div></div>
+    <div class="day-row"><div class="day-num">Day 4</div><div class="day-action">Identify your target champion. Write what they care about this quarter. Write one connection point.</div><div class="day-time">10 min</div></div>
+    <div class="day-row"><div class="day-num">Day 5</div><div class="day-action">Prepare one strategic question for next week's meeting where leadership will be present.</div><div class="day-time">5 min</div></div>
+    <div class="checkpoint"><strong>Week 1 checkpoint:</strong> 5 scores, 5 rewritten communications, named ownership on at least one project, a target champion identified, and a question ready.</div>
+
+    <!-- Week 2 -->
+    <div class="week-header">
+      <div class="week-num">W2</div>
+      <div class="week-goal"><strong>Activate the System</strong> — start executing the moves</div>
+    </div>
+    <div class="day-row"><div class="day-num">Day 6</div><div class="day-action">Send Breadcrumb Trail update #1 to your manager. One sentence. One accomplishment.</div><div class="day-time">3 min</div></div>
+    <div class="day-row"><div class="day-num">Day 7</div><div class="day-action">Send Breadcrumb Trail update #2. Different project or accomplishment.</div><div class="day-time">3 min</div></div>
+    <div class="day-row"><div class="day-num">Day 8</div><div class="day-action">Send Breadcrumb Trail update #3. You're building a pattern now.</div><div class="day-time">3 min</div></div>
+    <div class="day-row"><div class="day-num">Day 9</div><div class="day-action">Deploy your strategic question in the meeting you identified on Day 5.</div><div class="day-time">2 min</div></div>
+    <div class="day-row"><div class="day-num">Day 10</div><div class="day-action">Review: Did the energy shift? Did anyone follow up? Write one sentence about what you'd do differently.</div><div class="day-time">5 min</div></div>
+    <div class="checkpoint"><strong>Week 2 checkpoint:</strong> 3 breadcrumb updates sent, one strategic question deployed, one reflection noted.</div>
+
+    <!-- Week 3 -->
+    <div class="week-header">
+      <div class="week-num">W3</div>
+      <div class="week-goal"><strong>Compound the Signal</strong> — follow up on Week 2 and add a champion touchpoint</div>
+    </div>
+    <div class="day-row"><div class="day-num">Day 11</div><div class="day-action">Review your 3 breadcrumb updates. Did your manager respond? Adjust tone or timing if needed.</div><div class="day-time">5 min</div></div>
+    <div class="day-row"><div class="day-num">Day 12</div><div class="day-action">Find one legitimate touchpoint with your target champion. Put yourself in proximity.</div><div class="day-time">10 min</div></div>
+    <div class="day-row"><div class="day-num">Day 13</div><div class="day-action">Send Breadcrumb Trail update #4. Keep the cadence.</div><div class="day-time">3 min</div></div>
+    <div class="day-row"><div class="day-num">Day 14</div><div class="day-action">Contribute once in your target champion's presence. One insight, one question, one useful piece of information.</div><div class="day-time">5 min</div></div>
+    <div class="day-row"><div class="day-num">Day 15</div><div class="day-action">Update your tracker. Which signal score would you give yourself now vs. Day 1?</div><div class="day-time">10 min</div></div>
+    <div class="checkpoint"><strong>Week 3 checkpoint:</strong> Breadcrumb trail is a habit. Your champion target has one positive interaction with you. At least one signal should have moved +1.</div>
+
+    <!-- Week 4 -->
+    <div class="week-header">
+      <div class="week-num">W4</div>
+      <div class="week-goal"><strong>Convert and Confirm</strong> — maintain the system and measure the change</div>
+    </div>
+    <div class="day-row"><div class="day-num">Day 16</div><div class="day-action">Send one upstream signal. A one-sentence FYI to your skip-level about something relevant to their priorities.</div><div class="day-time">5 min</div></div>
+    <div class="day-row"><div class="day-num">Day 17</div><div class="day-action">Follow up with your target champion. Something useful — not sycophantic, genuinely helpful.</div><div class="day-time">5 min</div></div>
+    <div class="day-row"><div class="day-num">Day 18</div><div class="day-action">Send Breadcrumb Trail update #5. This is now your weekly habit.</div><div class="day-time">3 min</div></div>
+    <div class="day-row"><div class="day-num">Day 19</div><div class="day-action">Prepare one advisory-positioned recommendation for an upcoming decision.</div><div class="day-time">10 min</div></div>
+    <div class="day-row"><div class="day-num">Day 20</div><div class="day-action">Re-run the Visibility Gap Audit. Compare to Day 1. Write: "My name would come up because ___."</div><div class="day-time">10 min</div></div>
+    <div class="checkpoint"><strong>Week 4 checkpoint:</strong> You've run the full system once. At minimum, 2 of your 5 signals should have moved.</div>
+
+    <div class="card card-highlight" style="margin-top: 24px;">
+      <h3>After Day 20</h3>
+      <ul style="padding-left: 20px;">
+        <li><strong>Breadcrumb trail:</strong> One update per week. Forever.</li>
+        <li><strong>Strategic question:</strong> One per meeting where leadership is present.</li>
+        <li><strong>Champion relationship:</strong> One touchpoint per month.</li>
+        <li><strong>Upstream signal:</strong> One FYI to your skip-level each quarter.</li>
+      </ul>
+      <p style="margin-top: 12px;">The system runs on 15 minutes per week after the initial 30 days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AI TEMPLATES ═══ -->
+<section id="templates">
+  <div class="wrap">
+    <div class="section-label">AI Templates</div>
+    <h2>12 AI Prompt Templates</h2>
+    <p class="section-sub">Each includes when to use it, the prompt, and what to customize. Works with Claude, ChatGPT, Gemini, or any LLM.</p>
+
+    <div class="accordion" id="template-accordion">
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>01 — Status Update Translator</h3><span class="template-when">Before any upward status update</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t01">I need to rewrite this project status update for an executive audience. The reader is [role] who cares about [their top priority this quarter].
+
+Here's my current update:
+[paste your update]
+
+Rewrite it to:
+1. Lead with business impact, not technical activity
+2. Answer one of these: What risk is being managed? What cost is being saved? What momentum is being maintained?
+3. Keep it under 3 sentences
+4. Include one specific metric or outcome if possible<button class="copy-btn" onclick="copyPrompt('t01')">Copy</button></div>
+          <div class="example-block">
+            <div class="label before">Before:</div>
+            <p>"We completed the database migration to PostgreSQL 16, updated all connection strings, ran regression tests, and deprecated the old MySQL instance."</p>
+            <div class="label after">After:</div>
+            <p>"The database migration is complete — 40% faster query performance and we've eliminated the MySQL licensing cost ($28K/year). All services running clean, no customer impact."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>02 — Incident Report as Risk Mitigation</h3><span class="template-when">After resolving any escalated incident</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t02">I need to frame this incident report as a risk-mitigation story for executive leadership. The audience is [role level].
+
+Here's what happened: [describe the incident technically]
+Here's what I did: [describe your actions]
+Here's the current state: [describe resolution]
+
+Rewrite this as a 4-sentence executive summary that: names the business risk, shows it was managed, demonstrates root cause understanding, and confirms prevention of recurrence.<button class="copy-btn" onclick="copyPrompt('t02')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>03 — Project Update as Business Impact</h3><span class="template-when">Weekly/biweekly leadership updates</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t03">Translate this project status into executive language. The audience doesn't care how — they care what it means for the business.
+
+Technical status: [paste your current project update]
+
+Business context:
+- This project supports: [which leadership priority]
+- Timeline target: [date]
+- Risk if delayed: [what happens if this slips]
+
+Rewrite as a 3-line update: (1) progress against timeline, (2) what this enables for the business, (3) any decision needed from leadership (or "no action needed").<button class="copy-btn" onclick="copyPrompt('t03')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>04 — Project Ownership Email</h3><span class="template-when">At kickoff of any significant project</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t04">Write a brief email (under 100 words) to my manager confirming I'm owning [project name]. Include:
+- Clear statement of ownership and accountability
+- Target delivery date
+- Cadence for updates (weekly)
+- One sentence about what success looks like in business terms
+
+Tone: confident, brief, no ask — just confirming. Not asking permission.<button class="copy-btn" onclick="copyPrompt('t04')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>05 — Weekly Breadcrumb Trail Update</h3><span class="template-when">Every Monday — takes 3 minutes</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t05">I need a one-sentence weekly update to send my manager. It should:
+- Name a specific thing I accomplished or unblocked this week
+- Connect it to a business outcome or team impact
+- Be under 30 words
+- Sound natural, not robotic
+
+What I did this week: [brief description]<button class="copy-btn" onclick="copyPrompt('t05')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>06 — End-of-Project Summary</h3><span class="template-when">When a significant project completes</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t06">Write a project completion summary (under 150 words) designed to be forwarded from my manager to their leadership. Include:
+- What was delivered (one sentence, business language)
+- Quantified impact (metric, time saved, risk eliminated, cost reduced)
+- Timeline performance (on time, early, or late with reason)
+- My name as the owner/lead
+- One forward-looking sentence about what this enables next
+
+Tone: factual, confident, not self-promotional. Let the results speak.
+
+Project details: [what you delivered, key metrics, timeline]<button class="copy-btn" onclick="copyPrompt('t06')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>07 — Strategic Question Generator</h3><span class="template-when">Before meetings with leadership</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t07">I'm attending a meeting with [role of senior leader]. The meeting topic is [topic]. Their known priorities this quarter are [priorities if known].
+
+Generate 3 strategic questions I could ask that:
+1. Demonstrate I understand the business context, not just the technical one
+2. Are genuinely useful to the conversation (not performative)
+3. Can't be answered with "yes" or "no"
+4. Position me as someone thinking beyond my immediate scope
+
+I want to ask exactly one. Help me pick the strongest.<button class="copy-btn" onclick="copyPrompt('t07')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>08 — Technical Recommendation as Business Decision</h3><span class="template-when">When presenting options to leadership</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t08">I need to present [number] technical options to leadership for [decision]. Reframe each option as a business decision.
+
+For each option, provide:
+- One-sentence summary (no jargon)
+- Impact on: timeline, cost, risk
+- Who is affected downstream
+- My recommendation and why (in business terms)
+
+Options: [describe each option technically]
+Leadership cares about: [their known priorities]<button class="copy-btn" onclick="copyPrompt('t08')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>09 — 1:1 Agenda That Demonstrates Strategic Thinking</h3><span class="template-when">Before your recurring 1:1</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t09">I have a 1:1 with my manager. Help me build a 3-item agenda that demonstrates strategic thinking, not just status reporting.
+
+Item 1: One update on current work (framed as business impact, not activity)
+Item 2: One forward-looking observation or question about next quarter
+Item 3: One request for input on a decision I'm making (positions me as the decision-maker seeking counsel)
+
+Current work: [brief summary]
+Next quarter focus: [what you know]
+Decision I'm considering: [brief description]<button class="copy-btn" onclick="copyPrompt('t09')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>10 — Follow-Up After Leadership Interaction</h3><span class="template-when">Within 24 hours of a meaningful interaction</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t10">I had a brief interaction with [role/name] about [topic]. Write a follow-up message (under 50 words) that:
+- References something specific they said
+- Adds one small piece of value
+- Does NOT ask for anything
+- Does NOT be sycophantic
+- Closes without requiring a response
+
+Tone: peer-level, brief, genuinely useful.<button class="copy-btn" onclick="copyPrompt('t10')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>11 — Strategic Awareness Brief (Champion Signal)</h3><span class="template-when">Once per quarter, to your target champion</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t11">I need to send a brief (under 100 words) to [senior leader] that demonstrates I understand what they're working on and can contribute to it. This is not a request — it's a signal.
+
+What I know about their current priorities: [what you've gathered]
+How my work connects: [the connection point]
+One insight I can offer: [something useful from your vantage point]
+
+Write it as a brief, casual message. Not formal. Not sycophantic. Just useful.<button class="copy-btn" onclick="copyPrompt('t11')">Copy</button></div>
+        </div></div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleTemplate(this)">
+          <div><h3>12 — Project Summary That Travels Upward</h3><span class="template-when">When you want work to reach leadership naturally</span></div>
+          <span class="template-chevron">▾</span>
+        </div>
+        <div class="template-body"><div class="template-body-inner">
+          <div class="prompt-block" id="t12">I need to summarize a project outcome in a way that can be shared upward naturally without sounding self-promotional.
+
+Write it as a third-person factual statement — the kind that would appear in a quarterly business review.
+
+Project: [name]
+What was delivered: [specifics]
+Impact: [metrics, outcomes]
+My role: [what specifically I did]
+
+Format as 2-3 bullet points. My name should appear once, naturally, as the owner — not as the hero.<button class="copy-btn" onclick="copyPrompt('t12')">Copy</button></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section id="closing">
+  <div class="wrap">
+    <div class="section-label">What's Next</div>
+    <h2>What Happens at Day 31</h2>
+    <p>You've run the audit twice. You've deployed the frameworks. Your scores moved. Now it becomes maintenance:</p>
+    <ul style="padding-left: 20px; margin-bottom: 24px;">
+      <li><strong>Quarterly:</strong> Re-score all 5 signals. Identify which one decayed. Run a 2-week sprint on the weakest.</li>
+      <li><strong>Structural signals</strong> (Communication Translation, Credit Capture) — once built, they run.</li>
+      <li><strong>Relational signals</strong> (Leadership Presence, Strategic Alignment, Relationship Capital) — actively maintain. They're the first to fade.</li>
+    </ul>
+
+    <div class="cta-section">
+      <h2>Go Deeper</h2>
+      <p>If your scores moved and you want personalized analysis or the full AI system:</p>
+      <div class="cta-grid">
+        <a href="/ai-communication-audit" class="cta-card">
+          <div class="cta-price">$97</div>
+          <div class="cta-name">AI Communication Audit</div>
+          <div class="cta-desc">Your actual emails and messages run through the same diagnostic framework, with specific rewrites calibrated to your voice.</div>
+        </a>
+        <a href="https://store.fromittoinfluence.com" class="cta-card">
+          <div class="cta-price">$147</div>
+          <div class="cta-name">Run AI</div>
+          <div class="cta-desc">The complete Agent OS — the same AI infrastructure used to manage executive communication, content production, and visibility.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 From IT to Influence · Jimmy Garcia</span>
+  <div>
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">YouTube</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTemplate(header) {
+  const card = header.closest('.template-card');
+  card.classList.toggle('open');
+}
+
+function copyPrompt(id) {
+  const el = document.getElementById(id);
+  const text = el.innerText.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+
+// Auto-calculate total score
+document.querySelectorAll('.score-input input').forEach(input => {
+  input.addEventListener('input', () => {
+    let total = 0;
+    let filled = 0;
+    document.querySelectorAll('.score-input input').forEach(i => {
+      const v = parseInt(i.value);
+      if (v >= 1 && v <= 5) { total += v; filled++; }
+    });
+    const display = document.getElementById('total-display');
+    display.textContent = filled === 5 ? `${total} / 25` : '— / 25';
+  });
+});
+</script>
+
+</body>
+</html>

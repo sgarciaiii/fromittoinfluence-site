@@ -924,24 +924,33 @@ sequenceDiagram
         <div class="pat-hdr">
           <div class="pat-letter">C</div>
           <div class="pat-titles">
-            <div class="pat-title">Decision Support</div>
-            <div class="pat-sub">For high-stakes choices requiring multi-perspective analysis</div>
+            <div class="pat-title">Decision Support + Accountability</div>
+            <div class="pat-sub">For high-stakes choices requiring multi-perspective analysis with behavioral guardrails</div>
           </div>
           <span class="badge b-amber" style="margin-left:auto">Multi-agent</span>
         </div>
         <div class="pat-body">
-          <p style="margin-bottom:14px">Spawns multiple parallel subagents representing different advisor personas. Each analyzes the decision independently. A synthesis subagent aggregates and produces a verdict. Used for the <code>/llm-council</code> skill.</p>
+          <p style="margin-bottom:14px">Spawns 5 parallel subagents — each a distinct thinking style, not a persona. They analyze independently, peer-review each other anonymously, then a chairman synthesizes the verdict. Three behavioral rules prevent the council from becoming an enabler:</p>
+          <ul style="margin:0 0 14px 18px;color:var(--muted);font-size:.92rem;line-height:1.6">
+            <li><strong>No Rescue</strong> — If an idea is off-priority or avoidance-driven, the council shuts it down instead of finding ways to make it work</li>
+            <li><strong>Pattern Recognition</strong> — Scans memory for prior behavioral patterns (shiny object syndrome, analysis paralysis, scope creep) and alerts all advisors</li>
+            <li><strong>Accountability Turn</strong> — At least one advisor turns a question back on the user: "Why are you asking this instead of finishing [priority]?"</li>
+          </ul>
+          <p style="margin-bottom:14px"><strong>Calling conventions</strong> control scope: <code>Team</code> (all 5 + peer review), <code>Consultants</code> (3 advisors, no peer review), <code>The Guys</code> (2 advisors), <code>Quick Council</code> (all 5, skip peer review), or any individual name. Used for the <code>/llm-council</code> skill.</p>
           <div class="mmd-wrap" style="margin:0">
             <div class="mermaid">
 graph LR
-    Input[Decision Input] --> A1[Advisor 1\nSkeptic]
-    Input --> A2[Advisor 2\nOptimist]
-    Input --> A3[Advisor 3\nStrategist]
-    Input --> A4[Advisor 4\nOperator]
-    Input --> A5[Advisor 5\nRisk analyst]
-    A1 & A2 & A3 & A4 & A5 --> PR[Peer Review\nEach reads others]
-    PR --> SYN[Synthesis\nChairman verdict]
-    SYN --> Output[Recommendation\n+ dissenting views]
+    Input[Decision Input] --> PS{Pattern Scan\nMemory + Decisions}
+    PS --> A1[Contrarian]
+    PS --> A2[First Principles]
+    PS --> A3[Expansionist]
+    PS --> A4[Outsider]
+    PS --> A5[Executor]
+    A1 & A2 & A3 & A4 & A5 --> PR[Anonymous Peer Review]
+    PR --> SYN[Chairman Synthesis]
+    SYN --> NR{No Rescue\nCheck}
+    NR -->|Idea is valid| Output[Verdict + Next Step]
+    NR -->|Avoidance detected| Kill[Hard NO\n+ Pattern Named]
             </div>
           </div>
         </div>

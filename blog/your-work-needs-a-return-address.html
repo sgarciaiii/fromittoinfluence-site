@@ -234,6 +234,39 @@
     }
     .article-cta a:hover { background: var(--gold-lt); }
 
+    .article-cta-paid {
+      background: linear-gradient(135deg, var(--surface), #1a1b26);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-cta-paid::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(212,148,10,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .article-cta-paid .article-cta-tag { color: var(--gold-lt); }
+    .article-cta-paid .paid-price {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .article-cta-paid .paid-price span {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--dimmer);
+      margin-left: 8px;
+      letter-spacing: 0.04em;
+    }
+
     /* Back link */
     .blog-back {
       display: inline-flex;
@@ -407,6 +440,14 @@
       <h3>Credit Visibility Checklist</h3>
       <p>Four moves, one page. Run through it before your next major project delivery to make sure your name travels with your work.</p>
       <a href="/credit-checklist">Get the Checklist →</a>
+    </div>
+
+    <div class="article-cta-paid">
+      <div class="article-cta-tag">Go Deeper</div>
+      <h3>Executive Visibility OS</h3>
+      <p>The complete 30-day system: 5 visibility signals, 4 frameworks, 12 AI templates, checklists, and a champion brief your manager can use to advocate for you. Built for technical leaders who are tired of being the best-kept secret in their own organization.</p>
+      <div class="paid-price">$347 <span>one payment · lifetime access</span></div>
+      <a href="/executive-visibility-os">See What's Inside →</a>
     </div>
 
   </div>
