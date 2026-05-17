@@ -381,6 +381,65 @@
   footer a:hover { color: var(--gold); }
   .footer-links { display: flex; gap: 24px; }
 
+  /* ── Product Ladder ── */
+  .product-ladder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 980px;
+    margin-bottom: 64px;
+  }
+  .ladder-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .ladder-card:hover {
+    border-color: var(--border-h);
+    transform: translateY(-3px);
+  }
+  .ladder-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .ladder-type {
+    font-family: var(--font-m);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .ladder-price {
+    font-family: var(--font-d);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+  }
+  .ladder-card h3 {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+  .ladder-card > p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
   /* ── Upsell Card ── */
   .upsell-card {
     width: 100%;
@@ -588,25 +647,49 @@
 
   </div>
 
-  <!-- Paid Product Upsell -->
+  <!-- Paid Product Ladder -->
   <h2 class="resources-label" style="margin-top: 16px;">Go Deeper</h2>
 
-  <div class="upsell-card">
-    <div class="upsell-badge">PREMIUM</div>
-    <h3>Executive Visibility OS</h3>
-    <p>The complete 30-day system: The Visibility Playbook + all 4 checklists + The Champion Brief + AI Communication Audit + Implementation System. Everything above — plus the frameworks, war stories, and AI templates that tie it all together.</p>
-    <div class="upsell-includes">
-      <span>7 tools</span>
-      <span>·</span>
-      <span>30-day action map</span>
-      <span>·</span>
-      <span>12 AI templates</span>
+  <div class="product-ladder">
+
+    <div class="ladder-card">
+      <div class="ladder-meta">
+        <span class="ladder-type">AI Workflow</span>
+        <span class="ladder-price">$97</span>
+      </div>
+      <h3>The AI Communication Audit</h3>
+      <p>Your actual emails and messages analyzed through a structured AI workflow. See how your writing lands with leadership — and get revised versions that preserve your personality while reducing promotion risk.</p>
+      <a href="https://store.fromittoinfluence.com/23525cf2" class="resource-cta">Get the Audit →</a>
     </div>
-    <div class="upsell-price">
-      <span class="upsell-amount">$347</span>
-      <span class="upsell-note">one payment · lifetime access</span>
+
+    <div class="ladder-card">
+      <div class="ladder-meta">
+        <span class="ladder-type">Course</span>
+        <span class="ladder-price">$147</span>
+      </div>
+      <h3>Run AI</h3>
+      <p>The complete Agent OS — the same AI infrastructure used to manage executive communication, content production, and visibility systems. Build the machine, not just use the playbook.</p>
+      <a href="https://store.fromittoinfluence.com/c8d048ce" class="resource-cta">Get Run AI →</a>
     </div>
-    <a href="/executive-visibility-os" class="upsell-cta">See What's Inside →</a>
+
+    <div class="upsell-card">
+      <div class="upsell-badge">COMPLETE SYSTEM</div>
+      <h3>Executive Visibility OS</h3>
+      <p>The complete 30-day system: The Visibility Playbook + all 4 checklists + The Champion Brief + AI Communication Audit + Implementation System. Everything above — plus the frameworks, war stories, and AI templates that tie it all together.</p>
+      <div class="upsell-includes">
+        <span>7 tools</span>
+        <span>·</span>
+        <span>30-day action map</span>
+        <span>·</span>
+        <span>12 AI templates</span>
+      </div>
+      <div class="upsell-price">
+        <span class="upsell-amount">$347</span>
+        <span class="upsell-note">one payment · lifetime access</span>
+      </div>
+      <a href="/executive-visibility-os" class="upsell-cta">See What's Inside →</a>
+    </div>
+
   </div>
 
   <!-- Channel CTA -->
