@@ -175,6 +175,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -364,7 +427,11 @@
 
       <p>And the people who were visible? They weren't always visible for the right reasons.</p>
 
-      <p>Every leader in that room defaulted to the same thing: recency. Nobody sat down beforehand and mapped out each person's full track record, their career goals, what they'd delivered over the past three years. With hundreds of people, that's impossible. So the system defaults to: who can I remember right now?</p>
+      <div class="article-img">
+        <img src="/blog/images/two-systems.png" alt="The dual systems of career growth: The Technical System (Projects, Metrics, Deliverables, Reviews) vs. The Narrative System (Memory, Stories, Mental Snapshots, Rooms)" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <p>Every leader in that room defaulted to the same thing: recency. Nobody sat down beforehand and mapped out each person's full track record, their career goals, what they'd delivered over the past three years. With hundreds of people, that's impossible. So the system defaults to: who can I remember right now? That's <a href="/blog/the-visibility-paradox">the visibility paradox</a> — your work is current, but your reputation isn't.</p>
 
       <p>That's when it hit me. <strong>There are two systems running in every organization.</strong></p>
 
@@ -402,16 +469,26 @@
 
       <p>Once I understood the system, I made three changes. Not to the work itself — to how the work moved through the organization.</p>
 
+      <div class="article-img">
+        <img src="/blog/images/three-shifts-cards.png" alt="The three shifts: Impact Not Effort, Upward Visibility, Sponsors Not Mentors" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>Report impact, not effort</strong> — translate what you did into what it enabled</li>
+        <li><strong>Build upward visibility deliberately</strong> — stop relying on your boss to carry your story</li>
+        <li><strong>Seek sponsors, not just mentors</strong> — find people who say your name in rooms you're not in</li>
+      </ol>
+
       <h3>1. Report impact, not effort.</h3>
       <p>I stopped telling people how hard I worked and started telling them what the work enabled. Not "here's how many hours I put in" but "here's what this project saved, generated, or unlocked." The same work, translated into the language the narrative system actually records.</p>
 
       <p>Here's what that sounds like in practice: "The platform migration we wrapped last quarter reduced our incident resolution time by 40%. That freed up about eight hours of engineering capacity per week." Same work. Different frame. That's the version that gets written into memory — and into the room you're not in.</p>
 
       <h3>2. Build upward visibility deliberately.</h3>
-      <p>I stopped relying on my boss to translate my work to leadership. If my boss's boss didn't know what I delivered, it didn't exist in the narrative system. I started creating the translation layer myself — briefing upward, making it easy for leaders two levels above me to know my name and attach it to outcomes.</p>
+      <p>I stopped relying on my boss to translate my work to leadership. <a href="/blog/your-boss-cant-champion">Your boss can't champion work they can't explain</a> — that was the lesson. If my boss's boss didn't know what I delivered, it didn't exist in the narrative system. I started creating the translation layer myself — briefing upward, making it easy for leaders two levels above me to know my name and attach it to outcomes.</p>
 
       <h3>3. Seek sponsors, not just mentors.</h3>
-      <p>Mentors give advice. Sponsors say your name in rooms you're not in. That's the difference between being coached and being promoted. I stopped spending time with people who could help me think and started spending time with people who could help me move.</p>
+      <p>Mentors give advice. Sponsors say your name in rooms you're not in. That's the difference between being coached and being promoted. I stopped spending time with people who could help me think and started spending time with people who could help me move. (If you want the exact moves for turning a high-friction assignment into a narrative reset, the <a href="/strategic-assignment">Strategic Assignment Playbook</a> walks through all four.)</p>
 
       <hr />
 
@@ -426,6 +503,22 @@
       <p>The work was never the problem. The work was always the proof. You just needed someone in the right room to present it — and for most of us, that someone has to be you. If you want the complete system for writing to the narrative — frameworks, AI templates, and a 30-day implementation roadmap — that's what the <a href="/executive-visibility-os">Executive Visibility Playbook</a> was built for.</p>
 
       <p><strong>Start writing to the narrative system. That's the game. Now you know it exists.</strong></p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Why do less qualified people get promoted over me?</h3>
+        <p>Because promotions aren't decided by the technical system — they're decided by the narrative system. The technical system scores what you deliver. The narrative system scores what people remember about you when your name comes up in a room you're not in. Your peers who advance aren't outperforming you. They're writing to a different system.</p>
+
+        <h3>What is the narrative system in organizations?</h3>
+        <p>Every organization runs two systems simultaneously. The technical system is the work — projects, deliverables, performance metrics. The narrative system is the story — what gets said about you in calibration sessions, how leadership describes you in one sentence, what mental snapshot exists of you in your skip-level's mind. Most technical professionals spend their entire career optimizing the first system and never learn the second one exists.</p>
+
+        <h3>How do I report impact instead of effort?</h3>
+        <p>Stop telling people how hard you worked and start telling them what the work enabled. Not "we spent three months on the platform migration" — instead, "the platform migration reduced incident resolution time by 40% and freed eight hours of engineering capacity per week." Same work. Different frame. The second version is what the narrative system records.</p>
+
+        <h3>How do I get promoted in a large organization?</h3>
+        <p>Three shifts: report impact not effort, build upward visibility deliberately (don't rely on your boss to translate your work), and seek sponsors not just mentors. The fastest path isn't doing more work — it's becoming visible to the right people for the right reasons. One in three high performers are also rated as high potentials. Your performance review and your promotion case are two different documents.</p>
+      </div>
     </article>
 
     <div class="article-cta">

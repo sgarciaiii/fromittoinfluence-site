@@ -116,6 +116,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -285,7 +348,11 @@
 
       <p>"Solid but quiet." "Detail guy." "Always in the weeds."</p>
 
-      <p>None of those are wrong. They're just incomplete. And incomplete labels don't get budget, headcount, or a seat at the strategy table.</p>
+      <div class="article-img">
+        <img src="/blog/images/three-word-label.png" alt="Labels that get depended on (Reliable, Detailed, Thorough, Solid) vs. labels that get promoted (Strategic, Forward-thinking, Cross-functional, High-potential)" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <p>None of those are wrong. They're just incomplete. And <a href="/blog/your-work-needs-a-return-address">incomplete labels don't get budget, headcount, or a seat at the strategy table</a>.</p>
 
       <p>The people who advance aren't necessarily better at their jobs. They're better at making the value of their work legible to the people who decide trajectories.</p>
 
@@ -303,6 +370,18 @@
 
       <p>When leadership evaluates you — consciously or not — they're listening across five dimensions:</p>
 
+      <div class="article-img">
+        <img src="/blog/images/five-dimensions.png" alt="The five dimensions of influence: Mode Awareness, Visibility Signal, Win Column, Strategic Positioning, Influence Delivery" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>Communication mode awareness</strong> — knowing what register the moment requires</li>
+        <li><strong>Executive visibility signal</strong> — whether your work reaches the people who decide your trajectory</li>
+        <li><strong>The win column</strong> — articulating impact in one sentence</li>
+        <li><strong>Strategic positioning</strong> — being seen as someone who thinks, not just executes</li>
+        <li><strong>Influence delivery</strong> — making it easy for leadership to say yes</li>
+      </ol>
+
       <h3>1. Communication mode awareness.</h3>
       <p>Do you know what register you're in? Technical detail is appropriate in a design review. In a steering committee update, it signals that you can't distinguish what matters from what happened.</p>
 
@@ -310,7 +389,7 @@
       <p>Does your communication make your work visible to the people who decide your trajectory? Or does it only reach the people who already know what you do?</p>
 
       <h3>3. The win column.</h3>
-      <p>Can you articulate impact in one sentence? Not what you built — what it changed. Not the migration — the risk it eliminated. Not the automation — the hours it freed for strategic work.</p>
+      <p>Can you articulate impact in one sentence? Not what you built — <a href="/blog/your-boss-cant-champion">what it changed</a>. Not the migration — the risk it eliminated. Not the automation — the hours it freed for strategic work.</p>
 
       <h3>4. Strategic positioning.</h3>
       <p>Does your communication position you as someone who executes, or someone who thinks? Both matter. But only one gets invited to the conversation where the next initiative gets scoped.</p>
@@ -333,6 +412,22 @@
       <p>Before you send your next status update or project summary, ask yourself one question: <strong>if this email is the only thing a VP reads about me this quarter, what three-word label does it create?</strong></p>
 
       <p>If the answer is "detail-oriented executor" and you're trying to be seen as a strategic leader — you've found the gap. The audit helps you close it. And if you want the full system — all five dimensions, the frameworks, and 12 AI templates that rewire how leadership perceives you — that's the <a href="/executive-visibility-os">Executive Visibility Playbook</a>.</p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is the difference between execution language and impact language?</h3>
+        <p>Execution language describes what was done and how: "We migrated 14 servers to the new cluster over the weekend." Impact language describes what changed and what it enables: "The migration eliminated our biggest single point of failure and freed up 12 hours of weekly maintenance." Same work, different frame. Leadership processes the second version because it answers the question they're actually asking: what does this mean for the business?</p>
+
+        <h3>How can AI help with executive communication?</h3>
+        <p>AI is a register translator. It can take your execution-language update and reframe it in impact-language — showing you what a VP actually hears when they read your email. The danger is using AI to write more detailed execution-language faster. That accelerates the wrong pattern. The value is using AI to show you the gap between what you wrote and what leadership needs to hear.</p>
+
+        <h3>How do I know if my communication style is hurting my career?</h3>
+        <p>Run a simple test: pull your last 10 emails to leadership and read them as if you'd never met you. What three-word label would you assign? If those three words describe a doer instead of a thinker — "reliable," "detailed," "thorough" — your communication is building the wrong perception. None of those words get promoted. They get depended on.</p>
+
+        <h3>What are the five dimensions of executive communication?</h3>
+        <p>Communication mode awareness, executive visibility signal, the win column (articulating impact in one sentence), strategic positioning (execution vs. thought leadership), and influence delivery (making it easy for leadership to say yes). Most technical professionals score well on mode awareness and poorly on everything else — because the other four dimensions were never part of their training.</p>
+      </div>
     </article>
 
     <div class="article-cta">

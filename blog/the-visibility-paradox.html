@@ -175,6 +175,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -358,7 +421,11 @@
 
       <p>Internal candidates don't get that treatment.</p>
 
-      <p>Internal candidates get judged by memory. By the most recent thing that felt relevant. By favorites — yes, favorites — and occasionally, if the hiring manager is smart enough, by an actual interview. And even in those interviews, the context can limit what comes out. The person sitting across from you might have done ten extraordinary things in the last three years that simply never come up because nobody thought to ask.</p>
+      <div class="article-img">
+        <img src="/blog/images/recency-bias-timeline.png" alt="Recency bias timeline: major project delivered in Q1 fades from memory by November review season. Leadership remembers the last 60-90 days." loading="lazy" width="1200" height="675" />
+      </div>
+
+      <p>Internal candidates get judged by memory. It's <a href="/blog/you-were-playing-the-wrong-game">a completely different system than the one you think you're being scored on</a>. By the most recent thing that felt relevant. By favorites — yes, favorites — and occasionally, if the hiring manager is smart enough, by an actual interview. And even in those interviews, the context can limit what comes out. The person sitting across from you might have done ten extraordinary things in the last three years that simply never come up because nobody thought to ask.</p>
 
       <p>You're not being evaluated. You're being recalled.</p>
 
@@ -386,7 +453,7 @@
 
       <p>So I told them who it was.</p>
 
-      <p>They were floored. Not because he'd changed. Because their mental snapshot of him was five years old and one technology wide. He had spent years delivering work they didn't know existed, in a system that never required them to know.</p>
+      <p>They were floored. Not because he'd changed. Because their mental snapshot of him was five years old and one technology wide. He had spent years delivering work they didn't know existed, in a system that never required them to know. His <a href="/blog/your-work-needs-a-return-address">work didn't have a return address</a>.</p>
 
       <p>He got the role.</p>
 
@@ -412,6 +479,17 @@
 
       <p>So what do you do if you're the Oracle guy and you don't have someone in the room running your résumé reveal for you?</p>
 
+      <div class="article-img">
+        <img src="/blog/images/four-moves-snapshot.png" alt="Four moves that update the snapshot: 1. Manage the Snapshot, 2. Enter Early Conversations, 3. Visible One Level Higher, 4. Find Your Sponsor" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>Manage the snapshot, not just the output</strong> — actively update leadership's mental model of you</li>
+        <li><strong>Get into conversations before they become calendar invites</strong> — be present at the edges of informal decisions</li>
+        <li><strong>Make your work visible one level higher</strong> — don't rely on your manager to translate your impact upward</li>
+        <li><strong>Find your in-room advocate before you need one</strong> — sponsors say your name when you're not there</li>
+      </ol>
+
       <h3>1. Manage the snapshot, not just the output.</h3>
       <p>Stop assuming that delivering good work means people know you delivered good work. Leadership doesn't read your project files. They carry a mental snapshot of you — and if you're not actively updating it, it defaults to the last thing that was memorable. Identify your skip-level. Ask yourself: what's the current mental model they have of me? If you can't answer that with confidence, you have a visibility problem.</p>
 
@@ -423,7 +501,7 @@
 
       <blockquote><p>"Hi [Name] — quick quarter update. I wrapped [X project], which enabled [Y outcome]. Currently driving [Z]. Happy to go deeper on any of it if useful."</p></blockquote>
 
-      <p>One paragraph. Quarterly. That's it. You're not showing off. You're updating the snapshot.</p>
+      <p>One paragraph. Quarterly. That's it. You're not showing off. You're updating the snapshot. (The <a href="/hybrid-visibility-checklist">Hybrid Visibility Checklist</a> turns this into a weekly Monday audit — five presence signals, checked in under two minutes.)</p>
 
       <h3>4. Find your in-room advocate before you need one.</h3>
       <p>I ran the résumé reveal because I knew the full picture. You need someone in those rooms who knows your full picture — not just your label. That's a sponsor, not a mentor. The difference: a mentor tells you what to do. A sponsor tells the room who you are. If you don't have one, build one. Deliberately.</p>
@@ -439,6 +517,22 @@
       <p>You've spent years delivering work that deserves to be seen. The gap isn't competence. It's the distance between what you've actually done and what the organization currently believes about you.</p>
 
       <p>That distance is closeable. But only if you close it on purpose. The <a href="/executive-visibility-os">Executive Visibility Playbook</a> is the 30-day system for closing it — frameworks, AI templates, and the exact moves that update leadership's mental snapshot of you.</p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is the visibility paradox for remote and hybrid workers?</h3>
+        <p>Your work is current but your reputation isn't. In hybrid environments, leadership's mental snapshot of you is built from the last memorable interaction — which may have been months ago. You're delivering real results that never reach the people who make decisions about your career. The paradox is that doing excellent work remotely can make you less visible, not more.</p>
+
+        <h3>How do performance reviews actually work at the leadership level?</h3>
+        <p>Year-end reviews predominantly reflect the most recent 60 to 90 days — not your full year. Ratings frequently reflect budget constraints and forced distributions as much as actual performance. And calibration sessions move fast: dozens of careers discussed in hours, with each person's trajectory shaped by whoever is willing to fight hardest to tell their full story in that room.</p>
+
+        <h3>How do I stay visible when working remotely?</h3>
+        <p>Four moves: manage the mental snapshot (not just the output), get into conversations before they become calendar invites, make your work visible one level higher than you delivered it, and find an in-room advocate before you need one. The most overlooked move is the quarterly skip-level update — one paragraph to your boss's boss about what you delivered, what it enabled, and what's next.</p>
+
+        <h3>What is the difference between a mentor and a sponsor?</h3>
+        <p>A mentor tells you what to do. A sponsor tells the room who you are. Mentors help you think. Sponsors help you move. Most technical professionals invest heavily in mentors and have zero sponsors — which is why they have excellent skills and no trajectory. If you're hybrid, you need someone in those rooms who knows your full picture, not just your label.</p>
+      </div>
     </article>
 
     <div class="article-cta">

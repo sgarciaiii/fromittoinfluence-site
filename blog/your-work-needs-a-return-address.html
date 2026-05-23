@@ -175,6 +175,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -366,7 +429,7 @@
 
       <p>That was the real problem. Not theft. Not politics. Not a bad manager.</p>
 
-      <p><strong>The work wasn't attached to my name. And I had let that happen.</strong></p>
+      <p><strong>The work wasn't attached to my name. It was <a href="/blog/the-visibility-paradox">a visibility problem I couldn't see</a>. And I had let that happen.</strong></p>
 
       <hr />
 
@@ -378,7 +441,11 @@
 
       <p>Credit doesn't travel with the work. Credit travels with the relationship — and the visibility of who did what. The person presenting your work built that relationship. You built the work. Those are not the same thing. And the gap between them is where your name disappears.</p>
 
-      <p>If you've been passed over for promotion while watching people with weaker technical chops move up — this is probably part of the reason. Not because you're doing bad work. Because the people making decisions about your career have a version of you that someone else wrote. And they're not investigating. Executives don't investigate. They absorb what surfaces. If your name isn't in the stream before the meeting happens, you're not in the story.</p>
+      <div class="article-img">
+        <img src="/blog/images/attribution-flow.png" alt="Credit attribution flow: without a return address, work becomes anonymous as it travels through org layers. With a return address, your name stays attached." loading="lazy" width="1200" height="675" />
+      </div>
+
+      <p>If you've been <a href="/blog/you-were-playing-the-wrong-game">passed over for promotion</a> while watching people with weaker technical chops move up — this is probably part of the reason. Not because you're doing bad work. Because the people making decisions about your career have a version of you that someone else wrote. And they're not investigating. Executives don't investigate. They absorb what surfaces. If your name isn't in the stream before the meeting happens, you're not in the story.</p>
 
       <blockquote><p>The question isn't: how do I stop someone from stealing my credit? The real question is: how did I let my work get disconnected from my name in the first place?</p></blockquote>
 
@@ -388,6 +455,17 @@
 
       <h2>Four Moves That Put Your Name Back on the Work</h2>
 
+      <div class="article-img">
+        <img src="/blog/images/four-moves-credit.png" alt="Four moves to reclaim credit: 1. The Pre-Brief, 2. Name on Deliverable, 3. Upstream Signal, 4. Find a Sponsor" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>The pre-brief</strong> — frame the work before someone else does</li>
+        <li><strong>Make your name structurally inseparable from the deliverable</strong> — in the header, the subject line, the doc title</li>
+        <li><strong>Build a simple upstream signal</strong> — one sentence to the right person at the right cadence</li>
+        <li><strong>Find a sponsor, not just a mentor</strong> — mentors give advice, sponsors say your name</li>
+      </ol>
+
       <h3>Move 1: The pre-brief.</h3>
       <p>I stopped waiting for the moment my work showed up in someone else's deck. If a project was going to land in front of a decision-maker, I wanted to be the one who briefed that person first — not after the fact, not through a chain, but directly. One conversation. Not a status report. Something closer to: here's what you need to know before you hear about this from anyone else.</p>
 
@@ -396,7 +474,7 @@
       <h3>Move 2: Make your name structurally inseparable from the deliverable.</h3>
       <p>Not for ego — for accountability. Every deliverable I produced had my name on it explicitly. Not "Q2 Infrastructure Migration Plan." My name in the executive summary header. In the email subject line. In the document title. When someone lifted it into a deck, my name went with it. Or someone had to actively remove it. That's a different calculation than hoping they remember to mention you.</p>
 
-      <p>I know what you're thinking right now. This feels like brown-nosing. It's not. Brown-nosing is signaling loyalty upward with nothing behind it. What you're doing here is making accurate information easy to find. Your work already happened. You're just making sure it has a return address.</p>
+      <p>I know what you're thinking right now. This feels like brown-nosing. It's not. Brown-nosing is signaling loyalty upward with nothing behind it. What you're doing here is making accurate information easy to find. Your work already happened. You're just making sure it has a return address. (The <a href="/credit-checklist">Credit Visibility Checklist</a> puts all four moves into a pre-delivery checklist you can run in five minutes.)</p>
 
       <h3>Move 3: Build a simple upstream signal.</h3>
       <p>This is the one nobody tells you about. Not a status report. Not a formal briefing. One sentence to the right person at the right cadence. Something like: "Team delivered the firewall migration early. Zero issues — great work from everyone." Sent to your skip-level. Takes thirty seconds.</p>
@@ -433,6 +511,22 @@
       <p>You don't need a new manager. You need a different strategy for how your work travels. The <a href="/executive-visibility-os">Executive Visibility Playbook</a> is the full system — the four moves above plus 12 AI templates, a champion brief framework, and a 30-day roadmap for making sure your name is permanently attached to your work.</p>
 
       <p><strong>The work got you in the room. It won't keep you there.</strong></p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Why does my boss get credit for my work?</h3>
+        <p>Because credit travels with the relationship, not the work. The person presenting your project in a leadership meeting built visibility with that audience. You built the deliverable. Those are two different systems — and the organizational memory only records the version it saw in the room. Nobody is being sinister. The architecture just doesn't require attribution to function.</p>
+
+        <h3>How do I stop someone from taking credit for my work?</h3>
+        <p>Reframe the question. The real problem isn't credit theft — it's that your work doesn't have a return address. Instead of trying to prevent someone else from presenting your work, make your name structurally inseparable from it. Put your name in the executive summary header, the email subject line, the document title. When someone lifts it into a deck, your name goes with it — or they have to actively remove it.</p>
+
+        <h3>How do I make my work more visible to senior leadership?</h3>
+        <p>Four moves: pre-brief decision-makers before your work shows up in someone else's presentation, make your name structurally part of every deliverable, build a translation layer (reframe technical work as business impact before it travels upward), and find a sponsor who knows your full picture — not just your label. The common thread: don't wait for the system to notice you. The system doesn't investigate. It absorbs what surfaces.</p>
+
+        <h3>Is taking credit for someone else's work considered normal in corporate?</h3>
+        <p>It's not usually intentional — it's structural. Most organizations don't require attribution to flow upward. Your VP presents a portfolio of work from their entire team. They're not claiming they built it. But by the time it reaches the C-suite, the name attached to it is the name that presented it. The fix isn't calling people out. It's changing the architecture of how your work travels before it reaches that meeting.</p>
+      </div>
     </article>
 
     <div class="article-cta">

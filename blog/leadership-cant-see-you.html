@@ -175,6 +175,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -364,13 +427,17 @@
 
       <p>My wife had watched me on calls for five years, working from home. She said something I wasn't ready for: <em>"Did it ever occur to you that you're a different person with me than you are with them?"</em></p>
 
-      <p>Most senior IT professionals aren't losing to politics. They're losing to a communication pattern they don't even know they have.</p>
+      <p>Most senior IT professionals aren't losing to politics. They're losing to a <a href="/blog/the-ai-communication-gap">communication pattern they don't even know they have</a>.</p>
 
       <p>I decided to run an audit. Not because I believed the feedback. Because I wanted to prove it wrong.</p>
 
       <hr />
 
       <h2>Six Months of Email. One Uncomfortable Answer.</h2>
+
+      <div class="article-img">
+        <img src="/blog/images/before-after-email.png" alt="Email impact comparison: Before (terse, transactional — FYSA, migration complete) vs. After (context-rich narrative highlighting risk mitigation and team execution)" loading="lazy" width="1200" height="675" />
+      </div>
 
       <p>Six months of emails and Teams messages. I fed it to an AI with one instruction: tell me what you see, and don't be polite about it.</p>
 
@@ -394,6 +461,16 @@
 
       <p>Here's what the audit actually found. Three distinct communication modes. And leadership was mostly seeing the wrong one.</p>
 
+      <div class="article-img">
+        <img src="/blog/images/three-modes-diagram.png" alt="Three communication modes: Inner Circle (warm, funny, vulnerable), Default Mode (terse, directive — 70% of interactions), and Under Pressure (measured, collaborative — reserved for emergencies)" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>The person your inner circle knows</strong> — warm, funny, fully human. Rationed to high-trust relationships.</li>
+        <li><strong>What leadership sees on 70% of interactions</strong> — terse, directive, no context. Star Destroyer energy.</li>
+        <li><strong>The version you're treating like a scarce resource</strong> — measured, collaborative. Reserved for emergencies instead of deployed where it builds perception.</li>
+      </ol>
+
       <h3>Mode 1: The person your inner circle knows.</h3>
       <p>Warm. Funny. Vulnerable. Fully human. This version shows up when the stakes are low and the trust is high. I had a colleague who nicknamed me Darth Vader — not as an insult. He said he could see past the mask to the person underneath. He said I read his mind, worked him extremely hard, gave him grief every single day, and he gave it right back. When I transferred departments, he chose to follow. He wanted to follow the full person. That version of me is real. It's just rationed. Almost nobody gets it.</p>
 
@@ -413,7 +490,7 @@
 
       <p>This isn't about being someone you're not. It's not about softening who you are. It's not about performing warmth for people who've done nothing to earn it.</p>
 
-      <p>It's about understanding that the people deciding your career trajectory don't get automatic access to the full version. You're defaulting to a communication mode — and that default is the whole problem.</p>
+      <p>It's about understanding that <a href="/blog/your-boss-cant-champion">the people deciding your career trajectory</a> don't get automatic access to the full version. You're defaulting to a communication mode — and that default is the whole problem.</p>
 
       <p>Your CIO wasn't wrong about you. He just didn't have the framework to describe what he was seeing. Now you do.</p>
 
@@ -436,6 +513,22 @@
       <p>And the actual answer was: this isn't a rebuild. It's a calibration.</p>
 
       <p><strong>Leadership can't follow someone they can't see.</strong> The gap isn't your competence. It's the version of yourself you're putting in front of the people who decide what happens next.</p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I know if leadership doesn't see my value?</h3>
+        <p>The clearest signal is feedback that sounds accurate but doesn't move anything. If your reviews say "strong performer" and nothing changes — no new scope, no seat at the strategy table, no promotion conversation — leadership has a label for you, not a picture. The feedback is real. The career impact of that feedback is zero.</p>
+
+        <h3>Is it politics holding me back, or is it something I'm doing?</h3>
+        <p>Usually both, but not in equal measure. Politics is real — it exists in every organization. But most senior technical professionals overweight politics and underweight their own communication default. The audit I ran on my own emails showed that 70% of what leadership saw from me was terse, directive, and context-free. That wasn't politics. That was a pattern I didn't know I had.</p>
+
+        <h3>Can I change how leadership perceives me without being fake?</h3>
+        <p>Yes — and that's the critical distinction. This isn't about performing warmth or faking a personality you don't have. It's about choosing which version of yourself you deploy in which context. You already have multiple communication modes. The problem is that the best one is reserved for emergencies instead of being deployed where it builds perception.</p>
+
+        <h3>How long does it take to change a leadership perception once it's set?</h3>
+        <p>Shorter than you think. My CIO's feedback after I made the shift was that it wasn't a rebuild — it was a calibration. One well-crafted email, one adjusted communication default, one quarter of deliberate presence can update the mental snapshot. The issue is that most people never start because they assume the mountain is taller than it is.</p>
+      </div>
     </article>
 
     <div class="article-cta">

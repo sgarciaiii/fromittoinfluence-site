@@ -175,6 +175,69 @@
       color: var(--white);
       font-weight: 600;
     }
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,148,10,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--gold);
+    }
+    .article-body ol,
+    .article-body ul {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #c8d4e8;
+      margin: 1.2em 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .article-body li {
+      margin-bottom: 0.6em;
+    }
+    .article-body li strong {
+      color: var(--white);
+    }
+    .article-img {
+      margin: 2em 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-faq {
+      margin: 3em 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+    }
+    .article-faq h2 {
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin: 0 0 1.2em;
+    }
+    .article-faq h3 {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin: 1.6em 0 0.4em;
+    }
+    .article-faq p {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #c8d4e8;
+      margin-bottom: 0;
+    }
     .article-body hr {
       border: none;
       border-top: 1px solid var(--border);
@@ -354,7 +417,11 @@
 
       <p>Here's what your boss's world actually looks like. They're managing up to their own boss. They're absorbing political pressure from peers. They're fielding escalations from every direction simultaneously.</p>
 
-      <p>Most VPs have six to ten direct reports. Each of those people manages six to ten more. Before your VP even manages up to their own leadership, they're absorbing pressure from hundreds of people across the organization. If understanding your update requires mental translation work — converting technical specifics into business impact before they can use it — that translation won't happen. Your work disappears inside an overloaded context, and you wonder why nothing moved.</p>
+      <p>Most VPs have six to ten direct reports. Each of those people manages six to ten more. Before your VP even manages up to their own leadership, they're absorbing pressure from hundreds of people across the organization. If understanding your update requires mental translation work — converting technical specifics into business impact before they can use it — <a href="/blog/the-ai-communication-gap">that translation won't happen</a>. Your work disappears inside an overloaded context, and you wonder why nothing moved.</p>
+
+      <div class="article-img">
+        <img src="/blog/images/cognitive-load.png" alt="VP mental bandwidth: competing demands fill cognitive space. Pre-translated, easy-to-recall information cuts through. Make it easy to say yes." loading="lazy" width="1200" height="675" />
+      </div>
 
       <p>There's a compounding factor most people don't account for: year-end performance reviews predominantly reflect the most recent 60 to 90 days of work. That project you led in Q1 that saved the organization real money? If it didn't surface in the last quarter, there's a real probability your boss can't accurately describe it right now. Not because they don't care. Because recency bias under cognitive load is a feature of how human memory works, not a flaw in your boss specifically.</p>
 
@@ -396,6 +463,16 @@
 
       <p>These aren't impression management tactics. They're operational inputs your boss needs to do their job — and yours.</p>
 
+      <div class="article-img">
+        <img src="/blog/images/three-things-boss.png" alt="Three things your boss needs: 1. Context before the ask, 2. The translation layer (technical to business impact), 3. No surprises upward" loading="lazy" width="1200" height="675" />
+      </div>
+
+      <ol>
+        <li><strong>Context before the ask</strong> — situation, what you've done, what you need</li>
+        <li><strong>The translation layer</strong> — your technical work reframed as business impact in two sentences</li>
+        <li><strong>No surprises upward</strong> — your boss should never hear bad news about your work from someone else first</li>
+      </ol>
+
       <h3>1. Context before the ask.</h3>
       <p>Never bring a problem alone. Bring three sentences: here's the situation, here's what I've already done, here's what I need from you. Reduce the cognitive load before you make the request. The easier you are to support, the more you get supported.</p>
 
@@ -415,7 +492,7 @@
 
       <p>The fastest path to getting your name on the list isn't doing more work. It's becoming the person who makes your boss's job easier to do.</p>
 
-      <p>Most technical professionals are excellent at the actual work. They were hired for that. The gap isn't competence — it's the invisible operating system running above the technical layer that determines who gets promoted, funded, and heard. The people advancing aren't outworking you. They're writing to a system you didn't know existed. The <a href="/executive-visibility-os">Executive Visibility Playbook</a> is the complete system for learning that language — 30 days, 4 frameworks, and the AI templates that make your boss's job easier to do.</p>
+      <p>Most technical professionals are excellent at the actual work. They were hired for that. The gap isn't competence — it's the invisible operating system running above the technical layer that determines who gets promoted, funded, and heard. The people advancing aren't outworking you. They're <a href="/blog/you-were-playing-the-wrong-game">writing to a system you didn't know existed</a>. The <a href="/executive-visibility-os">Executive Visibility Playbook</a> is the complete system for learning that language — 30 days, 4 frameworks, and the AI templates that make your boss's job easier to do.</p>
 
       <p>That's the game. And now you know it exists.</p>
 
@@ -426,6 +503,22 @@
       <p>Send your manager three sentences 24 hours before your next meeting: here's what I'm working on, here's the business impact, here's what I need from you.</p>
 
       <p>That's it. Watch how the conversation changes.</p>
+
+      <div class="article-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I manage up without looking like I'm sucking up?</h3>
+        <p>Real managing up isn't impression management — it's a service. You're reducing your boss's cognitive load by giving them what they need to advocate for you in rooms you're not in. Context before the ask, impact translated into business language, no surprises upward. That's not political theater. That's making their job easier to do — which happens to make your career easier to advance.</p>
+
+        <h3>What does my boss actually need from me?</h3>
+        <p>Three things they'll never ask for: context before the ask (situation, what you've done, what you need), the translation layer (your technical work reframed as business impact in two sentences), and no surprises upward (they should never hear bad news about your work from someone else first). None of this is about looking good. It's about making the person above you effective at supporting you.</p>
+
+        <h3>Why does my boss get credit for my work?</h3>
+        <p>Usually not intentionally. Your boss presents to executives using the information you provide. If that information requires mental translation — converting technical details into business impact — the translation either doesn't happen or it happens without your name attached. The fix isn't confrontation. It's giving your boss the exact bullet points they need, pre-translated, with your name structurally attached.</p>
+
+        <h3>How do I get my boss to advocate for my promotion?</h3>
+        <p>Make it easy. Your boss can't champion work they can't explain in two sentences to their own boss. Send a one-paragraph quarterly update: what you delivered, what it enabled, what you're working on next. Do it 24 hours before your one-on-one. The easier you are to support, the more you get supported. That's not a theory — that's how cognitive load works under pressure.</p>
+      </div>
     </article>
 
     <div class="article-cta">
