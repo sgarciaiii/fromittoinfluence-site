@@ -356,6 +356,58 @@
       .article-video { flex-wrap: wrap; }
       .article-cta { padding: 24px; }
     }
+
+    /* YouTube embed (replaces article-video link) */
+    .article-video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 52px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+    }
+    .article-video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Author bio */
+    .author-bio {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      margin-bottom: 56px;
+    }
+    .author-bio-name {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .author-bio-role {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .author-bio-desc {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.72;
+      color: var(--dimmer);
+      margin: 0;
+    }
+    .author-bio-desc a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .author-bio-desc a:hover { text-decoration: underline; }
+
   </style>
 
   <script type="application/ld+json">
@@ -396,16 +448,6 @@
       "image": {
         "@type": "ImageObject",
         "url": "https://fromittoinfluence.com/chess_knight_logo.png"
-      },
-      "video": {
-        "@type": "VideoObject",
-        "url": "https://www.youtube.com/watch?v=5At7tavRscU",
-        "contentUrl": "https://www.youtube.com/watch?v=5At7tavRscU",
-        "embedUrl": "https://www.youtube.com/embed/5At7tavRscU",
-        "name": "Your Work Is Current. Your Reputation Isn't.",
-        "description": "How the memory system inside your organization is building a version of you that doesn't reflect who you actually are — and what to do before the next calibration session.",
-        "thumbnailUrl": "https://fromittoinfluence.com/chess_knight_logo.png",
-        "uploadDate": "2026-05-11T00:00:00+00:00"
       }
     },
     {
@@ -511,14 +553,16 @@
       <p class="article-sub">How the memory system inside your organization is building a version of you that doesn't reflect who you actually are — and what to do before the next calibration session.</p>
     </header>
 
-    <a href="https://youtu.be/5At7tavRscU" class="article-video" target="_blank" rel="noopener">
-      <div class="article-video-icon" aria-hidden="true"></div>
-      <div class="article-video-text">
-        <div class="article-video-label">Watch the video</div>
-        <div class="article-video-title">The Visibility Paradox in Hybrid Environments</div>
+    <div class="article-video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/5At7tavRscU"
+          title="Watch on YouTube"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
-      <span class="article-video-arrow">Watch →</span>
-    </a>
 
     <article class="article-body">
       <p class="lede">Your career is not being managed by your performance reviews. It's being managed by what people remember about you the moment your name comes up in a room you're not in.</p>
@@ -634,6 +678,11 @@
 
       <p>That distance is closeable. But only if you close it on purpose. The <a href="/visibility-playbook">Executive Visibility Playbook</a> is the 30-day system for closing it — frameworks, AI templates, and the exact moves that update leadership's mental snapshot of you.</p>
 
+      <div class="author-bio">
+        <div class="author-bio-name">Jimmy Garcia</div>
+        <div class="author-bio-role">Director of Digital Solutions &middot; From IT to Influence</div>
+        <p class="author-bio-desc">25+ years in enterprise IT. Crossed from senior technical to executive management in 2011 and got two pay grades in 2012. I teach technical professionals the unwritten corporate game &mdash; from inside the war zone, not from retirement. <a href="https://www.youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">Watch the channel &rarr;</a></p>
+      </div>
       <div class="article-faq">
         <h2>Frequently Asked Questions</h2>
 

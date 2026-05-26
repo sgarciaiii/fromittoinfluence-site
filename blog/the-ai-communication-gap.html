@@ -292,6 +292,58 @@
       .article-header { padding: 100px 0 40px; }
       .article-cta { padding: 24px; }
     }
+
+    /* YouTube embed (replaces article-video link) */
+    .article-video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 52px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+    }
+    .article-video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Author bio */
+    .author-bio {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      margin-bottom: 56px;
+    }
+    .author-bio-name {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .author-bio-role {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .author-bio-desc {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      line-height: 1.72;
+      color: var(--dimmer);
+      margin: 0;
+    }
+    .author-bio-desc a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .author-bio-desc a:hover { text-decoration: underline; }
+
   </style>
 
   <script type="application/ld+json">
@@ -519,6 +571,11 @@
 
       <p>If the answer is "detail-oriented executor" and you're trying to be seen as a strategic leader — you've found the gap. The audit helps you close it. And if you want the full system — all five dimensions, the frameworks, and 12 AI templates that rewire how leadership perceives you — that's the <a href="/visibility-playbook">Executive Visibility Playbook</a>.</p>
 
+      <div class="author-bio">
+        <div class="author-bio-name">Jimmy Garcia</div>
+        <div class="author-bio-role">Director of Digital Solutions &middot; From IT to Influence</div>
+        <p class="author-bio-desc">25+ years in enterprise IT. Crossed from senior technical to executive management in 2011 and got two pay grades in 2012. I teach technical professionals the unwritten corporate game &mdash; from inside the war zone, not from retirement. <a href="https://www.youtube.com/@FromITtoInfluence" target="_blank" rel="noopener">Watch the channel &rarr;</a></p>
+      </div>
       <div class="article-faq">
         <h2>Frequently Asked Questions</h2>
 
