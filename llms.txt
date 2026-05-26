@@ -1,0 +1,28 @@
+# From IT to Influence
+
+> The rules they never teach. Career strategy for technical professionals navigating the organizational layer above their work.
+
+Jimmy Garcia — IT Director, 25+ years enterprise. Teaching the unwritten corporate game from the war zone, not retirement.
+
+## Blog
+
+- [Why Leadership Doesn't Know You Exist](https://fromittoinfluence.com/blog/leadership-cant-see-you): How the organizational visibility gap works and why great work alone doesn't fix it.
+- [You Were Playing the Wrong Game](https://fromittoinfluence.com/blog/you-were-playing-the-wrong-game): The two systems running in every organization — and why most technical professionals only see one.
+- [Your Work Needs a Return Address](https://fromittoinfluence.com/blog/your-work-needs-a-return-address): Why invisible output doesn't compound and how to attach authorship to what you ship.
+- [Your Boss Can't Champion You](https://fromittoinfluence.com/blog/your-boss-cant-champion): Why your manager's cognitive bandwidth is already spent — and what to do instead.
+- [The Visibility Paradox](https://fromittoinfluence.com/blog/the-visibility-paradox): Why the people who most need visibility are the ones least likely to pursue it.
+- [The AI Communication Gap](https://fromittoinfluence.com/blog/the-ai-communication-gap): How AI-generated communication is eroding the executive communication signals that drive promotion decisions.
+
+## Free Tools
+
+- [The Executive Lens](https://fromittoinfluence.com/executive-lens): Free self-assessment — identify which visibility gaps are holding your career back.
+- [Promotion Gap Checklist](https://fromittoinfluence.com/promotion-gap-checklist): The specific signals executives look for before promoting someone.
+- [Champion Brief](https://fromittoinfluence.com/champion-brief): A one-page brief that gives your sponsor the exact language they need to advocate for you.
+- [Credit Visibility Checklist](https://fromittoinfluence.com/credit-checklist): How to ensure your contributions are attributed correctly in the rooms you're not in.
+- [Hybrid Visibility Checklist](https://fromittoinfluence.com/hybrid-visibility-checklist): Maintaining executive visibility in remote and hybrid work environments.
+
+## Products
+
+- [The Executive Visibility Playbook](https://fromittoinfluence.com/visibility-playbook): The complete system for making your work visible to the people who decide what happens to your career. $347.
+- [Run AI](https://fromittoinfluence.com/ai-workshop-kit): A practical course for technical professionals building AI workflows with Claude. $147.
+- [AI Career Scorecard](https://fromittoinfluence.com/ai-communication-audit): Diagnostic tool for identifying where AI-generated communication is eroding your executive presence. $147.

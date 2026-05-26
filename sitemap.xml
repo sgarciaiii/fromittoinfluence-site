@@ -7,6 +7,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- AI crawler entry point -->
+  <url>
+    <loc>https://fromittoinfluence.com/llms.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Blog index -->
   <url>
     <loc>https://fromittoinfluence.com/blog</loc>
