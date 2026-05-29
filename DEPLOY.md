@@ -36,15 +36,28 @@ Domain: `fromittoinfluence.com` — managed at Cloudflare Registrar. DNS wired a
 
 ## Adding a New Page
 
-1. Create the HTML file (e.g., `new-page.html`)
-2. Add a redirect in `netlify.toml` → **no, use `_redirects` instead:**
+HTML files ship with their video — not during pre-production. The file lives in the video's `pre-production/` folder until the video uploads, then gets added here and pushed.
 
-Add a line to `_redirects`:
-```
-/new-page  /new-page.html  200
-```
-
+1. Copy the HTML file into this directory (e.g., `monday-prompt.html`)
+2. Add the filename to `_live-pages.txt` — this is the gate. Push will be blocked without it.
 3. `git push` — done.
+
+The pre-push hook (`.githooks/pre-push`) enforces this automatically.
+
+---
+
+## Approving a Page for Production
+
+Edit `_live-pages.txt` and add the filename. Root files: `filename.html`. Blog files: `blog/filename.html`.
+
+---
+
+## Re-clone Setup (One-Time)
+
+After cloning the repo fresh, run once to activate the pre-push hook:
+```bash
+git config core.hooksPath .githooks
+```
 
 ---
 
