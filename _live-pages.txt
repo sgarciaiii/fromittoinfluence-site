@@ -1,0 +1,39 @@
+# Approved HTML files for production
+# One filename per line (basename only for root files, relative path for subdirectories)
+# Add a file here to approve it for deployment — this is the gate
+# HTML files NOT in this list will block git push
+
+# Root pages
+index.html
+privacy.html
+terms.html
+thank-you.html
+
+# Products + courses
+ai-workshop-kit.html
+agent-os-reference.html
+visibility-playbook.html
+executive-visibility-os.html
+
+# Free tools / lead magnets
+executive-lens.html
+ai-cheatsheet.html
+ai-communication-audit.html
+ai-audit.html
+champion-brief.html
+hybrid-visibility-checklist.html
+credit-checklist.html
+promotion-gap-checklist.html
+strategic-assignment.html
+influence-audit.html
+political-scan.html
+visibility-sliver-audit.html
+
+# Blog
+blog/index.html
+blog/leadership-cant-see-you.html
+blog/the-ai-communication-gap.html
+blog/the-visibility-paradox.html
+blog/you-were-playing-the-wrong-game.html
+blog/your-boss-cant-champion.html
+blog/your-work-needs-a-return-address.html
