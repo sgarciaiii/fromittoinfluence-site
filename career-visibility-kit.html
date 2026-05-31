@@ -1,0 +1,571 @@
+<!doctype html>
+<!-- © 2026 From IT to Influence. All rights reserved. fromittoinfluence.com -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Career Visibility Kit — From IT to Influence</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+  --navy:#0a1628;--navy-2:#0f1f3a;--navy-3:#122a52;
+  --gold:#f4c430;--gold-2:#d4af37;--gold-soft:#ffe48a;
+  --magenta:#ff3da6;--cyan:#34d1ff;--violet:#8a5cff;
+  --ink:#e9f0ff;--ink-dim:#9fb1d1;
+  --ok:#36e39a;--warn:#ff8a3d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--navy);color:var(--ink);font-family:'Inter','Segoe UI',system-ui,sans-serif;overflow:hidden}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0;filter:blur(80px);opacity:.45}
+body::before{top:-10%;left:40%;width:55vw;height:55vw;background:radial-gradient(circle,var(--violet),transparent 60%)}
+body::after{bottom:-15%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle,var(--magenta),transparent 55%)}
+
+.app{position:relative;z-index:2;display:grid;grid-template-columns:clamp(220px,17vw,300px) 1fr;height:100vh}
+
+/* SIDEBAR */
+nav.side{
+  background:linear-gradient(180deg,rgba(10,22,40,.95),rgba(18,42,82,.9));
+  border-right:1px solid rgba(244,196,48,.2);
+  padding:clamp(18px,2vw,32px) clamp(14px,1.4vw,22px);
+  overflow-y:auto;backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;gap:0;
+}
+.brand{font-weight:900;font-size:clamp(12px,1vw,17px);letter-spacing:.3px;line-height:1.15;background:linear-gradient(90deg,var(--gold-soft),var(--gold),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px}
+.brand small{display:block;font-size:clamp(8px,0.6vw,11px);font-weight:600;color:var(--ink-dim);letter-spacing:2px;margin-top:4px;text-transform:uppercase}
+.kit-badge{margin-top:14px;margin-bottom:clamp(14px,1.4vw,24px);padding:10px 12px;background:rgba(244,196,48,.07);border:1px solid rgba(244,196,48,.25);border-radius:10px}
+.kit-badge .label{font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.6vw,11px);letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.kit-badge .name{font-size:clamp(11px,0.85vw,15px);font-weight:800;color:var(--ink)}
+.navlist{list-style:none;display:flex;flex-direction:column;gap:2px}
+.navlist .sep{font-size:clamp(8px,0.6vw,11px);letter-spacing:3px;color:var(--ink-dim);margin:clamp(10px,1vw,18px) clamp(8px,0.8vw,12px) 4px;text-transform:uppercase}
+.navlist a{display:flex;align-items:center;gap:9px;padding:clamp(7px,0.65vw,11px) clamp(10px,1vw,14px);color:var(--ink-dim);text-decoration:none;font-weight:600;font-size:clamp(11px,0.8vw,14px);cursor:pointer;transition:all .2s ease;border-left:3px solid transparent;border-radius:8px}
+.navlist a .n{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.65vw,11px);color:var(--gold-2);width:20px;flex-shrink:0;text-align:right}
+.navlist a:hover{color:var(--ink);background:rgba(244,196,48,.07)}
+.navlist a.active{color:var(--navy);background:linear-gradient(90deg,var(--gold),var(--gold-soft));border-left-color:var(--magenta)}
+.navlist a.active .n{color:var(--navy)}
+.side-footer{margin-top:auto;padding-top:18px;font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.62vw,11px);color:var(--ink-dim);border-top:1px solid rgba(255,255,255,.08)}
+
+/* MAIN */
+main.stage{position:relative;overflow-y:auto;padding:clamp(28px,3.5vw,60px) clamp(28px,4vw,72px) clamp(40px,5vw,80px)}
+.screen{display:none;max-width:clamp(760px,72vw,1200px);margin:0 auto;animation:fadein .4s ease both}
+.screen.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* TYPOGRAPHY */
+.kicker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.72vw,13px);letter-spacing:4px;color:var(--gold);text-transform:uppercase;padding:.4em .85em;border:1px solid rgba(244,196,48,.35);border-radius:999px;background:rgba(244,196,48,.06);margin-bottom:clamp(10px,1vw,18px)}
+h1.mega{font-size:clamp(34px,4.2vw,68px);font-weight:900;letter-spacing:-1.5px;line-height:1.03;margin-bottom:clamp(10px,1vw,18px)}
+h1.mega em{font-style:normal;background:linear-gradient(90deg,var(--gold-soft),var(--gold),var(--magenta) 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2.title{font-size:clamp(24px,3vw,48px);font-weight:900;letter-spacing:-.8px;line-height:1.06;margin-bottom:clamp(6px,0.7vw,12px)}
+h2.title em{font-style:normal;color:var(--gold)}
+.lede{font-size:clamp(14px,1.1vw,19px);line-height:1.58;color:var(--ink);max-width:780px;margin-bottom:clamp(14px,1.4vw,24px)}
+.lede b{color:var(--gold-soft)}
+.lede code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(244,196,48,.1);padding:.15em .4em;border-radius:4px;color:var(--gold-soft)}
+
+/* PILLS */
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:clamp(12px,1.2vw,20px)}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.68vw,12px);letter-spacing:2px;text-transform:uppercase;padding:.3em .75em;border-radius:999px}
+.pill.g{background:rgba(52,209,255,.12);color:var(--cyan);border:1px solid rgba(52,209,255,.3)}
+.pill.y{background:rgba(244,196,48,.1);color:var(--gold);border:1px solid rgba(244,196,48,.3)}
+.pill.v{background:rgba(138,92,255,.12);color:#c9b5ff;border:1px solid rgba(138,92,255,.3)}
+.pill.ok{background:rgba(54,227,154,.1);color:var(--ok);border:1px solid rgba(54,227,154,.3)}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(260px,22vw,340px),1fr));gap:clamp(12px,1.2vw,20px);margin:clamp(16px,1.6vw,28px) 0}
+.card{background:rgba(15,31,58,.6);border:1px solid rgba(244,196,48,.15);border-radius:14px;padding:clamp(16px,1.5vw,26px);transition:border-color .2s}
+.card:hover{border-color:rgba(244,196,48,.35)}
+.card .n{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.7vw,12px);color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.card h3{font-size:clamp(14px,1.1vw,19px);font-weight:800;color:var(--ink);margin-bottom:6px}
+.card p{font-size:clamp(12px,0.9vw,15px);color:var(--ink-dim);line-height:1.5}
+
+/* STEPS */
+.steps{list-style:none;display:flex;flex-direction:column;gap:clamp(12px,1.2vw,20px);margin:clamp(14px,1.4vw,24px) 0}
+.steps li{display:flex;gap:14px;align-items:flex-start}
+.steps li .num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+.steps li .body{font-size:clamp(13px,1vw,17px);line-height:1.55;color:var(--ink);padding-top:3px}
+.steps li .body b{color:var(--gold-soft)}
+.steps li .body code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(244,196,48,.1);padding:.15em .4em;border-radius:4px;color:var(--gold-soft)}
+
+/* TEMPLATE SCREENS */
+.t-header{margin-bottom:clamp(18px,1.8vw,32px)}
+.t-header .scenario{font-size:clamp(13px,1vw,17px);color:var(--ink-dim);line-height:1.55;max-width:760px;margin-top:10px}
+.t-header .scenario b{color:var(--ink)}
+
+.prompt-block{background:rgba(8,16,32,.7);border:1px solid rgba(244,196,48,.2);border-radius:14px;padding:clamp(18px,1.8vw,32px);margin:clamp(16px,1.6vw,28px) 0;position:relative}
+.prompt-block .pb-label{font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.62vw,11px);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.prompt-block .pb-label::after{content:"";flex:1;height:1px;background:rgba(244,196,48,.15)}
+.prompt-block pre{font-family:'JetBrains Mono',monospace;font-size:clamp(11px,0.85vw,14px);line-height:1.7;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.prompt-block pre .bracket{color:var(--gold-soft)}
+.prompt-block pre .comment{color:var(--ink-dim)}
+
+.copy-btn{position:absolute;top:clamp(12px,1.2vw,20px);right:clamp(12px,1.2vw,20px);background:rgba(244,196,48,.1);border:1px solid rgba(244,196,48,.3);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.68vw,12px);letter-spacing:2px;text-transform:uppercase;padding:.4em .9em;border-radius:8px;cursor:pointer;transition:all .2s}
+.copy-btn:hover{background:rgba(244,196,48,.2);border-color:var(--gold)}
+.copy-btn.copied{background:rgba(54,227,154,.12);border-color:var(--ok);color:var(--ok)}
+
+.t-tips{background:rgba(138,92,255,.07);border:1px solid rgba(138,92,255,.2);border-radius:12px;padding:clamp(14px,1.4vw,22px);margin-top:clamp(12px,1.2vw,20px)}
+.t-tips .tips-label{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.68vw,12px);letter-spacing:3px;text-transform:uppercase;color:#c9b5ff;margin-bottom:10px}
+.t-tips ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.t-tips li{font-size:clamp(12px,0.9vw,15px);color:var(--ink-dim);line-height:1.5;padding-left:18px;position:relative}
+.t-tips li::before{content:"→";position:absolute;left:0;color:var(--violet);font-size:12px}
+
+.t-output{background:rgba(54,227,154,.05);border:1px solid rgba(54,227,154,.18);border-radius:12px;padding:clamp(14px,1.4vw,22px);margin-top:clamp(12px,1.2vw,20px)}
+.t-output .out-label{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.68vw,12px);letter-spacing:3px;text-transform:uppercase;color:var(--ok);margin-bottom:8px}
+.t-output p{font-size:clamp(12px,0.9vw,15px);color:var(--ink-dim);line-height:1.55}
+
+/* DIVIDER */
+hr.sep{border:none;border-top:1px solid rgba(255,255,255,.07);margin:clamp(20px,2vw,36px) 0}
+
+/* CTA BLOCK */
+.cta-block{background:linear-gradient(135deg,rgba(244,196,48,.07),rgba(138,92,255,.07));border:1px solid rgba(244,196,48,.25);border-radius:16px;padding:clamp(20px,2vw,40px);margin-top:clamp(20px,2vw,40px);text-align:center}
+.cta-block p{color:var(--ink-dim);font-size:clamp(13px,1vw,17px);line-height:1.55;max-width:600px;margin:0 auto clamp(12px,1.2vw,20px)}
+.cta-block a.btn{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--gold-soft));color:var(--navy);font-weight:900;font-size:clamp(13px,1vw,17px);padding:.75em 2em;border-radius:999px;text-decoration:none;transition:opacity .2s}
+.cta-block a.btn:hover{opacity:.88}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- SIDEBAR -->
+<nav class="side">
+  <div class="brand">From IT to Influence<small>fromittoinfluence.com</small></div>
+  <div class="kit-badge">
+    <span class="label">Product</span>
+    <span class="name">Career Visibility Kit</span>
+  </div>
+  <ul class="navlist">
+    <li class="sep">Start here</li>
+    <li><a href="#" class="active" data-screen="s0"><span class="n">00</span> How to Use</a></li>
+    <li class="sep">The Templates</li>
+    <li><a href="#" data-screen="s1"><span class="n">01</span> Executive Status Update</a></li>
+    <li><a href="#" data-screen="s2"><span class="n">02</span> Performance Review Narrative</a></li>
+    <li><a href="#" data-screen="s3"><span class="n">03</span> Project Positioning Memo</a></li>
+    <li><a href="#" data-screen="s4"><span class="n">04</span> LinkedIn Visibility Post</a></li>
+    <li><a href="#" data-screen="s5"><span class="n">05</span> Meeting Follow-up</a></li>
+    <li><a href="#" data-screen="s6"><span class="n">06</span> Champion Brief</a></li>
+  </ul>
+  <div class="side-footer">© 2026 From IT to Influence</div>
+</nav>
+
+<!-- MAIN -->
+<main class="stage">
+
+  <!-- SCREEN 0: HOW TO USE -->
+  <section class="screen active" id="s0">
+    <div class="kicker">Career Visibility Kit</div>
+    <h1 class="mega">Six prompts.<br><em>One clear signal.</em></h1>
+    <div class="meta">
+      <span class="pill y">6 AI Prompts</span>
+      <span class="pill g">Copy &amp; Run</span>
+      <span class="pill v">IT Professionals</span>
+      <span class="pill ok">No Setup Required</span>
+    </div>
+    <p class="lede">
+      These are the six situations where your work becomes invisible — not because you didn't do it,
+      but because <b>no one in the room knows how to narrate it</b>. Each prompt gives Claude
+      enough context to write it the way a leader would. You fill in the brackets. Claude does the framing.
+    </p>
+
+    <hr class="sep">
+    <h2 class="title" style="font-size:clamp(18px,1.8vw,28px);margin-bottom:16px">How to use these</h2>
+    <ol class="steps">
+      <li>
+        <span class="num">1</span>
+        <span class="body"><b>Open Claude</b> (claude.ai or Claude Code). Any version works — these don't require advanced models.</span>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <span class="body"><b>Click a template in the sidebar.</b> Read the scenario — if it matches your situation, click <code>Copy Prompt</code>.</span>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <span class="body"><b>Paste into Claude.</b> Replace every <code>[BRACKET]</code> with your real information. The more specific you are, the better the output.</span>
+      </li>
+      <li>
+        <span class="num">4</span>
+        <span class="body"><b>Review, edit, send.</b> Claude gives you the structure and framing. You own the final words. Never send AI output without reading it.</span>
+      </li>
+    </ol>
+
+    <hr class="sep">
+    <h2 class="title" style="font-size:clamp(18px,1.8vw,28px);margin-bottom:16px">The six templates</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="n">01</div>
+        <h3>Executive Status Update</h3>
+        <p>Make weekly updates leadership actually reads — not a task list, a narrative that connects your work to what the org cares about.</p>
+      </div>
+      <div class="card">
+        <div class="n">02</div>
+        <h3>Performance Review Narrative</h3>
+        <p>Frame your year before someone else does. Written to sound one level above where you sit today.</p>
+      </div>
+      <div class="card">
+        <div class="n">03</div>
+        <h3>Project Positioning Memo</h3>
+        <p>Get credit before the meeting where credit gets assigned to whoever is loudest.</p>
+      </div>
+      <div class="card">
+        <div class="n">04</div>
+        <h3>LinkedIn Visibility Post</h3>
+        <p>One post, one insight, no cringe. Reads like a peer sharing from experience, not a guru performing.</p>
+      </div>
+      <div class="card">
+        <div class="n">05</div>
+        <h3>Meeting Follow-up</h3>
+        <p>Turn your post-meeting email into a visibility move — not just notes, a record of who contributed what.</p>
+      </div>
+      <div class="card">
+        <div class="n">06</div>
+        <h3>Champion Brief</h3>
+        <p>Give your sponsor or advocate exactly what they need to represent you in the rooms you're not in.</p>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:8px;font-size:clamp(12px,0.9vw,15px);color:var(--ink-dim)">
+      Navigate using the sidebar. Each template includes the prompt, customization notes, and what to expect from the output.
+    </p>
+  </section>
+
+  <!-- SCREEN 1: EXECUTIVE STATUS UPDATE -->
+  <section class="screen" id="s1">
+    <div class="t-header">
+      <div class="kicker">Template 01</div>
+      <h2 class="title">Executive <em>Status Update</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> You need to send a weekly or monthly status update to leadership. Most people send a list of tasks completed. This prompt produces a narrative that connects your work to what the organization actually cares about — so you're not just reporting, you're being seen.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p1">You are helping me write a professional status update for my leadership team.
+
+Context about me:
+- My role: <span class="bracket">[YOUR TITLE — e.g., "Senior Infrastructure Manager"]</span>
+- My team or domain: <span class="bracket">[YOUR TEAM OR AREA — e.g., "Network and Security Operations, 6 people"]</span>
+- Who receives this: <span class="bracket">[AUDIENCE — e.g., "my VP and the other Directors in the monthly leadership sync"]</span>
+
+What I worked on this period (paste your raw notes):
+<span class="bracket">[YOUR LIST — bullet points, rough notes, whatever you have. Don't clean it up — just paste it.]</span>
+
+What leadership is focused on right now:
+<span class="bracket">[1-2 sentences — e.g., "Q3 priority is reducing vendor spend and completing the ERP migration on time."]</span>
+
+Write a status update that:
+1. Opens with the business outcome, not the task — what moved forward, not what I did
+2. Connects my work to the organizational priority above
+3. Surfaces one upcoming item leadership should be aware of or may need to weigh in on
+4. Stays under 150 words
+5. Reads as strategic, not operational — like a Director briefing peers, not a PM reporting to a boss
+
+Format: 3 short paragraphs. No bullet lists. No jargon or acronyms unless they're universal in our org.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The "organizational priority" field is the most important one. If you don't know what leadership is focused on, check the last all-hands deck or your manager's most recent update.</li>
+        <li>Paste your raw notes without editing them first. Claude will extract the signal — you don't need to pre-organize.</li>
+        <li>If the output sounds too formal, add: "Make the tone more like a trusted colleague briefing a peer, not a subordinate reporting up."</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A 3-paragraph status update (~130 words) that leads with business impact, connects directly to a stated org priority, and closes with a forward-looking note. Leadership reads it in 45 seconds and understands what you're doing and why it matters.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: PERFORMANCE REVIEW NARRATIVE -->
+  <section class="screen" id="s2">
+    <div class="t-header">
+      <div class="kicker">Template 02</div>
+      <h2 class="title">Performance Review <em>Narrative</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> It's review season. Most people submit a bullet list of accomplishments and hope the manager fills in the framing. This prompt writes your self-assessment the way someone one level above you would write it — focused on impact and organizational contribution, not task completion.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p2">You are helping me write my performance review self-assessment.
+
+Context:
+- My role: <span class="bracket">[YOUR TITLE]</span>
+- Time in this role: <span class="bracket">[X years / X months]</span>
+- My manager's level: <span class="bracket">[e.g., "Director" or "VP"]</span>
+- Our review framework focuses on: <span class="bracket">[WHAT YOUR COMPANY EVALUATES — e.g., "impact, collaboration, and growth mindset" or "results, leadership behaviors, and development"]</span>
+
+My accomplishments this year (raw list — don't clean it up):
+<span class="bracket">[PASTE YOUR LIST — specifics, numbers, projects, decisions, anything you remember. More is better here.]</span>
+
+What the organization was focused on this year:
+<span class="bracket">[1-2 sentences — e.g., "We migrated 3 legacy systems, reduced vendor spend by 18%, and expanded the team from 4 to 9."]</span>
+
+Write a self-assessment narrative that:
+1. Opens with the macro contribution — what the organization can do now that it couldn't do before, because of my work
+2. Shows evidence of impact, not just activity — replaces "I did X" with "X resulted in Y"
+3. Includes at least one moment that demonstrates leadership behavior above my current level
+4. Positions my goals for next year in terms of organizational need, not personal ambition
+5. Reads as if written by someone who is already performing one level above their current role
+
+Length: 300-400 words. First person. Confident and specific — not arrogant, not hedging.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The "leadership behavior above my current level" point is where most people undersell. If you made a decision that your manager usually makes, mention it. If you navigated a cross-functional conflict, mention it.</li>
+        <li>If your company uses a specific competency framework (e.g., "influence without authority"), add that exact phrase to the prompt so Claude targets it.</li>
+        <li>Run the output through your own edit pass — Claude will write confidently. Soften anything that doesn't sound like your natural voice.</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A 300-400 word self-assessment written at the register of your next level up. Hits your company's stated competencies, leads with organizational impact, and sets up your next conversation about advancement without sounding like you're lobbying.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: PROJECT POSITIONING MEMO -->
+  <section class="screen" id="s3">
+    <div class="t-header">
+      <div class="kicker">Template 03</div>
+      <h2 class="title">Project Positioning <em>Memo</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> You're leading or deeply involved in a high-visibility project. There will be a meeting — or a series of conversations — where leadership forms their impression of who drove it. This prompt helps you get there first, clearly, without sounding self-promotional.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p3">You are helping me write a project update memo that clearly positions my role and surfaces key decisions for leadership.
+
+Context:
+- Project name: <span class="bracket">[PROJECT NAME]</span>
+- My specific role: <span class="bracket">[YOUR ROLE — e.g., "Technical lead. I own the architecture decisions and vendor coordination. A PM owns scheduling and stakeholder comms."]</span>
+- Team structure: <span class="bracket">[BRIEFLY — e.g., "Cross-functional team of 8. I am one of two technical resources."]</span>
+- Current stage: <span class="bracket">[WHERE YOU ARE — e.g., "UAT complete. Go-live is in 3 weeks."]</span>
+- Audience: <span class="bracket">[WHO GETS THIS — e.g., "My VP and the CTO. Neither is in the daily weeds."]</span>
+
+What I have specifically done on this project:
+<span class="bracket">[BE SPECIFIC — decisions you made, problems you solved, blockers you removed, tradeoffs you navigated. The more concrete, the better.]</span>
+
+Risks or open items that leadership should be aware of:
+<span class="bracket">[1-2 honest risks — e.g., "Vendor delivery is 4 days behind. If they miss the revised date, we need a go/no-go call."]</span>
+
+Write a project memo that:
+1. Opens with current status and business impact in 2 sentences — what is true right now
+2. Names my specific decisions and contributions in the body — matter-of-factly, not as a brag
+3. Surfaces the risks with enough context for leadership to act or decide
+4. Closes with a specific ask: approval, awareness, a decision, or a call
+5. Reads like a leader informing stakeholders — not an IC asking for recognition
+
+Format: Short paragraphs only. No bullets. Under 250 words. Send it before the meeting where this project gets discussed.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The "what I specifically did" section is the one most people leave vague. Force yourself to name actual decisions: "I chose vendor X over Y because..." or "I resolved the security blocker by..."</li>
+        <li>The closing ask is critical. A memo without an ask is an FYI. An FYI doesn't require anyone to think about you.</li>
+        <li>Send this 24-48 hours before the relevant meeting, not after. Timing is a visibility move.</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A clean, under-250-word memo that names your contributions without self-promotion, surfaces the decisions leadership actually needs to make, and positions you as the person with their hands on the wheel.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: LINKEDIN VISIBILITY POST -->
+  <section class="screen" id="s4">
+    <div class="t-header">
+      <div class="kicker">Template 04</div>
+      <h2 class="title">LinkedIn <em>Visibility Post</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> You have something worth saying — a real lesson from work, a moment that changed how you think, a pattern you've noticed after 20 years in IT. This prompt writes it the way a credible practitioner sounds, not a content creator performing expertise.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p4">You are helping me write a LinkedIn post about a real experience at work.
+
+Context about me:
+- My role: <span class="bracket">[YOUR TITLE]</span>
+- My domain: <span class="bracket">[e.g., "enterprise IT, 20 years. Currently Director of Digital Solutions in healthcare."]</span>
+- The audience I write for: <span class="bracket">[e.g., "technical managers and IT leads who want to move into leadership roles"]</span>
+
+What I want to share (rough — don't clean it up):
+<span class="bracket">[DESCRIBE THE MOMENT OR LESSON IN 2-4 SENTENCES. What happened? What did you realize? What would you do differently? It can be messy — that's fine.]</span>
+
+Write a LinkedIn post that:
+1. Opens with the exact moment — drop the reader into a specific scene, not a lesson or general observation
+2. Shares one specific insight: what I learned or what I'd do differently — not a list of takeaways
+3. Ends with a question or observation that invites response — something that makes someone with 15 years of experience want to reply
+4. Reads like I'm talking to one specific person over coffee, not broadcasting to a feed
+5. Avoids all of: "excited to share," "humbled," "game-changer," "unpopular opinion," "a thread," "let me explain," and any opener that begins with "I"
+
+Length: 100-140 words. Line breaks between paragraphs for LinkedIn formatting. Direct and specific — no fluff.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The "drop into a scene" opener is what separates a post people read from one they scroll past. Be specific: "Last Tuesday, my VP called me into her office" lands. "I've been thinking about leadership lately" doesn't.</li>
+        <li>If the post ends up too long, ask Claude to trim it to 100 words. Shorter usually performs better with the IT audience.</li>
+        <li>Post 2-3 times before evaluating what lands. LinkedIn is slow-burn visibility — one post doesn't tell you anything.</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A 100-140 word LinkedIn post that opens with a real moment, shares one specific insight from your actual experience, and ends with something worth responding to. Reads like a person, not a content machine.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 5: MEETING FOLLOW-UP -->
+  <section class="screen" id="s5">
+    <div class="t-header">
+      <div class="kicker">Template 05</div>
+      <h2 class="title">Meeting Follow-up <em>That Builds Credit</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> You just walked out of a high-stakes meeting where you contributed, facilitated, or made a decision. The follow-up email most people send is a bullet list of action items. This prompt turns it into a visibility move — a record of who contributed what, written in a way that reinforces your role.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p5">You are helping me write a meeting follow-up email.
+
+Context:
+- What the meeting was: <span class="bracket">[MEETING NAME/PURPOSE — e.g., "Q3 architecture review with the CTO and VP of Engineering"]</span>
+- My role in it: <span class="bracket">[e.g., "I presented two migration options and answered technical questions for 45 minutes"]</span>
+- Who attended: <span class="bracket">[BRIEFLY — e.g., "CTO, VP of Engineering, 3 Directors, me"]</span>
+- What happened (rough notes — your own words):
+<span class="bracket">[WHAT WAS DISCUSSED, WHAT DECISIONS WERE MADE, WHAT I CONTRIBUTED — messy is fine, include everything you remember]</span>
+- Who gets this email: <span class="bracket">[RECIPIENTS — e.g., "all attendees, including the CTO"]</span>
+
+Write a follow-up email that:
+1. Opens by capturing the decision made or the outcome agreed on — not "per our meeting today" or "as discussed"
+2. Names my specific contributions in the body — factually, in a way that reads as a summary, not self-promotion
+3. Lists next steps with clear owner names (not "the team") and specific dates
+4. Is written at the register of a senior leader — measured, clear, accountable
+5. Does NOT ask for validation of what was said or whether the notes are accurate — this email confirms, it doesn't request review
+
+Format: Short subject line. 3-4 paragraphs, under 200 words. Professional but direct. Send within 2 hours of the meeting.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The 2-hour window matters. A same-day follow-up is a leadership behavior. A next-day follow-up is just notes.</li>
+        <li>Naming the owner of each next step (a real name, not "the team") is the most important structural move. Ambiguity in follow-ups is where credit disappears.</li>
+        <li>If the output includes a question to the group, remove it. This email does not ask — it confirms.</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A clean, under-200-word follow-up that leads with the decision, names contributors accurately, and closes with owned next steps. It serves as the official record of the meeting — and you wrote it.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 6: CHAMPION BRIEF -->
+  <section class="screen" id="s6">
+    <div class="t-header">
+      <div class="kicker">Template 06</div>
+      <h2 class="title">Champion <em>Brief</em></h2>
+      <p class="scenario">
+        <b>The situation:</b> You have a sponsor or advocate — someone who talks about you in rooms you're not in. Most people assume their sponsor knows what to say. They don't. This prompt gives your champion a half-page tool they can actually use when your name comes up in the right conversation.
+      </p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="pb-label">Prompt — copy and fill in the brackets</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      <pre id="p6">You are helping me write a "champion brief" — a short document I give to my sponsor or advocate so they can represent me accurately in conversations I'm not part of.
+
+Context about me:
+- My role: <span class="bracket">[YOUR TITLE]</span>
+- Time in organization: <span class="bracket">[X years]</span>
+- My key accomplishments (last 6-12 months):
+<span class="bracket">[3-5 bullet points — your own words, as specific as possible. Include numbers where you have them.]</span>
+- What I'm aiming for: <span class="bracket">[e.g., "A Director-level role" or "to lead the platform modernization initiative next year"]</span>
+- My sponsor's relationship to me: <span class="bracket">[e.g., "My skip-level. She is in the quarterly executive talent review."]</span>
+- How I want to be perceived: <span class="bracket">[2-3 words — e.g., "strategic, technically credible, ready for more scope"]</span>
+
+Write a champion brief that:
+1. Summarizes who I am in one sentence — role, impact, how long
+2. Gives 3 specific proof points my sponsor can mention naturally in conversation — concrete, not vague
+3. States clearly what opportunity I'm ready for and why the timing makes sense for the organization
+4. Gives my sponsor one "door-opener" sentence they can use naturally when my name comes up
+5. Reads like something my sponsor would be comfortable saying out loud — plain language, not polished corporate copy
+
+Format: Half a page maximum. Bullet points for the proof points only. Everything else is plain paragraphs. This is a tool, not a showcase.</pre>
+    </div>
+
+    <div class="t-tips">
+      <div class="tips-label">Customization notes</div>
+      <ul>
+        <li>The "door-opener sentence" is the deliverable your sponsor will actually use. If Claude's version sounds too formal, ask: "Rewrite the door-opener sentence so it sounds like something a senior executive would say casually in a hallway conversation."</li>
+        <li>Give this to your sponsor in a 1:1, not via email. Walk them through it. Ask if they'd change anything. That conversation is the sponsorship activation.</li>
+        <li>Update it every 6 months or after a significant accomplishment. A stale champion brief is worse than none — it makes you look like you stopped growing.</li>
+      </ul>
+    </div>
+
+    <div class="t-output">
+      <div class="out-label">What you get</div>
+      <p>A half-page champion brief with a one-sentence summary, 3 specific proof points, a clear statement of readiness, and a door-opener your sponsor can use tomorrow. The difference between a sponsor who vaguely supports you and one who specifically advocates for you is usually this document.</p>
+    </div>
+
+    <div class="cta-block">
+      <p>Want the full system behind these templates? The <b>Executive Visibility Playbook</b> is the complete framework for making your work impossible to ignore — built for IT professionals who deliver but don't advance.</p>
+      <a class="btn" href="https://store.fromittoinfluence.com/4ebed3df" target="_blank">Get the Visibility Playbook →</a>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<script>
+// Navigation
+document.querySelectorAll('.navlist a[data-screen]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const id = link.dataset.screen;
+    document.querySelectorAll('.navlist a').forEach(a => a.classList.remove('active'));
+    link.classList.add('active');
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelector('main.stage').scrollTo(0, 0);
+  });
+});
+
+// Copy prompt
+function copyPrompt(btn) {
+  const pre = btn.closest('.prompt-block').querySelector('pre');
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy Prompt';
+      btn.classList.remove('copied');
+    }, 2200);
+  }).catch(() => {
+    // Fallback selection
+    const range = document.createRange();
+    range.selectNodeContents(pre);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    btn.textContent = 'Selected!';
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; }, 2200);
+  });
+}
+</script>
+</body>
+</html>

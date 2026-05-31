@@ -14,6 +14,7 @@ ai-workshop-kit.html
 agent-os-reference.html
 visibility-playbook.html
 executive-visibility-os.html
+career-visibility-kit.html
 
 # Free tools / lead magnets
 executive-lens.html
