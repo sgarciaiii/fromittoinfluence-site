@@ -38,7 +38,7 @@ export default {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-Kit-Api-Key": env.KIT_API_KEY,
+              "Authorization": `Bearer ${env.KIT_API_KEY}`,
             },
             body: JSON.stringify(payload),
           }
