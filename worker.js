@@ -45,8 +45,9 @@ export default {
           }
         );
 
-        if (!kitRes.ok) {
-          console.error("Kit API error:", kitRes.status, await kitRes.text());
+        // Kit returns 200 or 302 on success; only 4xx/5xx are real errors
+        if (kitRes.status >= 400) {
+          console.error("Kit subscription error:", kitRes.status, await kitRes.text());
           return Response.redirect(new URL(ERROR_REDIRECT, url).toString(), 302);
         }
 
