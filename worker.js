@@ -4,13 +4,13 @@
  * Handles custom routes, then falls through to static assets.
  *
  * Custom routes:
- *   POST /subscribe  — Executive Lens lead magnet form → Kit API → redirect
+ *   POST /subscribe  — Executive Lens lead magnet form → Kit hosted form → redirect
  *
- * Environment variables (set in Worker dashboard → Settings → Variables and Secrets):
- *   KIT_API_KEY  — Kit secret API key (Settings > Developer > API Keys)
+ * No API key required — uses Kit's public form subscription endpoint (same one
+ * their embed JS uses). Form UID: 8c8653ea8d
  */
 
-const KIT_FORM_ID = "9509071";
+const KIT_FORM_UID = "8c8653ea8d";
 const SUCCESS_REDIRECT = "/executive-lens";
 const ERROR_REDIRECT = "/?subscribe_error=1";
 
@@ -32,12 +32,12 @@ export default {
         const payload = { email_address: email };
         if (firstName) payload.first_name = firstName;
 
-        // Kit v3 API — public api_key is safe to use server-side for form subscriptions
-        const kitPayload = { api_key: env.KIT_API_KEY, email: email };
+        // Kit public form endpoint — no API key needed, same endpoint their embed JS uses
+        const kitPayload = { email_address: email };
         if (firstName) kitPayload.first_name = firstName;
 
         const kitRes = await fetch(
-          `https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`,
+          `https://app.convertkit.com/forms/${KIT_FORM_UID}/subscriptions`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
