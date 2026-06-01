@@ -32,15 +32,16 @@ export default {
         const payload = { email_address: email };
         if (firstName) payload.first_name = firstName;
 
+        // Kit v3 API — public api_key is safe to use server-side for form subscriptions
+        const kitPayload = { api_key: env.KIT_API_KEY, email: email };
+        if (firstName) kitPayload.first_name = firstName;
+
         const kitRes = await fetch(
-          `https://api.kit.com/v4/forms/${KIT_FORM_ID}/subscribers`,
+          `https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`,
           {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Kit-Api-Key": env.KIT_API_KEY,
-            },
-            body: JSON.stringify(payload),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(kitPayload),
           }
         );
 
