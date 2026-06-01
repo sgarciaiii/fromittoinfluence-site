@@ -45,8 +45,12 @@ export default {
         );
 
         if (!kitRes.ok) {
-          console.error("Kit API error:", kitRes.status, await kitRes.text());
-          return Response.redirect(new URL(ERROR_REDIRECT, url).toString(), 302);
+          const errBody = await kitRes.text();
+          console.error("Kit API error:", kitRes.status, errBody);
+          return Response.redirect(
+            new URL(`${ERROR_REDIRECT}&kit_status=${kitRes.status}&has_key=${!!env.KIT_API_KEY}`, url).toString(),
+            302
+          );
         }
 
         return Response.redirect(new URL(SUCCESS_REDIRECT, url).toString(), 302);
