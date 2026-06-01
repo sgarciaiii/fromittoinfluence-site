@@ -38,19 +38,15 @@ export default {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${env.KIT_API_KEY}`,
+              "X-Kit-Api-Key": env.KIT_API_KEY,
             },
             body: JSON.stringify(payload),
           }
         );
 
         if (!kitRes.ok) {
-          const errBody = await kitRes.text();
-          console.error("Kit API error:", kitRes.status, errBody);
-          return Response.redirect(
-            new URL(`${ERROR_REDIRECT}&kit_status=${kitRes.status}&has_key=${!!env.KIT_API_KEY}`, url).toString(),
-            302
-          );
+          console.error("Kit API error:", kitRes.status, await kitRes.text());
+          return Response.redirect(new URL(ERROR_REDIRECT, url).toString(), 302);
         }
 
         return Response.redirect(new URL(SUCCESS_REDIRECT, url).toString(), 302);
