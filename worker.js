@@ -4,13 +4,14 @@
  * Handles custom routes, then falls through to static assets.
  *
  * Custom routes:
- *   POST /subscribe  — Executive Lens lead magnet form → Kit hosted form → redirect
+ *   POST /subscribe  — Executive Lens lead magnet form → Kit v3 API → redirect
  *
- * No API key required — uses Kit's public form subscription endpoint (same one
- * their embed JS uses). Form UID: 8c8653ea8d
+ * Uses Kit v3 API (api_key in body). Subscribers land as state:active (no
+ * double opt-in confirmation). Requires KIT_API_KEY secret.
+ * Form numeric ID: 9509071
  */
 
-const KIT_FORM_UID = "8c8653ea8d";
+const KIT_FORM_ID = "9509071";
 const SUCCESS_REDIRECT = "/executive-lens";
 const ERROR_REDIRECT = "/?subscribe_error=1";
 
@@ -29,15 +30,11 @@ export default {
           return Response.redirect(new URL(ERROR_REDIRECT, url).toString(), 302);
         }
 
-        const payload = { email_address: email };
-        if (firstName) payload.first_name = firstName;
-
-        // Kit public form endpoint — no API key needed, same endpoint their embed JS uses
-        const kitPayload = { email_address: email };
+        const kitPayload = { api_key: env.KIT_API_KEY, email };
         if (firstName) kitPayload.first_name = firstName;
 
         const kitRes = await fetch(
-          `https://app.convertkit.com/forms/${KIT_FORM_UID}/subscriptions`,
+          `https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -45,7 +42,6 @@ export default {
           }
         );
 
-        // Kit returns 200 or 302 on success; only 4xx/5xx are real errors
         if (kitRes.status >= 400) {
           console.error("Kit subscription error:", kitRes.status, await kitRes.text());
           return Response.redirect(new URL(ERROR_REDIRECT, url).toString(), 302);
