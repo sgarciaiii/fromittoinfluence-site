@@ -107,20 +107,8 @@ No AI crawlers were blocked before. This change signals explicit intent and futu
 
 ### Medium effort
 
-**1. OG images missing on all 6 blog articles**
-Blog articles have no `<meta property="og:image">` tags. Social shares and AI rich-result previews fall back to nothing. Article-specific infographics exist in `blog/images/` but need 1200×630 crops for OG use.
-- Suggested mapping:
-  - leadership-cant-see-you → `three-modes-diagram.png`
-  - you-were-playing-the-wrong-game → `two-systems.png`
-  - your-work-needs-a-return-address → `attribution-flow.png`
-  - your-boss-cant-champion → `three-things-boss.png`
-  - the-visibility-paradox → `recency-bias-timeline.png`
-  - the-ai-communication-gap → `cognitive-load.png`
-- Also missing from BlogPosting `image` property (currently uses logo for all articles)
-- Fix when batch-processing articles next — not blocking
-
-**2. No `twitter:image` on blog articles**
-Same issue as OG image — social card previews are broken for Twitter/X on all articles. Fix same time as OG images.
+**~~1. OG images missing on all 6 blog articles~~** — Done 2026-06-02.
+All 6 articles now have `og:image` + `og:image:width/height` + `twitter:image` tags. BlogPosting schema `image` updated from logo to article-specific infographic (1200×675) on all posts.
 
 **3. `dateModified` is identical to `datePublished` on all articles**
 If articles are ever updated, schema should reflect the modification date. Currently `dateModified` is hardcoded to publish date. Low urgency until articles are actually updated.
@@ -147,7 +135,7 @@ The brand mentions in the AEO report are thin because no third-party sites have 
 |----------|--------|--------|--------|
 | 1 | **LinkedIn/TikTok/Instagram in sameAs** | Done ✅ | Closes entity graph gap; LinkedIn is highest AI signal per AEO report |
 | 2 | **Explicit AI crawlers in robots.txt** | Done ✅ | Future-proofing; minor signal |
-| 3 | **OG images on blog articles** | 2–3 hours | Unlocks rich results in Google AI Overviews; improves social sharing |
+| 3 | ~~**OG images on blog articles**~~ | Done ✅ | All 6 articles updated 2026-06-02 |
 | 4 | **Reddit presence** | Ongoing | Biggest Perplexity gap; no shortcut |
 | 5 | **One external-sourced stat per article** | 30 min/article | Improves AI confidence in quoting content |
 
@@ -183,5 +171,5 @@ The brand mentions in the AEO report are thin because no third-party sites have 
 - [x] Critical findings logged (sameAs entity gap, AI crawler access, llms.txt confirmed)
 - [x] Quick-win fixes applied (sameAs x7 files, robots.txt)
 - [ ] **Deploy to production** — run deploy script or `wrangler deploy` from `projects/landing-page/`
-- [ ] OG images added to blog articles (medium effort, separate session)
+- [x] OG images added to blog articles — Done 2026-06-02
 - [ ] Reddit presence started (ongoing, separate workstream)
