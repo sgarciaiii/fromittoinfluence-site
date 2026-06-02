@@ -560,6 +560,45 @@ sequenceDiagram
       <p style="margin-top:10px">CLAUDE.md injection is reliable but probabilistic — in very long sessions or under compaction, critical context can drift. <strong>Hooks are the guarantee layer</strong>: shell commands wired to Claude Code lifecycle events in <code>.claude/settings.json</code>. <code>SessionStart</code> fires at every session open and injects your current priorities unconditionally. <code>PreCompact</code> fires before any compaction event and re-injects critical context so it survives the summary. CLAUDE.md is a hint. Hooks are a guarantee.</p>
     </div>
 
+    <h2 class="s-h2">Lifecycle Automation Hooks</h2>
+    <p style="color:var(--tx2);font-size:.875rem;margin-bottom:16px">Shell commands wired to Claude Code lifecycle events in <code>.claude/settings.json</code>. Hooks run outside the model's context window — deterministic OS-level automation, not AI instructions.</p>
+    <table class="doc-table">
+      <thead><tr><th>Hook event</th><th>Fires when</th><th>Production use</th></tr></thead>
+      <tbody>
+        <tr><td><code>SessionStart</code></td><td>Session opens</td><td>Inject <code>current-priorities.md</code> unconditionally — guaranteed context every session regardless of CLAUDE.md drift</td></tr>
+        <tr><td><code>PreCompact</code></td><td>Before context compaction</td><td>Re-inject priorities; prompt operator to run <code>/close-session</code> before the compaction summary is written</td></tr>
+        <tr><td><code>PostToolUse(Skill)</code></td><td>After every Skill tool call</td><td>Auto-append timestamped stub to <code>skills/run-log.md</code> — closes the dropped-Learn gap for programmatic skill invocations</td></tr>
+        <tr><td><code>UserPromptSubmit</code></td><td>Every user message sent</td><td>Parse for leading <code>/command</code> → append run-log stub for typed slash skills (<code>PostToolUse</code> fires on Skill-tool calls only, not typed <code>/commands</code>)</td></tr>
+        <tr><td><code>SessionEnd</code></td><td>Session closes</td><td>If uncommitted or unpushed work exists, auto-commit a WIP snapshot and push — backstop behind <code>/close-session</code>. No-ops on clean state.</td></tr>
+      </tbody>
+    </table>
+    <div class="code-wrap" style="margin-top:20px">
+      <div class="code-hdr"><div class="code-dots"><div class="cd" style="background:#ff5f56"></div><div class="cd" style="background:#ffbd2e"></div><div class="cd" style="background:#27c93f"></div></div><span>.claude/settings.json — hooks</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><code class="language-json">{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "python3 .claude/hooks/session-start.py", "timeout": 10 }] }
+    ],
+    "PreCompact": [
+      { "hooks": [{ "type": "command", "command": "python3 .claude/hooks/pre-compact.py", "timeout": 15 }] }
+    ],
+    "SessionEnd": [
+      { "hooks": [{ "type": "command", "command": "bash .claude/hooks/session-end-snapshot.sh", "timeout": 60 }] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Skill", "hooks": [{ "type": "command", "command": "python3 .claude/hooks/log-skill-run.py", "timeout": 10 }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "python3 .claude/hooks/log-slash-skill.py", "timeout": 10 }] }
+    ]
+  }
+}</code></pre>
+    </div>
+    <div class="callout callout-tip">
+      <div class="callout-t">Why two hooks for run-log?</div>
+      <p><code>PostToolUse(Skill)</code> fires when Claude Code dispatches a skill as an internal tool call. <code>UserPromptSubmit</code> fires on every user message — including <code>/commands</code> that are inline-expanded rather than dispatched as tool calls. The two hooks are disjoint: together they guarantee every skill invocation reaches the log regardless of invocation path.</p>
+    </div>
+
     <h2 class="s-h2">Full Production Session</h2>
     <p style="color:var(--tx2);font-size:.875rem;margin-bottom:16px">End-to-end data flow for a content creation session using the <code>/youtube-pipeline</code> skill.</p>
     <div class="mmd-wrap reveal">
@@ -1314,6 +1353,7 @@ token.json
         <tr><td>Monorepo for all projects</td><td>Separate repos per project</td><td>Single context load covers entire operation; Claude doesn't need to switch repos for cross-project dependencies</td></tr>
         <tr><td>Skills as text documents</td><td>Code-defined workflows (LangGraph, etc.)</td><td>No framework dependency; skills are readable, editable, and debuggable by anyone who can read markdown</td></tr>
         <tr><td>Phase-gate approval pattern</td><td>Fully autonomous execution</td><td>For content + business decisions, human approval at phase boundaries prevents compounding errors</td></tr>
+        <tr><td>Hook-driven automation over manual logging</td><td>Relying on /close-session to capture run-log</td><td>PostToolUse + UserPromptSubmit hooks fire unconditionally — operator cannot forget to log. SessionEnd snapshot is a backstop for dropped close-session calls. Automation beats discipline for high-frequency operations.</td></tr>
       </tbody>
     </table>
 
@@ -1373,7 +1413,8 @@ token.json
       <tbody>
         <tr><td>System health</td><td><code>os-verify</code> report</td><td><code>projects/[strategist]/workspace/os-health-[date].md</code> — generated weekly</td></tr>
         <tr><td>Decision history</td><td><code>decisions/log.md</code></td><td><code>git log -p decisions/log.md</code> for full diff history</td></tr>
-        <tr><td>Skill usage</td><td>Not tracked automatically</td><td>Add logging to skill output files if usage tracking is needed</td></tr>
+        <tr><td>Skill usage</td><td><code>skills/run-log.md</code> (auto)</td><td>Appended automatically by <code>PostToolUse(Skill)</code> + <code>UserPromptSubmit</code> hooks on every invocation</td></tr>
+        <tr><td>WIP backup</td><td><code>SessionEnd</code> hook</td><td>Auto-commits + pushes uncommitted work on session close; inspectable via <code>git log --oneline</code></td></tr>
         <tr><td>Memory drift</td><td><code>os-verify</code> Module 3</td><td>Flags stale or contradicted memory entries</td></tr>
         <tr><td>Context staleness</td><td><code>os-verify</code> Module 2</td><td>Flags context files >28 days since last update</td></tr>
       </tbody>
