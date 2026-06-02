@@ -8,4 +8,26 @@ Disallow: /executive-visibility-os
 Disallow: /influence-audit
 Disallow: /ai-audit
 
+# AI search crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 Sitemap: https://fromittoinfluence.com/sitemap.xml
