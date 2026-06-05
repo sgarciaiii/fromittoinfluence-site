@@ -38,3 +38,4 @@ blog/the-visibility-paradox.html
 blog/you-were-playing-the-wrong-game.html
 blog/your-boss-cant-champion.html
 blog/your-work-needs-a-return-address.html
+blog/ai-cant-read-the-room.html
