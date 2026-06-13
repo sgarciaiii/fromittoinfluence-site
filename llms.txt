@@ -21,5 +21,5 @@ Jimmy Garcia — IT Director, 25+ years enterprise. Teaching the unwritten corpo
 ## Products
 
 - [The Executive Visibility Playbook](https://fromittoinfluence.com/visibility-playbook): The complete system for making your work visible to the people who decide what happens to your career. $347.
-- [Run AI](https://fromittoinfluence.com/ai-workshop-kit): A practical course for technical professionals building AI workflows with Claude. $147.
+- [Run AI](https://fromittoinfluence.gumroad.com/l/run-ai): A practical course for technical professionals building AI workflows with Claude. $147.
 - [AI Career Scorecard](https://fromittoinfluence.gumroad.com/l/ai-career-scorecard): Diagnostic that scores your AI-era career positioning across five dimensions. $147.

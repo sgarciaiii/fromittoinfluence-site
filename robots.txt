@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /ai-workshop-kit
-Disallow: /agent-os-reference
-
 # AI search crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /

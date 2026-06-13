@@ -9,9 +9,8 @@ privacy.html
 terms.html
 thank-you.html
 
-# Products + courses
-ai-workshop-kit.html
-agent-os-reference.html
+# Products + courses (Run AI HTML retired from public site 2026-06-13 —
+# delivered via Gumroad upload; safety copy in CEA archives/)
 visibility-playbook.html
 career-visibility-kit.html
 
