@@ -13,22 +13,11 @@ thank-you.html
 ai-workshop-kit.html
 agent-os-reference.html
 visibility-playbook.html
-executive-visibility-os.html
 career-visibility-kit.html
 
-# Free tools / lead magnets
-executive-lens.html
-ai-cheatsheet.html
-ai-communication-audit.html
-ai-audit.html
-champion-brief.html
-hybrid-visibility-checklist.html
-credit-checklist.html
-promotion-gap-checklist.html
-strategic-assignment.html
-influence-audit.html
-political-scan.html
-visibility-sliver-audit.html
+# Free skills are delivered as downloadable zips (executive-lens.zip,
+# ai-communication-audit.zip, visibility-toolkit.zip), not HTML — so they
+# are not gated here. Source lives in skills/ (excluded from deploy).
 
 # Blog
 blog/index.html

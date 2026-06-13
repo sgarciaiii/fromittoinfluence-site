@@ -14,18 +14,12 @@ Jimmy Garcia — IT Director, 25+ years enterprise. Teaching the unwritten corpo
 - [The AI Communication Gap](https://fromittoinfluence.com/blog/the-ai-communication-gap): How AI-generated communication is eroding the executive communication signals that drive promotion decisions.
 
 ## Free Tools
-- [The Don't Get Passed Over Monday Prompt](https://fromittoinfluence.com/monday-prompt): One question, three filters. Run it every Monday before you open your task manager to identify your exposure action for the week.
-- [The 60-Second Political Scan](https://fromittoinfluence.com/political-scan): Five questions to run before sending anything AI-assisted to a stakeholder — for timing, audience state, and threat surface.
-- [Visibility Sliver Audit](https://fromittoinfluence.com/visibility-sliver-audit): A 10-minute diagnostic for senior technical professionals who are excellent at their jobs and invisible in the rooms that matter.
-
-- [The Executive Lens](https://fromittoinfluence.com/executive-lens): Free self-assessment — identify which visibility gaps are holding your career back.
-- [Promotion Gap Checklist](https://fromittoinfluence.com/promotion-gap-checklist): The specific signals executives look for before promoting someone.
-- [Champion Brief](https://fromittoinfluence.com/champion-brief): A one-page brief that gives your sponsor the exact language they need to advocate for you.
-- [Credit Visibility Checklist](https://fromittoinfluence.com/credit-checklist): How to ensure your contributions are attributed correctly in the rooms you're not in.
-- [Hybrid Visibility Checklist](https://fromittoinfluence.com/hybrid-visibility-checklist): Maintaining executive visibility in remote and hybrid work environments.
+- [The Executive Lens](https://fromittoinfluence.com/thank-you): A downloadable skill that scores your executive presence across five dimensions and shows which visibility gap to fix first.
+- [The AI Communication Audit](https://fromittoinfluence.com/thank-you): A downloadable skill that runs your real emails and messages through a five-dimension diagnostic and returns rewrites that keep your voice.
+- [The Visibility Toolkit](https://fromittoinfluence.com/thank-you): A downloadable skill covering promotion gaps, credit capture, hybrid presence, strategic assignments, and the champion brief in one place.
 
 ## Products
 
 - [The Executive Visibility Playbook](https://fromittoinfluence.com/visibility-playbook): The complete system for making your work visible to the people who decide what happens to your career. $347.
 - [Run AI](https://fromittoinfluence.com/ai-workshop-kit): A practical course for technical professionals building AI workflows with Claude. $147.
-- [AI Career Scorecard](https://fromittoinfluence.com/ai-communication-audit): Diagnostic tool for identifying where AI-generated communication is eroding your executive presence. $147.
+- [AI Career Scorecard](https://fromittoinfluence.gumroad.com/l/ai-career-scorecard): Diagnostic that scores your AI-era career positioning across five dimensions. $147.

@@ -62,65 +62,7 @@
 
   <!-- Free tools & lead magnets -->
   <url>
-    <loc>https://fromittoinfluence.com/executive-lens</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/ai-communication-audit</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/ai-audit</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/champion-brief</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/credit-checklist</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/promotion-gap-checklist</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/strategic-assignment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/hybrid-visibility-checklist</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fromittoinfluence.com/ai-cheatsheet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
     <loc>https://fromittoinfluence.com/monday-prompt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://fromittoinfluence.com/political-scan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://fromittoinfluence.com/visibility-sliver-audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

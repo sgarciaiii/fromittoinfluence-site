@@ -1,12 +1,8 @@
 User-agent: *
 Allow: /
 
-Disallow: /thank-you
 Disallow: /ai-workshop-kit
 Disallow: /agent-os-reference
-Disallow: /executive-visibility-os
-Disallow: /influence-audit
-Disallow: /ai-audit
 
 # AI search crawlers — explicitly allowed
 User-agent: GPTBot
