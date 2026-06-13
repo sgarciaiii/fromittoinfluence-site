@@ -11,7 +11,7 @@
  * Form numeric ID: 9509071
  */
 
-const KIT_FORM_ID = "9509071";
+const KIT_FORM_ID = "9561304";
 const SUCCESS_REDIRECT = "/thank-you";
 const ERROR_REDIRECT = "/?subscribe_error=1";
 
