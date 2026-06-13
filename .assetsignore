@@ -1,4 +1,14 @@
 .git
+.gitignore
+.githooks
 .wrangler
+.dev.vars*
 node_modules
 skills
+
+# Internal/dev files — not for public serving
+*.md
+_live-pages.txt
+worker.js
+wrangler.jsonc
+.assetsignore

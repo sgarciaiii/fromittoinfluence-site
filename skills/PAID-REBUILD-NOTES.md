@@ -28,15 +28,13 @@ Today: 6 copy-paste AI prompts (status update, performance-review narrative, pro
 
 ---
 
-## 2. AI Career Scorecard — $147  ⚠️ DECISION NEEDED FIRST
+## 2. AI Career Scorecard — $147  (overlap resolved 2026-06-13)
 
 Today: 18-question diagnostic across 5 dimensions — **fluency, visibility, communication, workflow integration, leadership positioning** — instant scored report.
 
-**The problem:** it overlaps the **free** Executive Lens. Both are "scored diagnostic of your positioning." Right now you'd be giving the diagnosis away free *and* charging $147 for a diagnosis. **Do not rebuild until this is resolved.** Options:
-- **Differentiate hard:** Scorecard becomes the *AI-career-specific* diagnostic (the 5 dims above are AI-flavored), positioned as "you've run the free Lens, now score your AI-era readiness." Sharper, paid depth, personalized AI analysis.
-- **Merge:** fold it into the Executive Lens as a premium tier, kill the standalone SKU.
+**Decision (2026-06-13):** the overlap with the free Executive Lens was resolved by **killing the free Lens** and keeping the paid Scorecard. Jimmy chose to protect the $147 revenue product rather than give a scored diagnostic away free. The free front door is now the AI Communication Audit (a different *kind* of diagnostic — runs on real messages, not a self-rated quiz), so there's no longer a free scored-diagnostic cannibalizing this one.
 
-Build archetype if kept: Likert/scored skill like Executive Lens, 18 Q × 5 dims, deeper AI-driven report.
+**Rebuild as:** a scored skill (same archetype as the retired Lens — Likert × 5 dims), 18 Q, with a deeper AI-driven report. It currently has no page (ai-audit.html deleted); it sells on Gumroad (`l/ai-career-scorecard`). When rebuilt, it returns as a skill delivered via Gumroad, not a hosted page. The retired Executive Lens SKILL.md (in git history at the 2026-06-13 consolidation commit) is the starting template for the scoring logic.
 
 ---
 
