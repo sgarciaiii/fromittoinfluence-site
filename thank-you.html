@@ -11,30 +11,30 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
 
   <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 
   :root {
-    --bg:        #0c0d14;
-    --bg-2:      #08090f;
-    --surface:   #15161f;
-    --surface-2: #1d1e29;
-    --border:    rgba(212,148,10,0.10);
-    --border-h:  rgba(212,148,10,0.22);
+    --bg:        #0B0A14;
+    --bg-2:      #08070d;
+    --surface:   #1a1430;
+    --surface-2: #241836;
+    --border:    rgba(157,134,255,0.10);
+    --border-h:  rgba(157,134,255,0.22);
     --border-w:  rgba(255,255,255,0.08);
-    --gold:      #dea01a;
-    --gold-lt:   #f0b428;
-    --gold-glow: rgba(212,148,10,0.12);
-    --white:     #f1f5f9;
-    --muted:     #94a3b8;
-    --dimmer:    #7b8da8;
-    --green:     #34d399;
-    --font-d:    'Sora', sans-serif;
-    --font-b:    'DM Sans', sans-serif;
-    --font-m:    'JetBrains Mono', monospace;
+    --gold:      #9D86FF;
+    --gold-lt:   #C9A9FF;
+    --gold-glow: rgba(157,134,255,0.12);
+    --white:     #EDEAF5;
+    --muted:     #9A93AE;
+    --dimmer:    #6E6982;
+    --green:     #2BDBD0;
+    --font-d:    'Space Grotesk', sans-serif;
+    --font-b:    'Hanken Grotesk', sans-serif;
+    --font-m:    'Space Grotesk', monospace;
   }
 
   body {
@@ -67,12 +67,12 @@
   .bg-orb-1 {
     width: 600px; height: 600px;
     top: -200px; left: -150px;
-    background: radial-gradient(circle, rgba(212,148,10,0.07), transparent 70%);
+    background: radial-gradient(circle, rgba(157,134,255,0.07), transparent 70%);
   }
   .bg-orb-2 {
     width: 400px; height: 400px;
     bottom: -100px; right: -100px;
-    background: radial-gradient(circle, rgba(59,130,246,0.04), transparent 70%);
+    background: radial-gradient(circle, rgba(43,219,208,0.04), transparent 70%);
   }
 
   /* ── Nav ── */
@@ -83,7 +83,7 @@
     padding: 20px 48px;
     border-bottom: 1px solid var(--border);
     position: relative; z-index: 10;
-    background: rgba(12,13,20,0.8);
+    background: rgba(11,10,20,0.8);
     backdrop-filter: blur(16px);
   }
   .logo {
@@ -105,13 +105,13 @@
     text-transform: uppercase;
     color: var(--gold);
     text-decoration: none;
-    border: 1px solid rgba(212,148,10,0.35);
+    border: 1px solid rgba(157,134,255,0.35);
     padding: 9px 18px;
     border-radius: 6px;
     transition: background 0.25s, border-color 0.25s;
   }
   .nav-yt:hover {
-    background: rgba(212,148,10,0.08);
+    background: rgba(157,134,255,0.08);
     border-color: var(--gold);
   }
   .yt-dot {
@@ -148,8 +148,8 @@
     width: 72px; height: 72px;
     margin: 0 auto 28px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05));
-    border: 1px solid rgba(52,211,153,0.3);
+    background: linear-gradient(135deg, rgba(43,219,208,0.15), rgba(43,219,208,0.05));
+    border: 1px solid rgba(43,219,208,0.3);
     display: flex; align-items: center; justify-content: center;
     font-size: 1.8rem;
     animation: pop-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -208,7 +208,7 @@
   }
   .origin p {
     font-size: 1.06rem;
-    color: #cbd5e1;
+    color: #cbc4d8;
     line-height: 1.85;
     margin-bottom: 1.15em;
   }
@@ -261,7 +261,7 @@
   .resource-card::after {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(circle at top right, rgba(212,148,10,0.07), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(157,134,255,0.07), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
@@ -269,7 +269,7 @@
   .resource-card:hover {
     border-color: var(--border-h);
     transform: translateY(-5px);
-    box-shadow: 0 16px 48px rgba(212,148,10,0.1);
+    box-shadow: 0 16px 48px rgba(157,134,255,0.1);
   }
   .resource-card:hover::after { opacity: 1; }
 
@@ -297,9 +297,9 @@
     border-radius: 100px;
   }
   .badge--live {
-    background: rgba(52,211,153,0.1);
+    background: rgba(43,219,208,0.1);
     color: var(--green);
-    border: 1px solid rgba(52,211,153,0.25);
+    border: 1px solid rgba(43,219,208,0.25);
   }
   .badge--soon {
     background: rgba(255,255,255,0.04);
@@ -345,14 +345,14 @@
     font-size: 0.88rem;
     text-decoration: none;
     border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(212,148,10,0.2);
+    box-shadow: 0 4px 18px rgba(157,134,255,0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     letter-spacing: -0.01em;
     align-self: flex-start;
   }
   .resource-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(212,148,10,0.3);
+    box-shadow: 0 8px 28px rgba(157,134,255,0.3);
   }
   .resource-cta--locked {
     display: inline-flex; align-items: center;
@@ -439,7 +439,7 @@
   .ladder-card::after {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(circle at top right, rgba(212,148,10,0.07), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(157,134,255,0.07), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
@@ -447,7 +447,7 @@
   .ladder-card:hover {
     border-color: var(--border-h);
     transform: translateY(-5px);
-    box-shadow: 0 16px 48px rgba(212,148,10,0.1);
+    box-shadow: 0 16px 48px rgba(157,134,255,0.1);
   }
   .ladder-card:hover::after { opacity: 1; }
   .ladder-meta {
@@ -492,25 +492,25 @@
     width: 100%;
     max-width: 980px;
     background: linear-gradient(135deg, var(--surface), var(--surface-2));
-    border: 2px solid rgba(212,148,10,0.3);
+    border: 2px solid rgba(157,134,255,0.3);
     border-radius: 16px;
     padding: 40px 36px;
     margin-bottom: 64px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 0 30px rgba(212,148,10,0.08), inset 0 1px 0 rgba(212,148,10,0.1);
+    box-shadow: 0 0 30px rgba(157,134,255,0.08), inset 0 1px 0 rgba(157,134,255,0.1);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   }
   .upsell-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(212,148,10,0.5);
-    box-shadow: 0 8px 48px rgba(212,148,10,0.18), 0 0 60px rgba(212,148,10,0.06);
+    border-color: rgba(157,134,255,0.5);
+    box-shadow: 0 8px 48px rgba(157,134,255,0.18), 0 0 60px rgba(157,134,255,0.06);
   }
   .upsell-card::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at top center, rgba(212,148,10,0.1), transparent 60%);
+    background: radial-gradient(ellipse at top center, rgba(157,134,255,0.1), transparent 60%);
     pointer-events: none;
   }
   .upsell-badge {
@@ -584,13 +584,13 @@
     font-size: 0.95rem;
     text-decoration: none;
     border-radius: 10px;
-    box-shadow: 0 4px 24px rgba(212,148,10,0.25);
+    box-shadow: 0 4px 24px rgba(157,134,255,0.25);
     transition: transform 0.2s, box-shadow 0.2s;
     letter-spacing: -0.01em;
   }
   .upsell-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(212,148,10,0.35);
+    box-shadow: 0 8px 32px rgba(157,134,255,0.35);
   }
 
   @media (max-width: 860px) {
@@ -610,7 +610,7 @@
 
 <nav>
   <a href="index.html" class="logo">
-    <img src="./chess_knight_logo.png" alt="From IT to Influence">
+    <img src="/knight-mark.png" alt="From IT to Influence">
     From <em>IT</em> to Influence
   </a>
   <a href="https://youtube.com/@FromITtoInfluence" class="nav-yt" target="_blank" rel="noopener">
