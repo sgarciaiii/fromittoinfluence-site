@@ -55,7 +55,16 @@
   .fin:focus{border-color:#9D86FF;}
   input::placeholder{color:#6E6982;}
   [data-reveal],[data-hero]{opacity:0;transform:translateY(26px);}
-  @media(max-width:880px){ .g2{grid-template-columns:1fr!important;} .nav-links{display:none!important;} }
+  .nav-toggle{display:none;background:none;border:0;color:#EDEAF5;cursor:pointer;padding:8px;}
+  .nav-toggle svg{width:26px;height:26px;display:block;}
+  @media(max-width:880px){
+    .g2{grid-template-columns:1fr!important;}
+    .nav-toggle{display:inline-flex;align-items:center;}
+    .nav-links{display:none!important;position:absolute;top:70px;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;background:rgba(15,12,26,0.98);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,0.08);padding:8px 0;}
+    .nav-links.open{display:flex!important;}
+    .nav-links a{padding:13px 30px;font-size:1rem!important;}
+    .nav-links a:last-child{margin:10px 30px 6px;justify-content:center;}
+  }
 </style>
 </head>
 <body>
@@ -72,18 +81,21 @@
       <img src="/knight-mark.png" alt="From IT to Influence" style="height:34px;width:auto;display:block;" />
       From IT to Influence
     </a>
-    <div class="nav-links" style="display:flex;align-items:center;gap:26px;">
+    <div class="nav-links" id="nav-links" style="display:flex;align-items:center;gap:26px;">
       <a href="#learn" style="font-size:.86rem;color:#9A93AE;text-decoration:none;">What you'll learn</a>
       <a href="#tools" style="font-size:.86rem;color:#9A93AE;text-decoration:none;">Free tools</a>
       <a href="#products" style="font-size:.86rem;color:#9A93AE;text-decoration:none;">Products</a>
       <a href="/blog" style="font-size:.86rem;color:#9A93AE;text-decoration:none;">Blog</a>
       <a href="https://youtube.com/@FromITtoInfluence" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:600;color:#0B0A14;background:#9D86FF;padding:9px 18px;border-radius:100px;text-decoration:none;">Watch the channel</a>
     </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links" onclick="var n=document.getElementById('nav-links'),o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close menu':'Open menu');">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </nav>
 
 <!-- sticky bottom CTA -->
-<div id="sticky" style="position:fixed;bottom:22px;left:50%;transform:translate(-50%,160%);z-index:95;opacity:0;background:rgba(22,20,33,0.92);border:1px solid rgba(157,134,255,0.35);box-shadow:0 18px 60px rgba(0,0,0,0.5);backdrop-filter:blur(20px);border-radius:16px;padding:12px 14px 12px 22px;display:flex;align-items:center;gap:22px;transition:transform .5s cubic-bezier(.4,0,.2,1), opacity .5s ease;">
+<div id="sticky" style="position:fixed;bottom:22px;left:50%;transform:translate(-50%,160%);z-index:95;opacity:0;visibility:hidden;background:rgba(22,20,33,0.92);border:1px solid rgba(157,134,255,0.35);box-shadow:0 18px 60px rgba(0,0,0,0.5);backdrop-filter:blur(20px);border-radius:16px;padding:12px 14px 12px 22px;display:flex;align-items:center;gap:22px;transition:transform .5s cubic-bezier(.4,0,.2,1), opacity .5s ease;">
   <div style="display:flex;flex-direction:column;">
     <strong style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.92rem;color:#EDEAF5;">The AI Communication Audit</strong>
     <span style="font-size:.8rem;color:#9A93AE;">See how your writing lands — free.</span>
@@ -91,6 +103,7 @@
   <a href="#top" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.9rem;color:#0B0A14;background:linear-gradient(135deg,#9D86FF,#7C5CF0);padding:11px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;">Start free →</a>
 </div>
 
+<main>
 <!-- ═══ HERO ═══ -->
 <section id="top" style="position:relative;z-index:1;padding:158px 30px 90px;">
   <div class="g2" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.06fr 0.94fr;gap:60px;align-items:center;">
@@ -103,8 +116,8 @@
       <p data-hero style="font-size:1.14rem;line-height:1.62;color:#9A93AE;max-width:500px;margin-bottom:32px;">The AI Communication Audit reads your real emails and messages and shows you — clearly and without the shame — how your writing lands with leadership, and the small moves that make it land even better. It keeps your voice. No quiz, no lecture. Just signal.</p>
       <form data-hero method="post" action="/subscribe" style="display:flex;flex-direction:column;gap:12px;max-width:470px;">
         <div style="display:flex;gap:10px;">
-          <input class="fin" name="first_name" placeholder="First name" required style="flex:1;min-width:0;padding:15px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;font-family:inherit;font-size:.96rem;color:#EDEAF5;outline:none;" />
-          <input class="fin" name="email" type="email" placeholder="Email address" required style="flex:1.3;min-width:0;padding:15px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;font-family:inherit;font-size:.96rem;color:#EDEAF5;outline:none;" />
+          <input class="fin" name="first_name" placeholder="First name" aria-label="First name" required style="flex:1;min-width:0;padding:15px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;font-family:inherit;font-size:.96rem;color:#EDEAF5;outline:none;" />
+          <input class="fin" name="email" type="email" placeholder="Email address" aria-label="Email address" required style="flex:1.3;min-width:0;padding:15px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;font-family:inherit;font-size:.96rem;color:#EDEAF5;outline:none;" />
         </div>
         <button class="btn" type="submit" style="padding:16px 26px;background:linear-gradient(135deg,#9D86FF,#7C5CF0);color:#0B0A14;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;border:none;border-radius:12px;cursor:pointer;box-shadow:0 12px 34px rgba(157,134,255,0.30);">Try the free Communication Audit →</button>
         <span style="font-size:.82rem;color:#6E6982;">Free · runs on your own work · no credit card</span>
@@ -410,6 +423,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ═══ FOOTER ═══ -->
 <footer style="position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.07);padding:48px 30px;">
   <div style="max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
@@ -446,9 +461,11 @@
     window.addEventListener('scroll', function(){
       var y = window.scrollY;
       if(nav){ nav.style.background = y>30 ? 'rgba(11,10,20,0.85)' : 'rgba(11,10,20,0.4)'; nav.style.transform = (y>last && y>420) ? 'translateY(-100%)' : 'translateY(0)'; }
-      if(sticky){ var show = y>760; sticky.style.transform = show ? 'translate(-50%,0)' : 'translate(-50%,160%)'; sticky.style.opacity = show ? '1' : '0'; }
+      if(sticky){ var show = y>760; sticky.style.transform = show ? 'translate(-50%,0)' : 'translate(-50%,160%)'; sticky.style.opacity = show ? '1' : '0'; sticky.style.visibility = show ? 'visible' : 'hidden'; }
       last = y;
     }, { passive:true });
+    var nl = document.getElementById('nav-links');
+    if(nl){ nl.addEventListener('click', function(e){ if(e.target.closest('a')){ nl.classList.remove('open'); var t=document.querySelector('.nav-toggle'); if(t){ t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','Open menu'); } } }); }
   })();
 </script>
 </body>
