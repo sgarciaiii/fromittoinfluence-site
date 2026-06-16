@@ -54,6 +54,19 @@ export default {
       }
     }
 
+    // ── Killed free page → paid checkout ────────────────────────────────────
+    // The on-site /career-visibility-kit page gave the full $27 kit away free.
+    // Removed 2026-06-15; URL now 301s to the paid Gumroad product.
+    if (
+      url.pathname === "/career-visibility-kit" ||
+      url.pathname === "/career-visibility-kit.html"
+    ) {
+      return Response.redirect(
+        "https://fromittoinfluence.gumroad.com/l/career-visibility-kit",
+        301
+      );
+    }
+
     // ── Everything else → static assets ─────────────────────────────────────
     return env.ASSETS.fetch(request);
   },
