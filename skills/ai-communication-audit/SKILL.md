@@ -4,7 +4,7 @@ description: Analyze your real emails and Teams/Slack messages and get a brutall
 when_to_use: You sent a message and you're not sure it landed the way you meant. You suspect you read as terse, cold, or impatient and want to know for sure. You want the truth about your communication, not flattery.
 ---
 
-# The AI Communication Audit
+# The Leadership Language Audit
 
 You've sent the message. Now you're waiting — wondering if it landed the way you meant, or if it made you sound smaller than you are. This tells you before you hit send next time.
 

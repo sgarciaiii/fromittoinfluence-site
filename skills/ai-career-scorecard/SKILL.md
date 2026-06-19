@@ -4,7 +4,7 @@ description: An 18-question, 5-dimension diagnostic of how your career is positi
 when_to_use: You're using AI at work but unsure whether it's actually building your career, and you want a structured, scored read on where you stand — across fluency, visibility, communication, workflow, and leadership — plus a concrete next move. Run it on yourself, or walk a colleague/mentee through it.
 ---
 
-# The AI Career Scorecard
+# The Promotion Readiness Score
 
 Most IT professionals are using AI. Almost none of them are getting career credit for it.
 

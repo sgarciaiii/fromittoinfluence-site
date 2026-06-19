@@ -14,12 +14,11 @@ Jimmy Garcia — IT Director, 25+ years enterprise. Teaching the unwritten corpo
 - [The AI Communication Gap](https://fromittoinfluence.com/blog/the-ai-communication-gap): How AI-generated communication is eroding the executive communication signals that drive promotion decisions.
 
 ## Free Tools
-- [The Executive Lens](https://fromittoinfluence.com/thank-you): A downloadable skill that scores your executive presence across five dimensions and shows which visibility gap to fix first.
-- [The AI Communication Audit](https://fromittoinfluence.com/thank-you): A downloadable skill that runs your real emails and messages through a five-dimension diagnostic and returns rewrites that keep your voice.
+- [The Leadership Language Audit](https://fromittoinfluence.com/thank-you): A downloadable skill that runs your real emails and messages through a five-dimension diagnostic and returns rewrites that keep your voice.
 - [The Visibility Toolkit](https://fromittoinfluence.com/thank-you): A downloadable skill covering promotion gaps, credit capture, hybrid presence, strategic assignments, and the champion brief in one place.
 
 ## Products
 
 - [The Executive Visibility Playbook](https://fromittoinfluence.com/visibility-playbook): The complete system for making your work visible to the people who decide what happens to your career. $347.
-- [Run AI](https://fromittoinfluence.gumroad.com/l/run-ai): A practical course for technical professionals building AI workflows with Claude. $147.
-- [AI Career Scorecard](https://fromittoinfluence.gumroad.com/l/ai-career-scorecard): Diagnostic that scores your AI-era career positioning across five dimensions. $147.
+- [The Practitioner's AI Playbook](https://fromittoinfluence.gumroad.com/l/run-ai): A practical course for technical professionals building AI workflows with Claude. $147.
+- [Promotion Readiness Score](https://fromittoinfluence.gumroad.com/l/ai-career-scorecard): Diagnostic that scores your AI-era career positioning across five dimensions. $147.
